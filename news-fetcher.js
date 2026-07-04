@@ -203,37 +203,48 @@ function isDuplicate(title, sourceId) {
     return !!similar;
 }
 
-// ===== CATEGORY DETECTION =====
+// ===== SMART CATEGORY DETECTION =====
+const _PLAYERS = ['ميسي','رونالدو','مبابي','هالاند','نيمار','صلاح','بنزيما','بيلينغهام','فينيسيوس','يامال','ليفاندوفسكي','تاليسكا','حمدالله','الشهري','الدوسري','كنو','المقهو','البريكان','مارسيلو','زيدان','رشفورد','كين','غريزمان'];
+const _CLUBS = ['ريال مدريد','برشلونة','مانشستر سيتي','ليفربول','أرسنال','بايرن ميونخ','باريس سان جيرمان','يوفنتوس','الهلال','النصر','الأهلي','الاتحاد','الشباب','الاتفاق','الترجي','الوداد','الرجاء','ميلان','إنتر ميلان','تشيلسي','مانشستر يونايتد','توتنهام','أتلتيكو مدريد'];
+const _COMPS = ['كأس العالم','مونديال','دوري أبطال أوروبا','تشامبيونزليغ','الدوري الإنجليزي','البريمرليغ','الليغا','البوندسليغا','السيري آ','دوري روشن','كأس الملك','يورو','كوبا أمريكا','فورمولا 1','NBA','كأس آسيا'];
+const _ECON_TERMS = ['نفط','برميل','أسهم','بورصة','تداول','استثمار','ريال','دولار','يورو','تضخم','نمو','ركود','أوبك','bitcoin','crypto','البنك المركزي','صندوق النقد','Wall Street','S&P','NASDAQ'];
+const _ECON_COMPANIES = ['أرامكو','سابك','أبل','Apple','جوجل','Google','مايكروسوفت','أمازون','تسلا','Tesla','سامسونغ','Samsung','بنك أمريكا','JP مورغان'];
+const _INT_COUNTRIES = ['أمريكا','روسيا','الصين','فرنسا','ألمانيا','بريطانيا','إيران','تركيا','إسرائيل','فلسطين','غزة','مصر','العراق','سوريا','لبنان','أوكرانيا','كوريا','اليابان'];
+const _INT_LEADERS = ['ترامب','بايدن','بوتين','ماكرون','شولتس','إردوغان','خامنئي','نتنياهو','زيلينسكي','السيسي','مودي'];
+const _INT_ORGS = ['الأمم المتحدة','حلف الناتو','NATO','الاتحاد الأوروبي','منظمة الصحة العالمية','الأوبك','G20','G7','الجامعة العربية'];
+const _SAUDI = ['السعودية','المملكة','الرياض','جدة','مكة','المدينة','سمو ولي العهد','الملك سلمان','رؤية 2030','مجلس الوزراء','وزارة','أمير','الحرس','الدفاع','الداخلية','المرور','الشؤون الإسلامية'];
+
 function detectCategory(title, content, sourceCategory) {
-    if (sourceCategory && sourceCategory !== 'auto') return sourceCategory;
-
     const text = (title + ' ' + content).toLowerCase();
+    const scores = { sports:0, economy:0, international:0, local:0, entertainment:0, tourism:0, misc:0, jobs:0, society:0 };
 
-    const categories = {
-        'sports': ['رياضة', 'كرة', 'مباراة', 'هدف', 'لاعب', 'فريق', 'بطولة', 'كأس', 'الدوري', 'coach', 'sport', 'match', 'goal', 'football', 'soccer', 'fifa', 'كرة قدم', 'المنتدي', 'مونديال', 'كأس العالم'],
-        'economy': ['اقتصاد', 'نفط', 'أسهم', 'بورصة', 'استثمار', 'مصرف', 'ريال', 'دولار', 'تجارة', 'economy', 'oil', 'stock', 'market', 'investment', 'أوبك', 'البنك', 'تضخم', 'نمو اقتصادي'],
-        'international': ['دولي', 'عالمي', 'أمريكا', 'أوروبا', 'الصين', 'روسيا', 'حرب', 'سلام', '联合国', 'international', 'world', 'global', 'trump', 'putin', 'iran', 'israel'],
-        'entertainment': ['ترفيه', 'فن', 'مسلسل', 'فيلم', 'ممثل', 'مغني', 'حفل', 'concert', 'movie', 'entertainment', 'celebrity', 'celeb', 'actor', 'سهرة', 'حفلة'],
-        'tourism': ['سياحة', 'سفر', 'فندق', 'مطار', 'وجهة', 'رحلات', 'tourism', 'travel', 'hotel', 'resort', 'سياحي'],
-        'jobs': ['وظيفة', 'توظيف', 'راتب', 'مسمى وظيفي', 'job', 'career', 'hiring', 'recruitment', 'employment', 'وظائف'],
-        'society': ['مجتمع', 'صحة', 'تعليم', 'أحوال', 'اجتماعي', 'society', 'health', 'education', 'social'],
-    };
+    for (const p of _PLAYERS) if (text.includes(p.toLowerCase())) scores.sports += 10;
+    for (const c of _CLUBS) if (text.includes(c.toLowerCase())) scores.sports += 8;
+    for (const c of _COMPS) if (text.includes(c.toLowerCase())) scores.sports += 9;
+    for (const t of ['مباراة','هدف','لاعب','فريق','بطولة','كأس','دوري','مدرب','فوز','خسارة','تأهل','goal','match','final','score','hat-trick']) if (text.includes(t)) scores.sports += 3;
 
-    let bestMatch = sourceCategory || 'local';
+    for (const t of _ECON_TERMS) if (text.includes(t.toLowerCase())) scores.economy += 4;
+    for (const c of _ECON_COMPANIES) if (text.includes(c.toLowerCase())) scores.economy += 8;
+
+    for (const c of _INT_COUNTRIES) if (text.includes(c.toLowerCase())) scores.international += 4;
+    for (const l of _INT_LEADERS) if (text.includes(l.toLowerCase())) scores.international += 8;
+    for (const o of _INT_ORGS) if (text.includes(o.toLowerCase())) scores.international += 6;
+    for (const t of ['حرب','سلام','مفاوضات','اتفاق','عقوبات','أزمة','إرهاب']) if (text.includes(t)) scores.international += 3;
+
+    for (const k of _SAUDI) if (text.includes(k.toLowerCase())) scores.local += 4;
+
+    for (const t of ['فن','فيلم','مسلسل','ممثل','مغني','حفل','concert','movie','entertainment','celebrity']) if (text.includes(t)) scores.entertainment += 3;
+    for (const t of ['سياحة','سفر','فندق','مطار','tourism','travel','hotel']) if (text.includes(t)) scores.tourism += 3;
+    for (const t of ['وظيفة','توظيف','راتب','job','career','hiring']) if (text.includes(t)) scores.jobs += 5;
+
+    if (sourceCategory && sourceCategory !== 'auto' && scores[sourceCategory] !== undefined) scores[sourceCategory] += 5;
+
+    let best = 'local';
     let bestScore = 0;
-
-    for (const [cat, keywords] of Object.entries(categories)) {
-        let score = 0;
-        for (const kw of keywords) {
-            if (text.includes(kw)) score++;
-        }
-        if (score > bestScore) {
-            bestScore = score;
-            bestMatch = cat;
-        }
+    for (const [cat, score] of Object.entries(scores)) {
+        if (score > bestScore) { bestScore = score; best = cat; }
     }
-
-    return bestMatch;
+    return best;
 }
 
 // ===== GET SECTION ID BY SLUG =====

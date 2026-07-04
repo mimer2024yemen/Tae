@@ -141,30 +141,28 @@ function extractAtomEntry(entry) {
 
 // ===== CATEGORY DETECTION =====
 function detectCategory(title, desc, sourceCategory) {
-    const text = (title + ' ' + desc).toLowerCase();
-
-    const cats = {
-        sports: ['رياضة', 'كرة', 'مباراة', 'هدف', 'لاعب', 'فريق', 'بطولة', 'كأس', 'الدوري', 'sport', 'match', 'goal', 'football', 'soccer', 'fifa', 'مونديال', 'world cup', 'nba', 'formula'],
-        economy: ['اقتصاد', 'نفط', 'أسهم', 'بورصة', 'استثمار', 'مصرف', 'ريال', 'دولار', 'economy', 'oil', 'stock', 'market', 'investment', 'أوبك', 'bitcoin', 'crypto'],
-        international: ['دولي', 'عالمي', 'أمريكا', 'أوروبا', 'الصين', 'روسيا', 'حرب', 'سلام', 'international', 'world', 'trump', 'iran', 'israel', 'gaza', 'ukraine'],
-        entertainment: ['ترفيه', 'فن', 'مسلسل', 'فيلم', 'ممثل', 'مغني', 'حفل', 'concert', 'movie', 'entertainment', 'celebrity', 'actor', 'netflix', 'spotify'],
-        tourism: ['سياحة', 'سفر', 'فندق', 'مطار', 'tourism', 'travel', 'hotel', 'resort'],
-    };
-
-    let best = sourceCategory;
-    let bestScore = 0;
-
-    for (const [cat, keywords] of Object.entries(cats)) {
-        let score = 0;
-        for (const kw of keywords) {
-            if (text.includes(kw)) score++;
-        }
-        if (score > bestScore) {
-            bestScore = score;
-            best = cat;
-        }
+    // Use SmartCategorizer if available
+    if (window.SmartCategorizer) {
+        const result = window.SmartCategorizer.classify(title, desc, sourceCategory);
+        return result.categorySlug;
     }
 
+    // Fallback: basic keyword matching
+    const text = (title + ' ' + desc).toLowerCase();
+    const cats = {
+        sports: ['رياضة', 'كرة', 'مباراة', 'هدف', 'لاعب', 'فريق', 'بطولة', 'كأس', 'الدوري', 'sport', 'match', 'goal', 'football', 'soccer', 'fifa', 'مونديال', 'world cup', 'nba', 'formula'],
+        economy: ['اقتصاد', 'نفط', 'أسهم', 'بورصة', 'استثمار', 'ريال', 'دولار', 'economy', 'oil', 'stock', 'market', 'investment', 'أوبك'],
+        international: ['دولي', 'عالمي', 'أمريكا', 'أوروبا', 'الصين', 'روسيا', 'حرب', 'سلام', 'international', 'world', 'trump', 'iran', 'israel'],
+        entertainment: ['ترفيه', 'فن', 'مسلسل', 'فيلم', 'ممثل', 'مغني', 'حفل', 'concert', 'movie', 'entertainment', 'celebrity'],
+        tourism: ['سياحة', 'سفر', 'فندق', 'مطار', 'tourism', 'travel', 'hotel', 'resort'],
+    };
+    let best = sourceCategory;
+    let bestScore = 0;
+    for (const [cat, keywords] of Object.entries(cats)) {
+        let score = 0;
+        for (const kw of keywords) { if (text.includes(kw)) score++; }
+        if (score > bestScore) { bestScore = score; best = cat; }
+    }
     return best || 'international';
 }
 
@@ -282,17 +280,19 @@ function renderNewsCards(articles, containerId) {
         return;
     }
 
-    container.innerHTML = articles.map(a => `
+    container.innerHTML = articles.map(a => {
+        const catInfo = window.SmartCategorizer ? window.SmartCategorizer.classify(a.title, a.summary || '', a.category || '') : { categoryName: a.category, categoryIcon: '📰', subcategory: '' };
+        const catBadge = catInfo.subcategory ? `${catInfo.categoryIcon} ${catInfo.categoryName} · ${catInfo.subcategory}` : `${catInfo.categoryIcon} ${catInfo.categoryName}`;
+        return `
         <a href="${a.link}" target="_blank" rel="noopener" class="latest-card" data-category="${a.category}">
             ${a.image ? `<img src="${a.image}" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:6px 6px 0 0;" loading="lazy" onerror="this.style.display='none'">` : ''}
             <div class="latest-card-body">
-                <span class="card-cat">${a.sourceLogo} ${a.source}</span>
+                <span class="card-cat">${catBadge}</span>
                 <h3>${escapeHtmlLive(a.title)}</h3>
-                <span class="card-date">${a.timeAgo}</span>
+                <span class="card-date">${a.sourceLogo} ${a.source} · ${a.timeAgo}</span>
                 <span class="read-more">اقرأ المزيد ←</span>
             </div>
-        </a>
-    `).join('');
+        </a>`}).join('');
 }
 
 function renderBreakingNews(articles, containerId) {

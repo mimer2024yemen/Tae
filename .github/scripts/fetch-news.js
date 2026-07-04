@@ -50,24 +50,49 @@ function extractImage(item) {
     return '';
 }
 
+// Smart categorization with entity recognition
+const SPORTS_PLAYERS = ['ميسي','رونالدو','مبابي','هالاند','نيمار','صلاح','بنزيما','بيلينغهام','فينيسيوس','يامال','ليفاندوفسكي','تاليسكا','حمدالله','الشهري','الدوسري','كنو','المقهو','البريكان'];
+const SPORTS_CLUBS = ['ريال مدريد','برشلونة','مانشستر سيتي','ليفربول','أرسنال','بايرن ميونخ','باريس سان جيرمان','يوفنتوس','الهلال','النصر','الأهلي','الاتحاد','الشباب','الاتفاق','الترجي','الوداد','الرجاء'];
+const SPORTS_COMPS = ['كأس العالم','مونديال','دوري أبطال أوروبا','تشامبيونزليغ','الدوري الإنجليزي','البريمرليغ','الليغا','البوندسليغا','السيري آ','دوري روشن','كأس الملك','يورو','كوبا أمريكا','فورمولا 1','NBA'];
+const ECONOMY_TERMS = ['نفط','برميل','أسهم','بورصة','تداول','استثمار','ريال','دولار','يورو','تضخم','نمو','ركود','أوبك','bitcoin','crypto','OPEC','البنك المركزي','صندوق النقد','Wall Street'];
+const ECONOMY_COMPANIES = ['أرامكو','سابك','أبل','Apple','جوجل','Google','مايكروسوفت','أمازون','تسلا','Tesla','سامسونغ','Samsung'];
+const INT_COUNTRIES = ['أمريكا','روسيا','الصين','فرنسا','ألمانيا','بريطانيا','إيران','تركيا','إسرائيل','فلسطين','غزة','مصر','العراق','سوريا','لبنان','أوكرانيا'];
+const INT_LEADERS = ['ترامب','بايدن','بوتين','ماكرون','شولتس','إردوغان','خامنئي','نتنياهو','زيلينسكي','السيسي','مودي'];
+const INT_ORGS = ['الأمم المتحدة','حلف الناتو','NATO','الاتحاد الأوروبي','منظمة الصحة العالمية','الأوبك','G20','G7','الجامعة العربية'];
+const SAUDI_KEYWORDS = ['السعودية','المملكة','الرياض','جدة','مكة','المدينة','سمو ولي العهد','الملك سلمان','رؤية 2030','مجلس الوزراء','وزارة','أمير','الحرس','الدفاع','الداخلية'];
+
 function detectCategory(title, desc, sourceCategory) {
     const text = (title + ' ' + desc).toLowerCase();
-    const cats = {
-        sports: ['رياضة', 'كرة', 'مباراة', 'هدف', 'لاعب', 'فريق', 'بطولة', 'كأس', 'الدوري', 'sport', 'match', 'goal', 'football', 'soccer', 'fifa', 'world cup', 'nba', 'tennis', 'golf', 'basketball'],
-        economy: ['اقتصاد', 'نفط', 'أسهم', 'بورصة', 'استثمار', 'ريال', 'دولار', 'economy', 'oil', 'stock', 'market', 'investment', 'bitcoin', 'crypto', 'fed', 'inflation'],
-        international: ['دولي', 'عالمي', 'أمريكا', 'أوروبا', 'الصين', 'روسيا', 'حرب', 'سلام', 'international', 'world', 'trump', 'iran', 'israel', 'gaza', 'ukraine', 'nato', 'un'],
-        entertainment: ['ترفيه', 'فن', 'مسلسل', 'فيلم', 'ممثل', 'مغني', 'concert', 'movie', 'entertainment', 'celebrity', 'actor', 'netflix', 'grammy', 'oscar'],
-        tourism: ['سياحة', 'سفر', 'فندق', 'مطار', 'tourism', 'travel', 'hotel', 'resort'],
-    };
+    const scores = { sports:0, economy:0, international:0, local:0, entertainment:0, tourism:0, misc:0, jobs:0, worldcup:0 };
 
-    let best = sourceCategory;
+    for (const p of SPORTS_PLAYERS) if (text.includes(p.toLowerCase())) scores.sports += 10;
+    for (const c of SPORTS_CLUBS) if (text.includes(c.toLowerCase())) scores.sports += 8;
+    for (const c of SPORTS_COMPS) if (text.includes(c.toLowerCase())) scores.sports += 9;
+    for (const t of ['مباراة','هدف','لاعب','فريق','بطولة','كأس','دوري','مدرب','فوز','خسارة','تأهل','goal','match','final','score']) if (text.includes(t)) scores.sports += 3;
+
+    for (const t of ECONOMY_TERMS) if (text.includes(t.toLowerCase())) scores.economy += 4;
+    for (const c of ECONOMY_COMPANIES) if (text.includes(c.toLowerCase())) scores.economy += 8;
+
+    for (const c of INT_COUNTRIES) if (text.includes(c.toLowerCase())) scores.international += 4;
+    for (const l of INT_LEADERS) if (text.includes(l.toLowerCase())) scores.international += 8;
+    for (const o of INT_ORGS) if (text.includes(o.toLowerCase())) scores.international += 6;
+    for (const t of ['حرب','سلام','مفاوضات','اتفاق','عقوبات','أزمة','إرهاب']) if (text.includes(t)) scores.international += 3;
+
+    for (const k of SAUDI_KEYWORDS) if (text.includes(k.toLowerCase())) scores.local += 4;
+
+    for (const t of ['فن','فيلم','مسلسل','ممثل','مغني','حفل','concert','movie','entertainment','celebrity']) if (text.includes(t)) scores.entertainment += 3;
+    for (const t of ['سياحة','سفر','فندق','مطار','tourism','travel','hotel']) if (text.includes(t)) scores.tourism += 3;
+    for (const t of ['وظيفة','توظيف','راتب','job','career','hiring']) if (text.includes(t)) scores.jobs += 5;
+    for (const t of ['كأس العالم','مونديال','world cup','2026']) if (text.includes(t)) scores.worldcup += 6;
+
+    if (sourceCategory && sourceCategory !== 'auto' && scores[sourceCategory] !== undefined) scores[sourceCategory] += 5;
+
+    let best = 'local';
     let bestScore = 0;
-    for (const [cat, keywords] of Object.entries(cats)) {
-        let score = 0;
-        for (const kw of keywords) { if (text.includes(kw)) score++; }
+    for (const [cat, score] of Object.entries(scores)) {
         if (score > bestScore) { bestScore = score; best = cat; }
     }
-    return best || 'international';
+    return best;
 }
 
 function hashCode(str) {
