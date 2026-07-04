@@ -116,6 +116,38 @@ function formatDateAr(d) {
     return days[date.getDay()] + ' ' + date.getDate() + ' ' + months[date.getMonth()] + ' ' + date.getFullYear();
 }
 
+// ===== LIVE NEWS (Static data + Client-side RSS fallback) =====
+async function loadLiveNews() {
+    try {
+        // First try static data (from GitHub Actions)
+        const staticData = await fetch('/data/news.json').then(r => r.ok ? r.json() : null).catch(() => null);
+        if (staticData && staticData.articles && staticData.articles.length > 0) {
+            console.log(`[عاجل] تم تحميل ${staticData.count} خبر من البيانات المحفوظة`);
+            if (window.AjelNews) {
+                window.AjelNews.renderSliderNews(staticData.articles, 'heroSlider');
+                window.AjelNews.renderBreakingNews(staticData.articles, 'tickerContent');
+                window.AjelNews.renderNewsCards(staticData.articles.slice(0, 6), 'articlesGrid');
+            }
+            return;
+        }
+    } catch {}
+
+    // Fallback: client-side RSS fetch
+    try {
+        if (window.AjelNews) {
+            const articles = await window.AjelNews.initLiveNews();
+            if (articles && articles.length > 0) {
+                console.log(`[عاجل] تم جلب ${articles.length} خبر مباشرة`);
+            }
+        }
+    } catch (err) {
+        console.log('[عاجل] Live news unavailable:', err.message);
+    }
+}
+
+// Load live news
+loadLiveNews();
+
 // Load data on page load
 loadHomeData();
 
