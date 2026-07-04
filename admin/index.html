@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة إدارة - عاجل نيوز</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="loginScreen" class="login-screen">
+    <div class="login-card">
+        <div class="login-logo">
+            <svg viewBox="0 0 120 50" width="120" height="50">
+                <rect x="0" y="0" width="120" height="50" rx="6" fill="#d71920"/>
+                <text x="60" y="36" text-anchor="middle" fill="#fff" font-size="32" font-weight="900" font-family="'Noto Kufi Arabic', sans-serif">عاجل</text>
+            </svg>
+        </div>
+        <h2>لوحة التحكم</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label>اسم المستخدم</label>
+                <input type="text" id="loginUsername" required placeholder="admin">
+            </div>
+            <div class="form-group">
+                <label>كلمة المرور</label>
+                <input type="password" id="loginPassword" required placeholder="••••••">
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">تسجيل الدخول</button>
+            <p id="loginError" class="error-msg"></p>
+        </form>
+    </div>
+</div>
+
+<!-- ADMIN DASHBOARD -->
+<div id="adminApp" class="admin-app" style="display:none;">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <svg viewBox="0 0 120 50" width="100" height="42">
+                <rect x="0" y="0" width="120" height="50" rx="6" fill="#d71920"/>
+                <text x="60" y="36" text-anchor="middle" fill="#fff" font-size="32" font-weight="900" font-family="'Noto Kufi Arabic', sans-serif">عاجل</text>
+            </svg>
+            <span class="sidebar-label">لوحة التحكم</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-page="dashboard">
+                <span class="nav-icon">📊</span>
+                <span>لوحة القيادة</span>
+            </a>
+            <a href="#" class="nav-item" data-page="articles">
+                <span class="nav-icon">📝</span>
+                <span>إدارة الأخبار</span>
+            </a>
+            <a href="#" class="nav-item" data-page="add-article">
+                <span class="nav-icon">➕</span>
+                <span>إضافة خبر</span>
+            </a>
+            <a href="#" class="nav-item" data-page="opinions">
+                <span class="nav-icon">✍️</span>
+                <span>مقالات الرأي</span>
+            </a>
+            <a href="#" class="nav-item" data-page="add-opinion">
+                <span class="nav-icon">📝</span>
+                <span>إضافة مقال رأي</span>
+            </a>
+            <a href="#" class="nav-item" data-page="sections">
+                <span class="nav-icon">📂</span>
+                <span>الأقسام</span>
+            </a>
+            <a href="#" class="nav-item" data-page="media">
+                <span class="nav-icon">🖼️</span>
+                <span>إدارة الصور</span>
+            </a>
+            <a href="#" class="nav-item" data-page="settings">
+                <span class="nav-icon">⚙️</span>
+                <span>الإعدادات</span>
+            </a>
+            <div class="nav-divider"></div>
+            <a href="/" target="_blank" class="nav-item">
+                <span class="nav-icon">🌐</span>
+                <span>عرض الموقع</span>
+            </a>
+            <a href="#" class="nav-item" id="logoutBtn">
+                <span class="nav-icon">🚪</span>
+                <span>تسجيل الخروج</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <!-- Top Bar -->
+        <header class="top-header">
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <div class="top-title" id="pageTitle">لوحة القيادة</div>
+            <div class="top-user">
+                <span id="userName">admin</span>
+                <div class="user-avatar">أ</div>
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="content-area" id="contentArea">
+
+            <!-- DASHBOARD PAGE -->
+            <div class="page active" id="page-dashboard">
+                <div class="stats-grid">
+                    <div class="stat-card stat-red">
+                        <div class="stat-icon">📰</div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="statTotal">0</span>
+                            <span class="stat-label">إجمالي الأخبار</span>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-green">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="statPublished">0</span>
+                            <span class="stat-label">منشورة</span>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-yellow">
+                        <div class="stat-icon">📋</div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="statDraft">0</span>
+                            <span class="stat-label">مسودة</span>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-blue">
+                        <div class="stat-icon">👁️</div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="statViews">0</span>
+                            <span class="stat-label">المشاهدات</span>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-purple">
+                        <div class="stat-icon">✍️</div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="statOpinions">0</span>
+                            <span class="stat-label">مقالات الرأي</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sections Stats -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3>إحصائيات الأقسام</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="sections-stats" id="sectionsStats"></div>
+                    </div>
+                </div>
+
+                <!-- Recent Articles -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3>آخر الأخبار المضافة</h3>
+                        <a href="#" class="btn btn-sm" onclick="navigateTo('articles')">عرض الكل</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>العنوان</th>
+                                        <th>القسم</th>
+                                        <th>الحالة</th>
+                                        <th>التاريخ</th>
+                                        <th>إجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recentArticlesBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ARTICLES LIST PAGE -->
+            <div class="page" id="page-articles">
+                <div class="page-header">
+                    <h2>إدارة الأخبار</h2>
+                    <button class="btn btn-primary" onclick="navigateTo('add-article')">➕ إضافة خبر جديد</button>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="filters">
+                            <select id="filterSection" class="input input-sm">
+                                <option value="">جميع الأقسام</option>
+                            </select>
+                            <select id="filterStatus" class="input input-sm">
+                                <option value="">جميع الحالات</option>
+                                <option value="published">منشور</option>
+                                <option value="draft">مسودة</option>
+                            </select>
+                            <input type="text" id="filterSearch" class="input input-sm" placeholder="🔍 بحث...">
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>الصورة</th>
+                                        <th>العنوان</th>
+                                        <th>القسم</th>
+                                        <th>الحالة</th>
+                                        <th>المشاهدات</th>
+                                        <th>التاريخ</th>
+                                        <th>إجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="articlesTableBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="pagination" id="articlesPagination"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ADD/EDIT ARTICLE PAGE -->
+            <div class="page" id="page-add-article">
+                <div class="page-header">
+                    <h2 id="articleFormTitle">إضافة خبر جديد</h2>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <form id="articleForm">
+                            <input type="hidden" id="articleId">
+                            <div class="form-row">
+                                <div class="form-group flex-2">
+                                    <label>عنوان الخبر *</label>
+                                    <input type="text" id="articleTitle" required placeholder="عنوان الخبر...">
+                                </div>
+                                <div class="form-group flex-1">
+                                    <label>القسم *</label>
+                                    <select id="articleSection" required>
+                                        <option value="">اختر القسم</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>ملخص الخبر</label>
+                                <textarea id="articleSummary" rows="2" placeholder="ملخص قصير..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>محتوى الخبر</label>
+                                <textarea id="articleContent" rows="10" placeholder="محتوى الخبر الكامل..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>صورة الخبر</label>
+                                <div class="image-upload-area" id="imageUploadArea">
+                                    <input type="file" id="articleImageFile" accept="image/*" style="display:none;">
+                                    <input type="text" id="articleImage" class="input" placeholder="رابط الصورة أو ارفع صورة...">
+                                    <button type="button" class="btn btn-sm" onclick="document.getElementById('articleImageFile').click()">📁 رفع صورة</button>
+                                </div>
+                                <div class="image-preview" id="imagePreview" style="display:none;">
+                                    <img id="previewImg" src="" alt="">
+                                    <button type="button" class="btn btn-sm btn-danger" onclick="clearImage()">✕ إزالة</button>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>اسم المراسل</label>
+                                    <input type="text" id="articleAuthor" value="عاجل" placeholder="عاجل">
+                                </div>
+                                <div class="form-group">
+                                    <label>الحالة</label>
+                                    <select id="articleStatus">
+                                        <option value="published">منشور</option>
+                                        <option value="draft">مسودة</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row checkboxes">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="articleFeatured"> خبر مميز
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="articleBreaking"> خبر عاجل
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="articleSlider"> في السلايدر
+                                </label>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">💾 حفظ الخبر</button>
+                                <button type="button" class="btn" onclick="resetArticleForm(); navigateTo('articles')">↩️ إلغاء</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OPINIONS LIST PAGE -->
+            <div class="page" id="page-opinions">
+                <div class="page-header">
+                    <h2>مقالات الرأي</h2>
+                    <button class="btn btn-primary" onclick="navigateTo('add-opinion')">➕ إضافة مقال</button>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>الكاتب</th>
+                                        <th>العنوان</th>
+                                        <th>الحالة</th>
+                                        <th>التاريخ</th>
+                                        <th>إجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="opinionsTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ADD/EDIT OPINION PAGE -->
+            <div class="page" id="page-add-opinion">
+                <div class="page-header">
+                    <h2 id="opinionFormTitle">إضافة مقال رأي</h2>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <form id="opinionForm">
+                            <input type="hidden" id="opinionId">
+                            <div class="form-row">
+                                <div class="form-group flex-2">
+                                    <label>عنوان المقال *</label>
+                                    <input type="text" id="opinionTitle" required placeholder="عنوان المقال...">
+                                </div>
+                                <div class="form-group flex-1">
+                                    <label>اسم الكاتب *</label>
+                                    <input type="text" id="opinionAuthor" required placeholder="اسم الكاتب">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>حرف الأفتار</label>
+                                    <input type="text" id="opinionLetter" maxlength="2" placeholder="أول حرف من الاسم">
+                                </div>
+                                <div class="form-group">
+                                    <label>لون الأفتار</label>
+                                    <input type="color" id="opinionColor" value="#d71920">
+                                </div>
+                                <div class="form-group">
+                                    <label>الحالة</label>
+                                    <select id="opinionStatus">
+                                        <option value="published">منشور</option>
+                                        <option value="draft">مسودة</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>ملخص المقال</label>
+                                <textarea id="opinionSummary" rows="2" placeholder="ملخص قصير..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>محتوى المقال</label>
+                                <textarea id="opinionContent" rows="10" placeholder="محتوى المقال الكامل..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>صورة الكاتب (اختياري)</label>
+                                <input type="text" id="opinionImage" class="input" placeholder="رابط الصورة...">
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">💾 حفظ المقال</button>
+                                <button type="button" class="btn" onclick="resetOpinionForm(); navigateTo('opinions')">↩️ إلغاء</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTIONS PAGE -->
+            <div class="page" id="page-sections">
+                <div class="page-header">
+                    <h2>إدارة الأقسام</h2>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>الأيقونة</th>
+                                        <th>الاسم</th>
+                                        <th>الرابط</th>
+                                        <th>الترتيب</th>
+                                        <th>الأخبار</th>
+                                        <th>الحالة</th>
+                                        <th>إجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="sectionsTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MEDIA PAGE -->
+            <div class="page" id="page-media">
+                <div class="page-header">
+                    <h2>إدارة الصور</h2>
+                    <button class="btn btn-primary" onclick="document.getElementById('bulkUploadInput').click()">📁 رفع صور</button>
+                    <input type="file" id="bulkUploadInput" accept="image/*" multiple style="display:none;">
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="media-grid" id="mediaGrid"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SETTINGS PAGE -->
+            <div class="page" id="page-settings">
+                <div class="page-header">
+                    <h2>إعدادات الموقع</h2>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <form id="settingsForm">
+                            <div class="form-group">
+                                <label>اسم الموقع</label>
+                                <input type="text" id="settingSiteName" class="input">
+                            </div>
+                            <div class="form-group">
+                                <label>شعار الموقع</label>
+                                <input type="text" id="settingTagline" class="input">
+                            </div>
+                            <div class="form-group">
+                                <label>وصف الموقع</label>
+                                <textarea id="settingDescription" rows="3" class="input"></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">💾 حفظ الإعدادات</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>
+
+<!-- TOAST NOTIFICATION -->
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="/admin/admin.js"></script>
+</body>
+</html>

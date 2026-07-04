@@ -3,6 +3,122 @@
    Slider, Ticker, Navigation, Interactions
    ======================================== */
 
+const API_BASE = '';
+
+// ===== LOAD DATA FROM API =====
+async function loadHomeData() {
+    try {
+        // Load sections for nav
+        const sections = await fetch(API_BASE + '/api/sections').then(r => r.json());
+        // Load slider articles
+        const sliderArticles = await fetch(API_BASE + '/api/articles?slider=1&limit=5').then(r => r.json());
+        // Load breaking articles
+        const breakingArticles = await fetch(API_BASE + '/api/articles?breaking=1&limit=5').then(r => r.json());
+        // Load latest articles
+        const latestArticles = await fetch(API_BASE + '/api/articles?limit=12').then(r => r.json());
+        // Load featured articles
+        const featuredArticles = await fetch(API_BASE + '/api/articles?featured=1&limit=10').then(r => r.json());
+        // Load opinions
+        const opinions = await fetch(API_BASE + '/api/opinions?limit=4').then(r => r.json());
+
+        // Update slider
+        if (sliderArticles.length > 0) updateSlider(sliderArticles);
+        // Update breaking ticker
+        if (breakingArticles.length > 0) updateTicker(breakingArticles);
+        // Update latest news
+        if (latestArticles.length > 0) updateLatestNews(latestArticles);
+        // Update opinions
+        if (opinions.length > 0) updateOpinions(opinions);
+    } catch (err) {
+        console.log('API not available, using static content');
+    }
+}
+
+function updateSlider(articles) {
+    const slider = document.getElementById('heroSlider');
+    if (!slider) return;
+    const dotsContainer = document.getElementById('sliderDots');
+    slider.innerHTML = '';
+    if (dotsContainer) dotsContainer.innerHTML = '';
+
+    articles.forEach((a, i) => {
+        const slide = document.createElement('div');
+        slide.className = 'slide' + (i === 0 ? ' active' : '');
+        slide.innerHTML = `
+            <div class="slide-img">
+                ${a.image ? `<img src="${a.image}" alt="" style="width:100%;height:100%;object-fit:cover;">` : `<div class="img-placeholder" style="background:#1a1a2e;"><span>صورة الخبر</span></div>`}
+                <div class="slide-overlay">
+                    <span class="slide-category">${a.section_name || ''}</span>
+                    <h2><a href="/article?id=${a.id}">${a.title}</a></h2>
+                    <span class="slide-date">${formatDateAr(a.created_at)}</span>
+                </div>
+            </div>
+        `;
+        slider.appendChild(slide);
+
+        if (dotsContainer) {
+            const dot = document.createElement('span');
+            dot.className = 'dot' + (i === 0 ? ' active' : '');
+            dot.onclick = () => goToSlide(i);
+            dotsContainer.appendChild(dot);
+        }
+    });
+}
+
+function updateTicker(articles) {
+    const content = document.querySelector('.ticker-content');
+    if (!content) return;
+    content.innerHTML = articles.map((a, i) =>
+        `<a href="/article?id=${a.id}">${a.title}</a>${i < articles.length - 1 ? '<span class="ticker-sep">|</span>' : ''}`
+    ).join('');
+}
+
+function updateLatestNews(articles) {
+    // Update latest grid
+    const grid = document.querySelector('.latest-grid');
+    if (grid) {
+        grid.innerHTML = articles.slice(0, 6).map(a => `
+            <a href="/article?id=${a.id}" class="latest-card">
+                ${a.image ? `<img src="${a.image}" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:6px 6px 0 0;">` : `<div class="img-placeholder card" style="background:#e63946;"><span>صورة</span></div>`}
+                <div class="latest-card-body">
+                    <span class="card-cat">${a.section_name || ''}</span>
+                    <h3>${a.title}</h3>
+                    <span class="card-date">${formatDateAr(a.created_at)}</span>
+                    <span class="read-more">اقرأ المزيد ←</span>
+                </div>
+            </a>
+        `).join('');
+    }
+}
+
+function updateOpinions(opinions) {
+    const grid = document.querySelector('.opinion-grid');
+    if (!grid) return;
+    grid.innerHTML = opinions.map(o => `
+        <a href="/article?id=${o.id}&type=opinion" class="opinion-card">
+            <div class="opinion-author">
+                <div class="author-avatar" style="background:${o.author_color || '#d71920'};">${o.author_letter || o.author_name.charAt(0)}</div>
+                <div class="author-info">
+                    <span class="author-name">${o.author_name}</span>
+                </div>
+            </div>
+            <h3>${o.title}</h3>
+            <p>${o.summary || ''}</p>
+        </a>
+    `).join('');
+}
+
+function formatDateAr(d) {
+    if (!d) return '';
+    const date = new Date(d);
+    const days = ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
+    const months = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'];
+    return days[date.getDay()] + ' ' + date.getDate() + ' ' + months[date.getMonth()] + ' ' + date.getFullYear();
+}
+
+// Load data on page load
+loadHomeData();
+
 document.addEventListener('DOMContentLoaded', function () {
 
     // ===== HERO SLIDER =====

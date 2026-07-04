@@ -1,0 +1,5 @@
+node_modules/
+ajel.db
+uploads/
+*.log
+.env
