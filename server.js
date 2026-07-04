@@ -6,7 +6,9 @@ const bcrypt = require('bcryptjs');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
+const cron = require('node-cron');
 const db = require('./database');
+const newsFetcher = require('./news-fetcher');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -529,6 +531,139 @@ app.get('/api/meta/:type/:id', (req, res) => {
         }
     });
 });
+
+// =============================
+//       NEWS SOURCES (Admin)
+// =============================
+app.get('/api/sources', authMiddleware, (req, res) => {
+    const sources = db.prepare('SELECT * FROM news_sources ORDER BY created_at DESC').all();
+    res.json(sources);
+});
+
+app.get('/api/sources/presets', authMiddleware, (req, res) => {
+    res.json(newsFetcher.PRESET_SOURCES);
+});
+
+app.post('/api/sources', authMiddleware, (req, res) => {
+    const { name, url, type, default_category, default_image, attribution, max_items, fetch_full_content, selectors, fetch_interval } = req.body;
+    if (!name || !url) return res.status(400).json({ error: 'الاسم والرابط مطلوبان' });
+
+    const result = db.prepare(`
+        INSERT INTO news_sources (name, url, type, default_category, default_image, attribution, max_items, fetch_full_content, selectors, fetch_interval)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `).run(name, url, type || 'rss', default_category || 'auto', default_image || '', attribution || name, max_items || 20, fetch_full_content ? 1 : 0, typeof selectors === 'string' ? selectors : JSON.stringify(selectors || {}), fetch_interval || 30);
+
+    res.json({ id: result.lastInsertRowid, success: true });
+});
+
+app.put('/api/sources/:id', authMiddleware, (req, res) => {
+    const { name, url, type, is_active, default_category, default_image, attribution, max_items, fetch_full_content, selectors, fetch_interval } = req.body;
+    db.prepare(`
+        UPDATE news_sources SET
+            name = COALESCE(?, name), url = COALESCE(?, url), type = COALESCE(?, type),
+            is_active = COALESCE(?, is_active), default_category = COALESCE(?, default_category),
+            default_image = COALESCE(?, default_image), attribution = COALESCE(?, attribution),
+            max_items = COALESCE(?, max_items), fetch_full_content = COALESCE(?, fetch_full_content),
+            selectors = COALESCE(?, selectors), fetch_interval = COALESCE(?, fetch_interval)
+        WHERE id = ?
+    `).run(name, url, type, is_active, default_category, default_image, attribution, max_items, fetch_full_content, typeof selectors === 'string' ? selectors : (selectors ? JSON.stringify(selectors) : null), fetch_interval, req.params.id);
+    res.json({ success: true });
+});
+
+app.delete('/api/sources/:id', authMiddleware, (req, res) => {
+    db.prepare('DELETE FROM fetch_logs WHERE source_id = ?').run(req.params.id);
+    db.prepare('DELETE FROM news_sources WHERE id = ?').run(req.params.id);
+    res.json({ success: true });
+});
+
+// Trigger manual fetch for one source
+app.post('/api/sources/:id/fetch', authMiddleware, async (req, res) => {
+    const source = db.prepare('SELECT * FROM news_sources WHERE id = ?').get(req.params.id);
+    if (!source) return res.status(404).json({ error: 'المصدر غير موجود' });
+    try {
+        const result = await newsFetcher.fetchSource(source);
+        res.json(result);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// Trigger manual fetch for all active sources
+app.post('/api/sources/fetch-all', authMiddleware, async (req, res) => {
+    try {
+        const results = await newsFetcher.fetchAllSources();
+        const totalNew = results.reduce((sum, r) => sum + (r.newCount || 0), 0);
+        res.json({ results, totalNew });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// Fetch logs
+app.get('/api/fetch-logs', authMiddleware, (req, res) => {
+    const { source_id, limit } = req.query;
+    let query = 'SELECT fl.*, ns.name as source_name FROM fetch_logs fl LEFT JOIN news_sources ns ON fl.source_id = ns.id WHERE 1=1';
+    const params = [];
+    if (source_id) { query += ' AND fl.source_id = ?'; params.push(source_id); }
+    query += ' ORDER BY fl.created_at DESC';
+    if (limit) { query += ' LIMIT ?'; params.push(parseInt(limit)); }
+    else { query += ' LIMIT 50'; }
+    res.json(db.prepare(query).all(...params));
+});
+
+// Auto-fetch scheduler toggle
+app.post('/api/sources/scheduler', authMiddleware, (req, res) => {
+    const { enabled, interval } = req.body;
+    db.prepare("INSERT OR REPLACE INTO settings (key, value) VALUES ('auto_fetch_enabled', ?)").run(enabled ? '1' : '0');
+    if (interval) db.prepare("INSERT OR REPLACE INTO settings (key, value) VALUES ('auto_fetch_interval', ?)").run(String(interval));
+    setupScheduler();
+    res.json({ success: true, enabled, interval: interval || 30 });
+});
+
+app.get('/api/sources/scheduler/status', authMiddleware, (req, res) => {
+    const enabled = db.prepare("SELECT value FROM settings WHERE key = 'auto_fetch_enabled'").get()?.value === '1';
+    const interval = parseInt(db.prepare("SELECT value FROM settings WHERE key = 'auto_fetch_interval'").get()?.value || '30');
+    res.json({ enabled, interval, nextRun: schedulerNextRun });
+});
+
+// =============================
+//       AUTO-FETCH SCHEDULER
+// =============================
+let schedulerTask = null;
+let schedulerNextRun = null;
+
+function setupScheduler() {
+    const enabled = db.prepare("SELECT value FROM settings WHERE key = 'auto_fetch_enabled'").get()?.value === '1';
+    const interval = parseInt(db.prepare("SELECT value FROM settings WHERE key = 'auto_fetch_interval'").get()?.value || '30');
+
+    if (schedulerTask) {
+        schedulerTask.stop();
+        schedulerTask = null;
+    }
+
+    if (enabled) {
+        // Run every N minutes
+        const cronExpr = `*/${Math.max(interval, 5)} * * * *`;
+        schedulerTask = cron.schedule(cronExpr, async () => {
+            console.log(`[CRON] تشغيل الجلب التلقائي - ${new Date().toISOString()}`);
+            try {
+                const results = await newsFetcher.fetchAllSources();
+                const totalNew = results.reduce((sum, r) => sum + (r.newCount || 0), 0);
+                console.log(`[CRON] انتهى الجلب: ${totalNew} خبر جديد`);
+            } catch (err) {
+                console.error('[CRON] خطأ:', err.message);
+            }
+        });
+        schedulerNextRun = `كل ${interval} دقيقة`;
+        console.log(`[SCHEDULER] الجلب التلقائي مفعّل - كل ${interval} دقيقة`);
+    } else {
+        schedulerNextRun = null;
+        console.log('[SCHEDULER] الجلب التلقائي معطّل');
+    }
+}
+
+// Initialize scheduler on startup
+setupScheduler();
 
 // =============================
 //       FRONTEND PAGES

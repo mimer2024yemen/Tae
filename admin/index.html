@@ -71,6 +71,10 @@
                 <span class="nav-icon">📂</span>
                 <span>الأقسام</span>
             </a>
+            <a href="#" class="nav-item" data-page="sources">
+                <span class="nav-icon">🔄</span>
+                <span>مصادر الأخبار</span>
+            </a>
             <a href="#" class="nav-item" data-page="media">
                 <span class="nav-icon">🖼️</span>
                 <span>إدارة الصور</span>
@@ -407,6 +411,187 @@
                                 <tbody id="sectionsTableBody"></tbody>
                             </table>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SOURCES PAGE -->
+            <div class="page" id="page-sources">
+                <div class="page-header">
+                    <h2>مصادر الأخبار التلقائية</h2>
+                    <div style="display:flex;gap:10px;">
+                        <button class="btn btn-primary" onclick="showAddSourceModal()">➕ إضافة مصدر</button>
+                        <button class="btn btn-success" onclick="showPresetsModal()">📋 مصادر جاهزة</button>
+                        <button class="btn" id="fetchAllBtn" onclick="fetchAllSources()">🔄 جلب الكل الآن</button>
+                    </div>
+                </div>
+
+                <!-- Scheduler Toggle -->
+                <div class="card">
+                    <div class="card-body">
+                        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px;">
+                            <div>
+                                <h3 style="font-size:16px;margin-bottom:5px;">⏰ الجلب التلقائي</h3>
+                                <p style="font-size:13px;color:#888;">جلب الأخبار تلقائياً من جميع المصادر المفعّلة</p>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:15px;">
+                                <select id="schedulerInterval" class="input input-sm" style="max-width:150px;">
+                                    <option value="5">كل 5 دقائق</option>
+                                    <option value="10">كل 10 دقائق</option>
+                                    <option value="15">كل 15 دقيقة</option>
+                                    <option value="30" selected>كل 30 دقيقة</option>
+                                    <option value="60">كل ساعة</option>
+                                    <option value="120">كل ساعتين</option>
+                                    <option value="360">كل 6 ساعات</option>
+                                </select>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="schedulerEnabled" onchange="toggleScheduler()"> تفعيل الجلب التلقائي
+                                </label>
+                            </div>
+                        </div>
+                        <div id="schedulerStatus" style="margin-top:10px;font-size:13px;color:#888;"></div>
+                    </div>
+                </div>
+
+                <!-- Sources List -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3>المصادر المُعرَّفة</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>الاسم</th>
+                                        <th>النوع</th>
+                                        <th>التصنيف</th>
+                                        <th>آخر جلب</th>
+                                        <th>الأخبار</th>
+                                        <th>الحالة</th>
+                                        <th>إجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="sourcesTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fetch Logs -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3>سجل الجلب</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>المصدر</th>
+                                        <th>الحالة</th>
+                                        <th>الأخبار الجديدة</th>
+                                        <th>التفاصيل</th>
+                                        <th>التاريخ</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="fetchLogsBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ADD/EDIT SOURCE MODAL -->
+            <div id="sourceModal" class="modal" style="display:none;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 id="sourceModalTitle">إضافة مصدر جديد</h3>
+                        <button class="modal-close" onclick="closeSourceModal()">✕</button>
+                    </div>
+                    <form id="sourceForm">
+                        <input type="hidden" id="sourceId">
+                        <div class="form-row">
+                            <div class="form-group flex-2">
+                                <label>اسم المصدر *</label>
+                                <input type="text" id="sourceName" required placeholder="مثال: العربية">
+                            </div>
+                            <div class="form-group flex-1">
+                                <label>النوع</label>
+                                <select id="sourceType">
+                                    <option value="rss">RSS Feed</option>
+                                    <option value="web">Web Scraper</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>الرابط *</label>
+                            <input type="url" id="sourceUrl" required placeholder="https://example.com/rss">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>التصنيف الافتراضي</label>
+                                <select id="sourceCategory">
+                                    <option value="auto">تلقائي (ذكي)</option>
+                                    <option value="local">المحليات</option>
+                                    <option value="economy">الاقتصاد</option>
+                                    <option value="sports">رياضة</option>
+                                    <option value="international">مدارات عالمية</option>
+                                    <option value="entertainment">الترفيه</option>
+                                    <option value="tourism">سياحة وسفر</option>
+                                    <option value="jobs">وظائف</option>
+                                    <option value="misc">منوعات</option>
+                                    <option value="society">مجتمع</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>الحد الأقصى للأخبار</label>
+                                <input type="number" id="sourceMaxItems" value="20" min="1" max="100">
+                            </div>
+                            <div class="form-group">
+                                <label>فترة الجلب (دقيقة)</label>
+                                <input type="number" id="sourceInterval" value="30" min="5">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group flex-2">
+                                <label>الانتماء (اسم المصدر في الخبر)</label>
+                                <input type="text" id="sourceAttribution" placeholder="مثال: العربية">
+                            </div>
+                            <div class="form-group flex-1">
+                                <label>صورة افتراضية</label>
+                                <input type="url" id="sourceImage" placeholder="https://...jpg">
+                            </div>
+                        </div>
+                        <label class="checkbox-label" style="margin:10px 0;">
+                            <input type="checkbox" id="sourceFullContent"> جلب المحتوى الكامل (أبطأ)
+                        </label>
+                        <div class="form-group" id="selectorsGroup" style="display:none;">
+                            <label>محددات CSS (لـ Web Scraper فقط)</label>
+                            <textarea id="sourceSelectors" rows="4" class="input" placeholder='{"item": "article", "title": "h2 a", "link": "a", "image": "img", "summary": "p"}'></textarea>
+                            <small style="color:#888;font-size:11px;">JSON: item, title, link, image, summary</small>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">💾 حفظ المصدر</button>
+                            <button type="button" class="btn" onclick="closeSourceModal()">↩️ إلغاء</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- PRESETS MODAL -->
+            <div id="presetsModal" class="modal" style="display:none;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>مصادر أخبارية جاهزة</h3>
+                        <button class="modal-close" onclick="closePresetsModal()">✕</button>
+                    </div>
+                    <p style="font-size:13px;color:#888;margin-bottom:15px;">اختر المصادر التي تريد إضافتها بنقرة واحدة</p>
+                    <div id="presetsList" style="max-height:400px;overflow-y:auto;"></div>
+                    <div class="form-actions">
+                        <button class="btn btn-primary" onclick="addSelectedPresets()">➕ إضافة المحددة</button>
+                        <button class="btn" onclick="closePresetsModal()">إغلاق</button>
                     </div>
                 </div>
             </div>

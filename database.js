@@ -59,6 +59,37 @@ db.exec(`
         updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
     );
 
+    CREATE TABLE IF NOT EXISTS news_sources (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        url TEXT NOT NULL,
+        type TEXT DEFAULT 'rss',
+        is_active INTEGER DEFAULT 1,
+        default_category TEXT DEFAULT 'auto',
+        default_image TEXT DEFAULT '',
+        attribution TEXT DEFAULT '',
+        max_items INTEGER DEFAULT 20,
+        fetch_full_content INTEGER DEFAULT 0,
+        selectors TEXT DEFAULT '',
+        fetch_interval INTEGER DEFAULT 30,
+        last_fetch DATETIME,
+        last_status TEXT DEFAULT '',
+        last_count INTEGER DEFAULT 0,
+        last_error TEXT DEFAULT '',
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    );
+
+    CREATE TABLE IF NOT EXISTS fetch_logs (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        source_id INTEGER,
+        status TEXT DEFAULT 'success',
+        new_count INTEGER DEFAULT 0,
+        error_message TEXT DEFAULT '',
+        details TEXT DEFAULT '',
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (source_id) REFERENCES news_sources(id)
+    );
+
     CREATE TABLE IF NOT EXISTS settings (
         key TEXT PRIMARY KEY,
         value TEXT NOT NULL
@@ -70,6 +101,10 @@ db.exec(`
     CREATE INDEX IF NOT EXISTS idx_articles_breaking ON articles(is_breaking);
     CREATE INDEX IF NOT EXISTS idx_articles_slider ON articles(is_slider);
     CREATE INDEX IF NOT EXISTS idx_articles_created ON articles(created_at DESC);
+    CREATE INDEX IF NOT EXISTS idx_articles_title ON articles(title);
+    CREATE INDEX IF NOT EXISTS idx_sources_active ON news_sources(is_active);
+    CREATE INDEX IF NOT EXISTS idx_logs_source ON fetch_logs(source_id);
+    CREATE INDEX IF NOT EXISTS idx_logs_created ON fetch_logs(created_at DESC);
 `);
 
 // ===== SEED DEFAULT SECTIONS =====
@@ -106,8 +141,10 @@ const settingsCount = db.prepare('SELECT COUNT(*) as count FROM settings').get()
 if (settingsCount === 0) {
     const insertSetting = db.prepare('INSERT OR IGNORE INTO settings (key, value) VALUES (?, ?)');
     insertSetting.run('site_name', 'عاجل');
-    insertSetting.run('site_tagline', 'أخبار السعودية والخليج والعالم لحظة بلحظة');
+    insertSetting.run('site_tagline', 'أ�tar السعودية والخليج والعالم لحظة بلحظة');
     insertSetting.run('site_description', 'صحيفة إلكترونية سعودية تم تأسيسها عام 2007م تهتم بنشر الأخبار المحلية والمنافسة في سبق الأخبار بمهنية ومصداقية وموضوعية');
+    insertSetting.run('auto_fetch_enabled', '0');
+    insertSetting.run('auto_fetch_interval', '30');
 }
 
 module.exports = db;

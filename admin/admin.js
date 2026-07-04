@@ -92,7 +92,8 @@ function navigateTo(page) {
         'add-opinion': 'إضافة مقال رأي',
         'sections': 'الأقسام',
         'media': 'إدارة الصور',
-        'settings': 'الإعدادات'
+        'settings': 'الإعدادات',
+        'sources': 'مصادر الأخبار'
     };
     document.getElementById('pageTitle').textContent = titles[page] || page;
 
@@ -103,6 +104,7 @@ function navigateTo(page) {
     if (page === 'sections') loadSectionsPage();
     if (page === 'media') loadMedia();
     if (page === 'settings') loadSettings();
+    if (page === 'sources') { loadSources(); loadFetchLogs(); }
     if (page === 'add-article') prepareArticleForm();
     if (page === 'add-opinion') prepareOpinionForm();
 
@@ -651,6 +653,155 @@ function copyShareLink(id, title) {
     dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.remove(); });
     document.body.appendChild(dialog);
 }
+
+function getCategoryName(slug) {
+    const names = { auto: 'تلقائي', local: 'المحليات', economy: 'الاقتصاد', sports: 'رياضة', international: 'مدارات عالمية', entertainment: 'الترفيه', tourism: 'سياحة وسفر', jobs: 'وظائف', misc: 'منوعات', society: 'مجتمع', worldcup: 'المونديال' };
+    return names[slug] || slug;
+}
+
+// ===== NEWS SOURCES =====
+async function loadSources() {
+    try {
+        const sources = await api('/api/sources');
+        const html = sources.map(s => `
+            <tr>
+                <td>${s.id}</td>
+                <td><strong>${escapeHtml(s.name)}</strong><br><small style="color:#888;font-size:10px;">${escapeHtml(s.url).substring(0, 60)}...</small></td>
+                <td><span class="badge" style="background:${s.type === 'rss' ? '#eff6ff' : '#f5f3ff'};color:${s.type === 'rss' ? '#3b82f6' : '#8b5cf6'};">${s.type === 'rss' ? '📡 RSS' : '🕸️ Web'}</span></td>
+                <td>${getCategoryName(s.default_category)}</td>
+                <td>${s.last_fetch ? formatDate(s.last_fetch) : '<span style="color:#ccc;">لم يُجلب</span>'}</td>
+                <td>${s.last_count || 0}</td>
+                <td>${s.is_active ? '<span class="badge badge-active">مفعّل</span>' : '<span class="badge badge-inactive">معطّل</span>'}</td>
+                <td class="action-btns">
+                    <button class="btn btn-sm btn-success" onclick="fetchSingleSource(${s.id})" title="جلب">🔄</button>
+                    <button class="btn btn-sm" onclick="toggleSourceActive(${s.id},${s.is_active})">${s.is_active ? '⏸️' : '▶️'}</button>
+                    <button class="btn btn-sm" onclick="editSource(${s.id})">✏️</button>
+                    <button class="btn btn-sm btn-danger" onclick="deleteSource(${s.id})">🗑️</button>
+                </td>
+            </tr>
+        `).join('');
+        document.getElementById('sourcesTableBody').innerHTML = html || '<tr><td colspan="8" class="empty-state"><p>لا توجد مصادر</p></td></tr>';
+        const status = await api('/api/sources/scheduler/status');
+        document.getElementById('schedulerEnabled').checked = status.enabled;
+        document.getElementById('schedulerInterval').value = status.interval;
+        document.getElementById('schedulerStatus').textContent = status.enabled ? '✅ الجلب التلقائي مفعّل - ' + status.nextRun : '⏸️ الجلب التلقائي معطّل';
+    } catch (err) { toast('خطأ', 'error'); }
+}
+
+async function loadFetchLogs() {
+    try {
+        const logs = await api('/api/fetch-logs?limit=30');
+        document.getElementById('fetchLogsBody').innerHTML = logs.map(l => `
+            <tr>
+                <td>${escapeHtml(l.source_name || '-')}</td>
+                <td><span class="fetch-status ${l.status}">${l.status === 'success' ? '✅' : '❌'}</span></td>
+                <td><strong>${l.new_count}</strong></td>
+                <td class="log-detail" title="${escapeHtml(l.details || '')}">${escapeHtml(l.error_message || '-')}</td>
+                <td>${formatDate(l.created_at)}</td>
+            </tr>
+        `).join('') || '<tr><td colspan="5">لا سجلات</td></tr>';
+    } catch (e) {}
+}
+
+function showAddSourceModal() { document.getElementById('sourceId').value=''; document.getElementById('sourceForm').reset(); document.getElementById('sourceModalTitle').textContent='إضافة مصدر'; document.getElementById('selectorsGroup').style.display='none'; document.getElementById('sourceModal').style.display='flex'; }
+function closeSourceModal() { document.getElementById('sourceModal').style.display='none'; }
+
+async function editSource(id) {
+    const sources = await api('/api/sources');
+    const s = sources.find(x => x.id === id);
+    if (!s) return;
+    ['sourceId','sourceName','sourceUrl','sourceType','sourceCategory','sourceMaxItems','sourceInterval','sourceAttribution','sourceImage','sourceFullContent','sourceSelectors'].forEach(k => {
+        const el = document.getElementById(k);
+        if (el.type === 'checkbox') el.checked = s[k.replace('source','').replace(/^./,c=>c.toLowerCase()).replace('FullContent','fetch_full_content').replace('MaxItems','max_items').replace('Interval','fetch_interval').replace('Attribution','attribution').replace('Image','default_image').replace('Selectors','selectors')] || s.fetch_full_content;
+        else el.value = s[k.replace('source','').replace(/^./,c=>c.toLowerCase()).replace('Id','id').replace('Name','name').replace('Url','url').replace('Type','type').replace('Category','default_category').replace('MaxItems','max_items').replace('Interval','fetch_interval').replace('Attribution','attribution').replace('Image','default_image').replace('Selectors','selectors')] || '';
+    });
+    document.getElementById('sourceId').value = s.id;
+    document.getElementById('sourceName').value = s.name;
+    document.getElementById('sourceUrl').value = s.url;
+    document.getElementById('sourceType').value = s.type;
+    document.getElementById('sourceCategory').value = s.default_category;
+    document.getElementById('sourceMaxItems').value = s.max_items;
+    document.getElementById('sourceInterval').value = s.fetch_interval;
+    document.getElementById('sourceAttribution').value = s.attribution || '';
+    document.getElementById('sourceImage').value = s.default_image || '';
+    document.getElementById('sourceFullContent').checked = s.fetch_full_content;
+    document.getElementById('sourceSelectors').value = s.selectors || '';
+    document.getElementById('sourceModalTitle').textContent = 'تعديل: ' + s.name;
+    document.getElementById('selectorsGroup').style.display = s.type === 'web' ? 'block' : 'none';
+    document.getElementById('sourceModal').style.display = 'flex';
+}
+
+document.getElementById('sourceForm')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const id = document.getElementById('sourceId').value;
+    const data = {
+        name: document.getElementById('sourceName').value,
+        url: document.getElementById('sourceUrl').value,
+        type: document.getElementById('sourceType').value,
+        default_category: document.getElementById('sourceCategory').value,
+        max_items: parseInt(document.getElementById('sourceMaxItems').value),
+        fetch_interval: parseInt(document.getElementById('sourceInterval').value),
+        attribution: document.getElementById('sourceAttribution').value,
+        default_image: document.getElementById('sourceImage').value,
+        fetch_full_content: document.getElementById('sourceFullContent').checked,
+        selectors: document.getElementById('sourceSelectors').value,
+    };
+    try {
+        if (id) await api('/api/sources/'+id, { method:'PUT', body:JSON.stringify(data) });
+        else await api('/api/sources', { method:'POST', body:JSON.stringify(data) });
+        toast(id ? 'تم التحديث' : 'تمت الإضافة', 'success');
+        closeSourceModal(); loadSources();
+    } catch (err) { toast(err.message, 'error'); }
+});
+
+document.getElementById('sourceType')?.addEventListener('change', function() { document.getElementById('selectorsGroup').style.display = this.value === 'web' ? 'block' : 'none'; });
+
+async function deleteSource(id) { if (!confirm('حذف المصدر؟')) return; await api('/api/sources/'+id,{method:'DELETE'}); toast('تم الحذف','success'); loadSources(); }
+async function toggleSourceActive(id, cur) { await api('/api/sources/'+id,{method:'PUT',body:JSON.stringify({is_active:cur?0:1})}); loadSources(); }
+
+async function fetchSingleSource(id) { toast('جاري الجلب...','info'); const r = await api('/api/sources/'+id+'/fetch',{method:'POST'}); toast('تم جلب '+(r.newCount||0)+' خبر','success'); loadSources(); loadFetchLogs(); }
+
+async function fetchAllSources() {
+    const btn = document.getElementById('fetchAllBtn'); btn.disabled=true; btn.textContent='⏳ جاري...';
+    const r = await api('/api/sources/fetch-all',{method:'POST'}); toast('تم جلب '+r.totalNew+' خبر','success');
+    btn.disabled=false; btn.textContent='🔄 جلب الكل الآن'; loadSources(); loadFetchLogs();
+}
+
+async function toggleScheduler() {
+    const enabled = document.getElementById('schedulerEnabled').checked;
+    const interval = parseInt(document.getElementById('schedulerInterval').value);
+    await api('/api/sources/scheduler',{method:'POST',body:JSON.stringify({enabled,interval})});
+    toast(enabled ? 'تم التفعيل' : 'تم التعطيل','success'); loadSources();
+}
+
+function showPresetsModal() { document.getElementById('presetsModal').style.display='flex'; loadPresets(); }
+function closePresetsModal() { document.getElementById('presetsModal').style.display='none'; }
+
+async function loadPresets() {
+    const presets = await api('/api/sources/presets');
+    const existing = await api('/api/sources');
+    const urls = new Set(existing.map(s=>s.url));
+    document.getElementById('presetsList').innerHTML = presets.map((p,i) => `
+        <label class="source-card ${urls.has(p.url)?'selected':''}">
+            <input type="checkbox" class="source-check" value="${i}" ${urls.has(p.url)?'checked disabled':''}>
+            <div class="source-icon">${p.type==='rss'?'📡':'🕸️'}</div>
+            <div class="source-info"><h4>${p.name}</h4><small>${p.url}</small></div>
+            <span class="badge" style="background:#f0f0f0;">${getCategoryName(p.default_category)}</span>
+        </label>
+    `).join('');
+}
+
+async function addSelectedPresets() {
+    const cbs = document.querySelectorAll('#presetsList .source-check:checked:not(:disabled)');
+    if (!cbs.length) return toast('اختر مصادر','info');
+    const presets = await api('/api/sources/presets');
+    let n=0;
+    for (const cb of cbs) { try { await api('/api/sources',{method:'POST',body:JSON.stringify(presets[parseInt(cb.value)])}); n++; } catch(e){} }
+    toast('تم إضافة '+n+' مصدر','success'); closePresetsModal(); loadSources();
+}
+
+// Navigate to sources
+function navigateToSources() { navigateTo('sources'); loadSources(); loadFetchLogs(); }
 
 function toast(msg, type = 'info') {
     const container = document.getElementById('toastContainer');
