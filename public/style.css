@@ -1156,6 +1156,96 @@ img[loading="lazy"]::before {
 /* ===== SELECTION ===== */
 ::selection { background: var(--red); color: var(--white); }
 
+/* ===== DARK MODE ===== */
+.dark-mode {
+    --gray-bg: #0f0f0f;
+    --gray-light: #1a1a1a;
+    --white: #1a1a1a;
+    --dark: #f0f0f0;
+    --dark-1: #e0e0e0;
+    --dark-2: #d0d0d0;
+    --gray-1: #ccc;
+    --gray-2: #aaa;
+    --gray-3: #888;
+    --gray-5: #333;
+}
+
+.dark-mode body { background: #0a0a0a; color: #e0e0e0; }
+.dark-mode .header { background: #111; border-bottom-color: var(--red); }
+.dark-mode .header-search form { background: #222; border-color: #333; }
+.dark-mode .header-search input { color: #e0e0e0; }
+.dark-mode .latest-card { background: #1a1a1a; border-color: #2a2a2a; }
+.dark-mode .latest-card-body h3 { color: #e0e0e0; }
+.dark-mode .side-story { background: #1a1a1a; }
+.dark-mode .trending-item { background: #1a1a1a; border-color: #2a2a2a; }
+.dark-mode .sidebar-block { background: #1a1a1a; border-color: #2a2a2a; }
+.dark-mode .sidebar-item:hover { background: #222; }
+.dark-mode .section-col { background: #1a1a1a; border-color: #2a2a2a; }
+.dark-mode .opinion-card { background: #1a1a1a; }
+.dark-mode .footer { background: #000; }
+.dark-mode .worldcup-banner { border-color: #333; }
+.dark-mode .wc-match { border-color: #333; background: rgba(255,255,255,0.04); }
+.dark-mode .section-header { border-bottom-color: #333; }
+.dark-mode .section-header::after { background: var(--red); }
+.dark-mode .news-list-item { border-bottom-color: #2a2a2a; }
+.dark-mode .news-list-item:hover { background: #1a1a1a; }
+.dark-mode .numbered-item { border-bottom-color: #2a2a2a; }
+.dark-mode .numbered-item:hover { background: #1a1a1a; }
+.dark-mode .card-date { color: #666; }
+.dark-mode .side-date { color: #666; }
+.dark-mode .sidebar-date { color: #666; }
+.dark-mode .top-bar { background: #000; }
+.dark-mode .main-nav { background: #111; }
+.dark-mode img { opacity: 0.9; }
+.dark-mode img:hover { opacity: 1; }
+
+/* ===== LOADING SKELETON ===== */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 6px;
+}
+.dark-mode .skeleton {
+    background: linear-gradient(90deg, #222 25%, #333 50%, #222 75%);
+    background-size: 200% 100%;
+}
+
+/* ===== READING TIME ===== */
+.reading-time {
+    font-size: 11px;
+    color: var(--gray-3);
+    font-family: var(--font-ui);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* ===== SHARE BUTTONS ON CARDS ===== */
+.card-share {
+    display: flex;
+    gap: 4px;
+    margin-top: 8px;
+    opacity: 0;
+    transition: opacity var(--transition);
+}
+.latest-card:hover .card-share { opacity: 1; }
+.card-share-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: var(--gray-light);
+    color: var(--gray-2);
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition);
+}
+.card-share-btn:hover { background: var(--red); color: var(--white); }
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
     .hero-grid { grid-template-columns: 1fr; }

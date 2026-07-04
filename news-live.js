@@ -282,13 +282,21 @@ function renderNewsCards(articles, containerId) {
         const imgProxy = window.NEWS_CONFIG?.imgProxy || 'https://images.weserv.nl/?url=';
         const proxiedImg = a.image ? imgProxy + encodeURIComponent(a.image) : '';
         const imgHtml = a.image ? `<img src="${proxiedImg}" data-original="${a.image}" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:6px 6px 0 0;" loading="lazy" onerror="handleImgError(this)">` : '<div class="no-img">📰</div>';
+        const readTime = Math.max(1, Math.ceil((a.summary || a.title || '').split(' ').length / 3));
+        const shareUrl = encodeURIComponent(a.link);
+        const shareTitle = encodeURIComponent(a.title);
         return `
         <a href="${a.link}" target="_blank" rel="noopener" class="latest-card" data-category="${a.category}">
             ${imgHtml}
             <div class="latest-card-body">
                 <span class="card-cat">${catBadge}</span>
                 <h3>${escapeHtmlLive(a.title)}</h3>
-                <span class="card-date">${a.sourceLogo} ${a.source} · ${a.timeAgo}</span>
+                <span class="card-date">${a.sourceLogo} ${a.source} · ${a.timeAgo} · <span class="reading-time">🕐 ${readTime} د</span></span>
+                <div class="card-share">
+                    <button class="card-share-btn" onclick="event.preventDefault();event.stopPropagation();window.open('https://twitter.com/intent/tweet?text=${shareTitle}&url=${shareUrl}','_blank')" title="تويتر">𝕏</button>
+                    <button class="card-share-btn" onclick="event.preventDefault();event.stopPropagation();window.open('https://wa.me/?text=${shareTitle}%20${shareUrl}','_blank')" title="واتساب">📱</button>
+                    <button class="card-share-btn" onclick="event.preventDefault();event.stopPropagation();navigator.clipboard.writeText('${a.link}')" title="نسخ">🔗</button>
+                </div>
                 <span class="read-more">اقرأ المزيد ←</span>
             </div>
         </a>`}).join('');

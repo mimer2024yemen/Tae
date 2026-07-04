@@ -4,11 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>عاجل — أخبار السعودية والخليج والعالم لحظة بلحظة</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 50'><rect width='120' height='50' rx='6' fill='%23d71920'/><text x='60' y='36' text-anchor='middle' fill='white' font-size='32' font-weight='900'>عاجل</text></svg>">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/Tae/manifest.json">
+    <meta name="theme-color" content="#d71920">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="عاجل نيوز" href="/Tae/feed.xml">
+
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://images.weserv.nl">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<!-- Structured Data (JSON-LD) -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "NewsMediaOrganization",
+    "name": "عاجل نيوز",
+    "url": "https://mimer2024yemen.github.io/Tae/",
+    "logo": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 50'><rect width='120' height='50' rx='6' fill='%23d71920'/><text x='60' y='36' text-anchor='middle' fill='white' font-size='32' font-weight='900'>عاجل</text></svg>",
+    "description": "صحيفة إلكترونية سعودية تهتم بنشر الأخبار المحلية والدولية والاقتصادية والرياضية",
+    "sameAs": [],
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://mimer2024yemen.github.io/Tae/?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+    }
+}
+</script>
 
 <!-- ===== TOP BAR ===== -->
 <div class="top-bar">
@@ -51,9 +84,19 @@
                     </button>
                 </form>
             </div>
-            <div class="header-lang">
-                <a href="/en">EN</a>
+            <div class="header-actions" style="display:flex;gap:8px;align-items:center;">
+                <button class="dark-toggle" id="darkToggle" title="الوضع الداكن" onclick="toggleDarkMode()" style="background:none;border:2px solid #eef0f2;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;">🌙</button>
+                <div class="header-lang">
+                    <a href="/en">EN</a>
+                </div>
             </div>
+        </div>
+        <div class="full-search" id="fullSearch" style="display:none;padding:10px 0;">
+            <form onsubmit="performSearch(event)" style="display:flex;gap:8px;max-width:600px;margin:0 auto;">
+                <input type="text" id="searchInput" placeholder="ابحث في الأخبار..." autocomplete="off" style="flex:1;padding:10px 16px;border:2px solid #eef0f2;border-radius:8px;font-size:14px;font-family:'Noto Kufi Arabic',sans-serif;outline:none;">
+                <button type="submit" style="background:#d71920;color:#fff;border:none;padding:10px 20px;border-radius:8px;font-weight:700;cursor:pointer;">🔍 بحث</button>
+            </form>
+            <div id="searchResults" style="max-width:600px;margin:10px auto 0;"></div>
         </div>
     </div>
 </header>
@@ -811,7 +854,54 @@
 <button class="back-to-top" id="backToTop" aria-label="العودة للأعلى">▲</button>
 
 <script>
-// Global image proxy configuration
+// ===== DARK MODE =====
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    localStorage.setItem('ajel_dark', isDark);
+    document.getElementById('darkToggle').textContent = isDark ? '☀️' : '🌙';
+}
+// Load saved preference
+if (localStorage.getItem('ajel_dark') === 'true') {
+    document.body.classList.add('dark-mode');
+    document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('darkToggle');
+        if (btn) btn.textContent = '☀️';
+    });
+}
+
+// ===== SEARCH =====
+function toggleSearch() {
+    const el = document.getElementById('fullSearch');
+    el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    if (el.style.display === 'block') document.getElementById('searchInput').focus();
+}
+async function performSearch(e) {
+    e.preventDefault();
+    const q = document.getElementById('searchInput').value.trim().toLowerCase();
+    if (!q) return;
+    try {
+        const data = await fetch('/Tae/data/news.json').then(r => r.json());
+        const results = data.articles.filter(a => a.title.toLowerCase().includes(q) || (a.summary||'').toLowerCase().includes(q)).slice(0, 10);
+        const el = document.getElementById('searchResults');
+        if (results.length === 0) {
+            el.innerHTML = '<div style="text-align:center;padding:20px;color:#888;">لا توجد نتائج</div>';
+        } else {
+            el.innerHTML = results.map(a => `
+                <a href="${a.link}" target="_blank" rel="noopener" style="display:flex;gap:12px;padding:12px;background:#fff;border-radius:8px;margin-bottom:8px;border:1px solid #eef0f2;transition:all 0.2s;">
+                    ${a.image ? `<img src="https://images.weserv.nl/?url=${encodeURIComponent(a.image)}" style="width:80px;height:60px;object-fit:cover;border-radius:6px;flex-shrink:0;" onerror="this.style.display='none'">` : ''}
+                    <div>
+                        <div style="font-size:11px;color:#d71920;font-weight:700;">${a.source}</div>
+                        <div style="font-size:14px;font-weight:700;line-height:1.5;">${a.title}</div>
+                    </div>
+                </a>
+            `).join('');
+        }
+    } catch {}
+}
+
+// ===== IMAGE PROXY =====
+window.NEWS_CONFIG = {
 window.NEWS_CONFIG = {
     imgProxy: 'https://images.weserv.nl/?url=',
     proxy: 'https://api.allorigins.win/raw?url=',

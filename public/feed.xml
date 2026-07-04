@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+    <channel>
+        <title>عاجل نيوز</title>
+        <link>https://mimer2024yemen.github.io/Tae/</link>
+        <description>أخبار السعودية والخليج والعالم لحظة بلحظة</description>
+        <language>ar</language>
+        <lastBuildDate>Fri, 04 Jul 2026 20:00:00 +0000</lastBuildDate>
+        <atom:link href="https://mimer2024yemen.github.io/Tae/feed.xml" rel="self" type="application/rss+xml"/>
+        <image>
+            <url>data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 50'&gt;&lt;rect width='120' height='50' rx='6' fill='%23d71920'/&gt;&lt;text x='60' y='36' text-anchor='middle' fill='white' font-size='32' font-weight='900'&gt;عاجل&lt;/text&gt;&lt;/svg&gt;</url>
+            <title>عاجل نيوز</title>
+            <link>https://mimer2024yemen.github.io/Tae/</link>
+        </image>
+        <!-- RSS items are dynamically generated from news.json -->
+    </channel>
+</rss>
