@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عاجل — أخبار السعودية والخليج والعالم لحظة بلحظة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<div class="top-bar">
+    <div class="container">
+        <div class="top-bar-right">
+            <span>صحيفة عاجل الإلكترونية</span>
+            <a href="#">النشرة البريدية</a>
+            <a href="#">اتصل بنا</a>
+        </div>
+        <div class="top-bar-left">
+            <span>تابعنا:</span>
+            <a href="#" class="social-icon" title="X">𝕏</a>
+            <a href="#" class="social-icon" title="Facebook">f</a>
+            <a href="#" class="social-icon" title="YouTube">▶</a>
+            <a href="#" class="social-icon" title="Instagram">IG</a>
+            <a href="#" class="social-icon" title="TikTok">TT</a>
+        </div>
+    </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+    <div class="container">
+        <div class="header-inner">
+            <div class="logo">
+                <a href="/">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 120 50" width="140" height="58">
+                            <rect x="0" y="0" width="120" height="50" rx="6" fill="#d71920"/>
+                            <text x="60" y="36" text-anchor="middle" fill="#fff" font-size="32" font-weight="900" font-family="'Noto Kufi Arabic', sans-serif">عاجل</text>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            <div class="header-search">
+                <form action="/search" method="get">
+                    <input type="text" name="q" placeholder="ابحث في عاجل…" autocomplete="off">
+                    <button type="submit">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    </button>
+                </form>
+            </div>
+            <div class="header-lang">
+                <a href="/en">EN</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ===== MAIN NAV ===== -->
+<nav class="main-nav" id="mainNav">
+    <div class="container">
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="القائمة">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-list" id="navList">
+            <li class="active"><a href="/">الرئيسية</a></li>
+            <li><a href="/local">المحليات</a></li>
+            <li><a href="/economy">الاقتصاد</a></li>
+            <li><a href="/sports">رياضة</a></li>
+            <li><a href="/international">مدارات عالمية</a></li>
+            <li><a href="/jobs">وظائف</a></li>
+            <li><a href="/entertainment">الترفيه</a></li>
+            <li><a href="/misc">منوعات</a></li>
+            <li><a href="/tourism">سياحة وسفر</a></li>
+            <li><a href="/society">مجتمع</a></li>
+            <li class="nav-highlight"><a href="/worldcup">المونديال</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ===== BREAKING NEWS TICKER ===== -->
+<div class="breaking-ticker">
+    <div class="container">
+        <div class="ticker-label">
+            <span class="pulse-dot"></span>
+            عاجل
+        </div>
+        <div class="ticker-wrap">
+            <div class="ticker-content">
+                <a href="#">تتناول 3 ملفات رئيسية.. باكستان تستضيف جولة مفاوضات «إيرانية _ أمريكية» 11 يوليو</a>
+                <span class="ticker-sep">|</span>
+                <a href="#">خلال أسبوع.. ضبط 15,591 مخالفًا لأنظمة الإقامة والعمل وأمن الحدود</a>
+                <span class="ticker-sep">|</span>
+                <a href="#">طقس السبت.. أمطار رعدية ورياح نشطة على عدة مناطق</a>
+                <span class="ticker-sep">|</span>
+                <a href="#">الخطوط السعودية ترد على مزاعم تسليم طائرات لكيان خاضع للعقوبات</a>
+                <span class="ticker-sep">|</span>
+                <a href="#">«التحالف» يرد على الحوثي: سنضرب بكل حزم وبقوة غير مسبوقة</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main id="content">
+
+<!-- ===== HERO / BREAKING SLIDER ===== -->
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-grid">
+            <!-- Main Story -->
+            <div class="hero-main">
+                <div class="hero-slider" id="heroSlider">
+                    <div class="slide active">
+                        <div class="slide-img">
+                            <div class="img-placeholder" style="background:#1a1a2e;">
+                                <span>صورة الخبر الرئيسي</span>
+                            </div>
+                            <div class="slide-overlay">
+                                <span class="slide-category">مدارات عالمية</span>
+                                <h2><a href="#">تتناول 3 ملفات رئيسية.. باكستان تستضيف جولة مفاوضات «إيرانية _ أمريكية» 11 يوليو</a></h2>
+                                <span class="slide-date">السبت 4 يوليو 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-img">
+                            <div class="img-placeholder" style="background:#16213e;">
+                                <span>صورة الخبر الثاني</span>
+                            </div>
+                            <div class="slide-overlay">
+                                <span class="slide-category">المحليات</span>
+                                <h2><a href="#">خلال أسبوع.. ضبط 15,591 مخالفًا لأنظمة الإقامة والعمل وأمن الحدود</a></h2>
+                                <span class="slide-date">السبت 4 يوليو 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-img">
+                            <div class="img-placeholder" style="background:#0f3460;">
+                                <span>صورة الخبر الثالث</span>
+                            </div>
+                            <div class="slide-overlay">
+                                <span class="slide-category">المحليات</span>
+                                <h2><a href="#">طقس السبت.. أمطار رعدية ورياح نشطة على عدة مناطق</a></h2>
+                                <span class="slide-date">السبت 4 يوليو 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-img">
+                            <div class="img-placeholder" style="background:#533483;">
+                                <span>صورة الخبر الرابع</span>
+                            </div>
+                            <div class="slide-overlay">
+                                <span class="slide-category">المحليات</span>
+                                <h2><a href="#">الخطوط السعودية ترد على مزاعم تسليم طائرات لكيان خاضع للعقوبات: بيعت وفق الأطر التشغيلية</a></h2>
+                                <span class="slide-date">السبت 4 يوليو 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn slider-prev" id="sliderPrev">❯</button>
+                    <div class="slider-dots" id="sliderDots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="slider-btn slider-next" id="sliderNext">❮</button>
+                </div>
+            </div>
+
+            <!-- Side Stories -->
+            <div class="hero-side">
+                <a href="#" class="side-story">
+                    <div class="img-placeholder sm" style="background:#2d4059;">
+                        <span>صورة</span>
+                    </div>
+                    <div class="side-story-info">
+                        <span class="side-cat">المحليات</span>
+                        <h3>«التحالف» يرد على الحوثي: سنضرب بكل حزم وبقوة غير مسبوقة من يحاول استهداف المملكة</h3>
+                        <span class="side-date">السبت 4 يوليو 2026</span>
+                    </div>
+                </a>
+                <a href="#" class="side-story">
+                    <div class="img-placeholder sm" style="background:#3d5a80;">
+                        <span>صورة</span>
+                    </div>
+                    <div class="side-story-info">
+                        <span class="side-cat">رياضة</span>
+                        <h3>الاتفاق يمدد عقد المدافع الاسكتلندي جاك هندري حتى 2028</h3>
+                        <span class="side-date">السبت 4 يوليو 2026</span>
+                    </div>
+                </a>
+                <a href="#" class="side-story">
+                    <div class="img-placeholder sm" style="background:#293241;">
+                        <span>صورة</span>
+                    </div>
+                    <div class="side-story-info">
+                        <span class="side-cat">مدارات عالمية</span>
+                        <h3>ترامب: إيران تسعى لاتفاق بعد "الدرس القاسي".. ومهلة أسبوع</h3>
+                        <span class="side-date">السبت 4 يوليو 2026</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WORLD CUP BANNER ===== -->
+<section class="worldcup-section">
+    <div class="container">
+        <div class="worldcup-banner">
+            <div class="wc-header">
+                <div class="wc-icon">🏆</div>
+                <h2>مركز المونديال 2026</h2>
+                <span class="wc-live-badge">مباشر الآن</span>
+            </div>
+            <div class="wc-matches">
+                <div class="wc-match live">
+                    <div class="wc-match-label">دور الـ16 · مباشر · 90'</div>
+                    <div class="wc-teams">
+                        <div class="wc-team">
+                            <span class="wc-flag">🇨🇦</span>
+                            <span class="wc-name">كندا</span>
+                        </div>
+                        <div class="wc-score">0 - 2</div>
+                        <div class="wc-team">
+                            <span class="wc-flag">🇲🇦</span>
+                            <span class="wc-name">المغرب</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="wc-match">
+                    <div class="wc-match-label">انتهت</div>
+                    <div class="wc-teams">
+                        <div class="wc-team">
+                            <span class="wc-flag">🇨🇴</span>
+                            <span class="wc-name">كولومبيا</span>
+                        </div>
+                        <div class="wc-score">1 - 0</div>
+                        <div class="wc-team">
+                            <span class="wc-flag">🇬🇭</span>
+                            <span class="wc-name">غانا</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="/worldcup" class="wc-link">كل التفاصيل ←</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TRENDING BAR ===== -->
+<section class="trending-bar">
+    <div class="container">
+        <div class="trending-header">
+            <span class="trending-badge">تحديث مباشر · الآن</span>
+        </div>
+        <div class="trending-items">
+            <a href="#" class="trending-item">
+                <span class="trending-time">قبل 9 ساعة</span>
+                <h4>غضب عارم ضد «ميسي» بعد لقطة جدلية أمام الرأس الأخضر في كأس العالم</h4>
+            </a>
+            <a href="#" class="trending-item">
+                <span class="trending-time">قبل 10 ساعة</span>
+                <h4>حفل زفاف مصري يتحول لمدرج جماهيري.. عريس يعرض مباراة المنتخب على المعازيم</h4>
+            </a>
+            <a href="#" class="trending-item">
+                <span class="trending-time">قبل 12 ساعة</span>
+                <h4>مشهد لمدرب منتخب مصر يتصدر الترند بعد الفوز على أستراليا في كأس العالم</h4>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== LATEST NEWS ===== -->
+<section class="section latest-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>آخر الأخبار</h2>
+            <a href="/latest-news" class="view-all">عرض كل الأخبار ←</a>
+        </div>
+        <div class="latest-grid">
+            <a href="#" class="latest-card">
+                <div class="img-placeholder card" style="background:#e63946;"><span>صورة</span></div>
+                <div class="latest-card-body">
+                    <span class="card-cat">مدارات عالمية</span>
+                    <h3>سفير إيران في بكين: الصين ستحصل على امتيازات خاصة في رسوم خدمات مضيق هرمز</h3>
+                    <span class="card-date">السبت 4 يوليو 2026</span>
+                    <span class="read-more">اقرأ المزيد ←</span>
+                </div>
+            </a>
+            <a href="#" class="latest-card">
+                <div class="img-placeholder card" style="background:#457b9d;"><span>صورة</span></div>
+                <div class="latest-card-body">
+                    <span class="card-cat">المحليات</span>
+                    <h3>يستهدف منسوبي المساجد.. «الشؤون الإسلامية» تطلق البرنامج التوعوي «الأمن السيبراني مسؤوليتنا المشتركة»</h3>
+                    <span class="card-date">السبت 4 يوليو 2026</span>
+                    <span class="read-more">اقرأ المزيد ←</span>
+                </div>
+            </a>
+            <a href="#" class="latest-card">
+                <div class="img-placeholder card" style="background:#2a9d8f;"><span>صورة</span></div>
+                <div class="latest-card-body">
+                    <span class="card-cat">مدارات عالمية</span>
+                    <h3>ترامب: إيران تسعى لاتفاق بعد "الدرس القاسي".. ومهلة أسبوع لإقامة جنازة خامنئي</h3>
+                    <span class="card-date">السبت 4 يوليو 2026</span>
+                    <span class="read-more">اقرأ المزيد ←</span>
+                </div>
+            </a>
+            <a href="#" class="latest-card">
+                <div class="img-placeholder card" style="background:#264653;"><span>صورة</span></div>
+                <div class="latest-card-body">
+                    <span class="card-cat">المحليات</span>
+                    <h3>جامعة الباحة تفتح باب القبول للبكالوريوس والدبلوم المتوسط للعام 1448هـ</h3>
+                    <span class="card-date">السبت 4 يوليو 2026</span>
+                    <span class="read-more">اقرأ المزيد ←</span>
+                </div>
+            </a>
+            <a href="#" class="latest-card">
+                <div class="img-placeholder card" style="background:#e9c46a;"><span>صورة</span></div>
+                <div class="latest-card-body">
+                    <span class="card-cat">المحليات</span>
+                    <h3>«الشؤون الإسلامية» تنظم دورة عن الوسطية والاعتدال في سريلانكا بمشاركة واسعة</h3>
+                    <span class="card-date">السبت 4 يوليو 2026</span>
+                    <span class="read-more">اقرأ المزيد ←</span>
+                </div>
+            </a>
+            <a href="#" class="latest-card">
+                <div class="img-placeholder card" style="background:#f4a261;"><span>صورة</span></div>
+                <div class="latest-card-body">
+                    <span class="card-cat">المحليات</span>
+                    <h3>مجمع الملك فهد لطباعة المصحف الشريف يسجل رقمًا قياسيًا جديدًا في أعداد الزوار</h3>
+                    <span class="card-date">السبت 4 يوليو 2026</span>
+                    <span class="read-more">اقرأ المزيد ←</span>
+                </div>
+            </a>
+        </div>
+        <div class="load-more-wrap">
+            <a href="/latest-news" class="load-more-btn">تحميل المزيد من الأخبار</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== LATEST SIDEBAR STYLE (matches right column on ajel) ===== -->
+<section class="section latest-sidebar-section">
+    <div class="container">
+        <div class="two-col-layout">
+            <!-- Main Column -->
+            <div class="col-main">
+                <!-- Sports Section -->
+                <div class="section-block">
+                    <div class="section-header">
+                        <h2>رياضة</h2>
+                        <a href="/sports" class="view-all">كل الأخبار ←</a>
+                    </div>
+                    <div class="news-list">
+                        <a href="#" class="news-list-item featured">
+                            <div class="img-placeholder card" style="background:#e76f51;"><span>صورة</span></div>
+                            <div class="news-list-info">
+                                <h3>الاتفاق يمدد عقد المدافع الاسكتلندي جاك هندري حتى 2028</h3>
+                                <span class="card-date">السبت 4 يوليو 2026</span>
+                            </div>
+                        </a>
+                        <a href="#" class="news-list-item">
+                            <div class="news-list-info">
+                                <h3>غضب عارم ضد «ميسي» بعد لقطة جدلية أمام الرأس الأخضر في كأس العالم</h3>
+                                <span class="card-date">السبت 4 يوليو 2026</span>
+                            </div>
+                        </a>
+                        <a href="#" class="news-list-item">
+                            <div class="news-list-info">
+                                <h3>مشهد لمدرب منتخب مصر يتصدر الترند بعد الفوز على أستراليا في كأس العالم</h3>
+                                <span class="card-date">السبت 4 يوليو 2026</span>
+                            </div>
+                        </a>
+                        <a href="#" class="news-list-item">
+                            <div class="news-list-info">
+                                <h3>ميسي يعزز رقمه القياسي ويقترب من الحذاء الذهبي في مونديال 2026</h3>
+                                <span class="card-date">السبت 4 يوليو 2026</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- International Section -->
+                <div class="section-block">
+                    <div class="section-header">
+                        <h2>مدارات عالمية</h2>
+                        <a href="/international" class="view-all">كل مدارات عالمية ←</a>
+                    </div>
+                    <div class="news-list">
+                        <a href="#" class="news-list-item featured">
+                            <div class="img-placeholder card" style="background:#264653;"><span>صورة</span></div>
+                            <div class="news-list-info">
+                                <h3>سفير إيران في بكين: الصين ستحصل على امتيازات خاصة في رسوم خدمات مضيق هرمز</h3>
+                                <span class="card-date">السبت 4 يوليو 2026</span>
+                            </div>
+                        </a>
+                        <a href="#" class="news-list-item">
+                            <div class="news-list-info">
+                                <h3>ترامب: إيران تسعى لاتفاق بعد "الدرس القاسي".. ومهلة أسبوع لإقامة جنازة خامنئي</h3>
+                                <span class="card-date">السبت 4 يوليو 2026</span>
+                            </div>
+                        </a>
+                        <a href="#" class="news-list-item">
+                            <div class="news-list-info">
+                                <h3>الرئيس التركي: على إسرائيل عدم عرقلة الاتفاق بين أمريكا وإيران</h3>
+                                <span class="card-date">السبت 4 يوليو 2026</span>
+                            </div>
+                        </a>
+                        <a href="#" class="news-list-item">
+                            <div class="news-list-info">
+                                <h3>الرئاسة الفلسطينية تحذر من تصعيد إرهاب المستوطنين وتطالب بتدخل دولي</h3>
+                                <span class="card-date">السبت 4 يوليو 2026</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Misc Section -->
+                <div class="section-block">
+                    <div class="section-header">
+                        <h2>منوعات</h2>
+                        <a href="/misc" class="view-all">كل منوعات ←</a>
+                    </div>
+                    <div class="news-list">
+                        <a href="#" class="news-list-item featured">
+                            <div class="img-placeholder card" style="background:#a8dadc;"><span>صورة</span></div>
+                            <div class="news-list-info">
+                                <h3>استشاري: استهلاك الملح لا يتجاوز 5 جرامات يوميا</h3>
+                                <span class="card-date">السبت 4 يوليو 2026</span>
+                            </div>
+                        </a>
+                        <a href="#" class="news-list-item">
+                            <div class="news-list-info">
+                                <h3>استشاري: قلة النوم عامل خطر مستقل لتدهور وظائف الكلى</h3>
+                                <span class="card-date">السبت 4 يوليو 2026</span>
+                            </div>
+                        </a>
+                        <a href="#" class="news-list-item">
+                            <div class="news-list-info">
+                                <h3>أخصائية: الاضطراب الوجداني «ثنائي القطب» قد يؤثر في العمل والعلاقات الاجتماعية</h3>
+                                <span class="card-date">السبت 4 يوليو 2026</span>
+                            </div>
+                        </a>
+                        <a href="#" class="news-list-item">
+                            <div class="news-list-info">
+                                <h3>«الصحة» تحث على استشارة الطبيب قبل استخدام المستحضرات العشبية</h3>
+                                <span class="card-date">السبت 4 يوليو 2026</span>
+                            </div>
+                        </a>
+                        <a href="#" class="news-list-item">
+                            <div class="news-list-info">
+                                <h3>مختص: لا توجد مادة غذائية ثبت تأثيرها طويل الأمد على الطفل مثل الرضاعة الطبيعية</h3>
+                                <span class="card-date">السبت 4 يوليو 2026</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar Column -->
+            <div class="col-sidebar">
+                <div class="sidebar-block">
+                    <div class="sidebar-header">
+                        <span class="sidebar-icon">📰</span>
+                        <h3>آخر الأخبار</h3>
+                        <a href="/latest-news" class="view-all-sm">عرض الكل ←</a>
+                    </div>
+                    <div class="sidebar-news">
+                        <a href="#" class="sidebar-item">
+                            <span class="sidebar-cat">مدارات عالمية</span>
+                            <h4>سفير إيران في بكين: الصين ستحصل على امتيازات خاصة في رسوم خدمات مضيق هرمز</h4>
+                            <span class="sidebar-date">السبت 4 يوليو 2026</span>
+                        </a>
+                        <a href="#" class="sidebar-item">
+                            <span class="sidebar-cat">المحليات</span>
+                            <h4>يستهدف منسوبي المساجد.. «الشؤون الإسلامية» تطلق البرنامج التوعوي</h4>
+                            <span class="sidebar-date">السبت 4 يوليو 2026</span>
+                        </a>
+                        <a href="#" class="sidebar-item">
+                            <span class="sidebar-cat">مدارات عالمية</span>
+                            <h4>ترامب: إيران تسعى لاتفاق بعد "الدرس القاسي"</h4>
+                            <span class="sidebar-date">السبت 4 يوليو 2026</span>
+                        </a>
+                        <a href="#" class="sidebar-item">
+                            <span class="sidebar-cat">المحليات</span>
+                            <h4>جامعة الباحة تفتح باب القبول للبكالوريوس والدبلوم المتوسط</h4>
+                            <span class="sidebar-date">السبت 4 يوليو 2026</span>
+                        </a>
+                        <a href="#" class="sidebar-item">
+                            <span class="sidebar-cat">المحليات</span>
+                            <h4>«الشؤون الإسلامية» تنظم دورة عن الوسطية والاعتدال في سريلانكا</h4>
+                            <span class="sidebar-date">السبت 4 يوليو 2026</span>
+                        </a>
+                        <a href="#" class="sidebar-item">
+                            <span class="sidebar-cat">المحليات</span>
+                            <h4>مجمع الملك فهد لطباعة المصحف الشريف يسجل رقمًا قياسيًا جديدًا</h4>
+                            <span class="sidebar-date">السبت 4 يوليو 2026</span>
+                        </a>
+                        <a href="#" class="sidebar-item">
+                            <span class="sidebar-cat">رياضة</span>
+                            <h4>الاتفاق يمدد عقد المدافع الاسكتلندي جاك هندري حتى 2028</h4>
+                            <span class="sidebar-date">السبت 4 يوليو 2026</span>
+                        </a>
+                        <a href="#" class="sidebar-item">
+                            <span class="sidebar-cat">المحليات</span>
+                            <h4>مشروع مسام يتلف 724 قطعة من المخلفات الحربية في المكلا</h4>
+                            <span class="sidebar-date">السبت 4 يوليو 2026</span>
+                        </a>
+                        <a href="#" class="sidebar-item">
+                            <span class="sidebar-cat">المحليات</span>
+                            <h4>وزير الداخلية يبحث مع نظيره السوري تعزيز التعاون الأمني</h4>
+                            <span class="sidebar-date">السبت 4 يوليو 2026</span>
+                        </a>
+                        <a href="#" class="sidebar-item">
+                            <span class="sidebar-cat">مدارات عالمية</span>
+                            <h4>الرئيس التركي: على إسرائيل عدم عرقلة الاتفاق بين أمريكا وإيران</h4>
+                            <span class="sidebar-date">السبت 4 июля 2026</span>
+                        </a>
+                    </div>
+                    <a href="/latest-news" class="sidebar-load-more">تحميل المزيد</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== OTHER SECTIONS GRID ===== -->
+<section class="section other-sections">
+    <div class="container">
+        <div class="section-header">
+            <h2>أقسام أخرى</h2>
+        </div>
+        <div class="sections-grid">
+            <!-- Local -->
+            <div class="section-col">
+                <div class="section-col-header">
+                    <h3>المحليات</h3>
+                    <a href="/local" class="view-all-sm">←</a>
+                </div>
+                <div class="numbered-list">
+                    <a href="#" class="numbered-item">
+                        <span class="num">1</span>
+                        <div class="numbered-info">
+                            <h4>يستهدف منسوبي المساجد.. «الشؤون الإسلامية» تطلق البرنامج التوعوي «الأمن السيبراني مسؤوليتنا المشتركة»</h4>
+                            <span class="card-date">السبت 4 يوليو 2026</span>
+                        </div>
+                    </a>
+                    <a href="#" class="numbered-item">
+                        <span class="num">2</span>
+                        <div class="numbered-info">
+                            <h4>جامعة الباحة تفتح باب القبول للبكالوريوس والدبلوم المتوسط للعام 1448هـ</h4>
+                            <span class="card-date">السبت 4 يوليو 2026</span>
+                        </div>
+                    </a>
+                    <a href="#" class="numbered-item">
+                        <span class="num">3</span>
+                        <div class="numbered-info">
+                            <h4>«الشؤون الإسلامية» تنظم دورة عن الوسطية والاعتدال في سريلانكا بمشاركة واسعة</h4>
+                            <span class="card-date">السبت 4 يوليو 2026</span>
+                        </div>
+                    </a>
+                    <a href="#" class="numbered-item">
+                        <span class="num">4</span>
+                        <div class="numbered-info">
+                            <h4>مجمع الملك فهد لطباعة المصحف الشريف يسجل رقمًا قياسيًا جديدًا في أعداد الزوار</h4>
+                            <span class="card-date">السبت 4 يوليو 2026</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Economy -->
+            <div class="section-col">
+                <div class="section-col-header">
+                    <h3>الاقتصاد</h3>
+                    <a href="/economy" class="view-all-sm">←</a>
+                </div>
+                <div class="numbered-list">
+                    <a href="#" class="numbered-item">
+                        <span class="num">1</span>
+                        <div class="numbered-info">
+                            <h4>النفط يسجل خسارة أسبوعية مع ترقب المباحثات الأميركية الإيرانية</h4>
+                            <span class="card-date">السبت 4 يوليو 2026</span>
+                        </div>
+                    </a>
+                    <a href="#" class="numbered-item">
+                        <span class="num">2</span>
+                        <div class="numbered-info">
+                            <h4>«منشآت» تنظم فعاليات لدعم رواد الأعمال في قطاع المطاعم والمقاهي بجدة</h4>
+                            <span class="card-date">الجمعة 3 يوليو 2026</span>
+                        </div>
+                    </a>
+                    <a href="#" class="numbered-item">
+                        <span class="num">3</span>
+                        <div class="numbered-info">
+                            <h4>"رتال" تُعزّز حضورها في مكة المكرمة بـ 357 مليون ريال بالشراكة مع "روشن"</h4>
+                            <span class="card-date">الجمعة 3 يوليو 2026</span>
+                        </div>
+                    </a>
+                    <a href="#" class="numbered-item">
+                        <span class="num">4</span>
+                        <div class="numbered-info">
+                            <h4>«بلومبرج»: إنتاج «أوبك» من النفط تجاوز 18 مليون برميل يوميًا في يونيو</h4>
+                            <span class="card-date">الجمعة 3 يوليو 2026</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Entertainment -->
+            <div class="section-col">
+                <div class="section-col-header">
+                    <h3>الترفيه</h3>
+                    <a href="/entertainment" class="view-all-sm">←</a>
+                </div>
+                <div class="numbered-list">
+                    <a href="#" class="numbered-item">
+                        <span class="num">1</span>
+                        <div class="numbered-info">
+                            <h4>مسؤول: أمانة الباحة تسخر كافة جهودها لتحظى بموسم ترفيهي متعدد النشاطات</h4>
+                            <span class="card-date">السبت 4 يوليو 2026</span>
+                        </div>
+                    </a>
+                    <a href="#" class="numbered-item">
+                        <span class="num">2</span>
+                        <div class="numbered-info">
+                            <h4>أحلام تعود إلى جمهور جدة بحفل يقوده المايسترو وليد فايد</h4>
+                            <span class="card-date">الجمعة 3 يوليو 2026</span>
+                        </div>
+                    </a>
+                    <a href="#" class="numbered-item">
+                        <span class="num">3</span>
+                        <div class="numbered-info">
+                            <h4>«هجرة» يحصد النخلة الذهبية للروائي الطويل.. وعبدالمحسن الضبعان مديراً فنياً</h4>
+                            <span class="card-date">الجمعة 3 يوليو 2026</span>
+                        </div>
+                    </a>
+                    <a href="#" class="numbered-item">
+                        <span class="num">4</span>
+                        <div class="numbered-info">
+                            <h4>إغلاق شوارع وإقامة حواجز.. نيويورك تتأهب لحفل زفاف تيلور سويفت</h4>
+                            <span class="card-date">الخميس 2 يوليو 2026</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Tourism -->
+            <div class="section-col">
+                <div class="section-col-header">
+                    <h3>سياحة وسفر</h3>
+                    <a href="/tourism" class="view-all-sm">←</a>
+                </div>
+                <div class="numbered-list">
+                    <a href="#" class="numbered-item">
+                        <span class="num">1</span>
+                        <div class="numbered-info">
+                            <h4>منحدرات تتحوّل إلى مزارع.. المدرجات الزراعية ترسم لوحة طبيعية في جبال جازان</h4>
+                            <span class="card-date">الجمعة 3 يوليو 2026</span>
+                        </div>
+                    </a>
+                    <a href="#" class="numbered-item">
+                        <span class="num">2</span>
+                        <div class="numbered-info">
+                            <h4>المطلات الجبلية والضباب يعززان جاذبية عسير كوجهة سياحية صيفية</h4>
+                            <span class="card-date">الجمعة 3 يوليو 2026</span>
+                        </div>
+                    </a>
+                    <a href="#" class="numbered-item">
+                        <span class="num">3</span>
+                        <div class="numbered-info">
+                            <h4>أمانة حائل ترفع جاهزية الحدائق لاستقبال زوار صيف 2026</h4>
+                            <span class="card-date">الجمعة 3 يوليو 2026</span>
+                        </div>
+                    </a>
+                    <a href="#" class="numbered-item">
+                        <span class="num">4</span>
+                        <div class="numbered-info">
+                            <h4>فوهة الهُتيمة في حائل تجذب الباحثين وهواة الرحلات لتاريخها البركاني</h4>
+                            <span class="card-date">الأربعاء 1 يوليو 2026</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== OPINION SECTION ===== -->
+<section class="section opinion-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>مقالات الرأي</h2>
+            <a href="/opinion" class="view-all">كل الكتّاب ←</a>
+        </div>
+        <div class="opinion-grid">
+            <a href="#" class="opinion-card">
+                <div class="opinion-author">
+                    <div class="author-avatar" style="background:#d71920;">ف</div>
+                    <div class="author-info">
+                        <span class="author-name">المستشار فرحان حسن</span>
+                    </div>
+                </div>
+                <h3>الجابري وكريشنامورتي.. حين يصبح العقل نفسه هو السؤال الأكبر</h3>
+                <p>على امتداد التاريخ حاول العلماء والمفكرون البحث بشكل حثيث عن أسباب أزمات الإنسان والحضارات...</p>
+            </a>
+            <a href="#" class="opinion-card">
+                <div class="opinion-author">
+                    <div class="author-avatar" style="background:#264653;">ع</div>
+                    <div class="author-info">
+                        <span class="author-name">د. عبدالله القفاري</span>
+                    </div>
+                </div>
+                <h3>هل سيغير الذكاء الاصطناعي قواعد بناء الثراء والثروة؟</h3>
+                <p>لم يعد الذكاء الاصطناعي مجرد أداة تقنية تساعد على كتابة نص أو تحليل جدول...</p>
+            </a>
+            <a href="#" class="opinion-card">
+                <div class="opinion-author">
+                    <div class="author-avatar" style="background:#2a9d8f;">ح</div>
+                    <div class="author-info">
+                        <span class="author-name">حسن النجراني</span>
+                    </div>
+                </div>
+                <h3>اللوبيات والفراغ الاتصالي في المنظومة الرياضية</h3>
+                <p>لم يكشف الخروج من كأس العالم عن أزمة فنية فحسب، بل عرّى خللاً أعمق في منظومة الاتصال...</p>
+            </a>
+            <a href="#" class="opinion-card">
+                <div class="opinion-author">
+                    <div class="author-avatar" style="background:#e76f51;">ح</div>
+                    <div class="author-info">
+                        <span class="author-name">حسن النجراني</span>
+                    </div>
+                </div>
+                <h3>الجامعة الإسلامية وقفزة استثنائية في QS</h3>
+                <p>منذ تولي د. صالح العقلا رئاسة الجامعة الإسلامية، اتجهت الجامعة بخطى متسارعة نحو تعزيز حضورها...</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logo">
+                    <svg viewBox="0 0 120 50" width="120" height="50">
+                        <rect x="0" y="0" width="120" height="50" rx="6" fill="#d71920"/>
+                        <text x="60" y="36" text-anchor="middle" fill="#fff" font-size="32" font-weight="900" font-family="'Noto Kufi Arabic', sans-serif">عاجل</text>
+                    </svg>
+                </div>
+                <p>صحيفة إلكترونية سعودية تم تأسيسها عام 2007م تهتم بنشر الأخبار المحلية والمنافسة في سبق الأخبار بمهنية ومصداقية وموضوعية</p>
+                <div class="footer-social">
+                    <a href="#" title="X">𝕏</a>
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Instagram">IG</a>
+                    <a href="#" title="YouTube">▶</a>
+                    <a href="#" title="TikTok">TT</a>
+                </div>
+            </div>
+            <div class="footer-links-group">
+                <div class="footer-col">
+                    <h4>الأقسام</h4>
+                    <ul>
+                        <li><a href="/local">المحليات</a></li>
+                        <li><a href="/economy">الاقتصاد</a></li>
+                        <li><a href="/sports">رياضة</a></li>
+                        <li><a href="/international">مدارات عالمية</a></li>
+                        <li><a href="/jobs">وظائف</a></li>
+                        <li><a href="/entertainment">الترفيه</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="/">الرئيسية</a></li>
+                        <li><a href="/opinion">مقالات الرأي</a></li>
+                        <li><a href="/search">البحث</a></li>
+                        <li><a href="/newsletter">النشرة البريدية</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>الصحيفة</h4>
+                    <ul>
+                        <li><a href="/about-us">من نحن</a></li>
+                        <li><a href="/contactus">اتصل بنا</a></li>
+                        <li><a href="/advertise">أعلن معنا</a></li>
+                        <li><a href="/privacy-policy">سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>جميع الحقوق محفوظة لـ شركة إيجاز للنشر الإلكتروني المالكة لصحيفة عاجل</p>
+            <div class="footer-bottom-links">
+                <a href="/privacy-policy">سياسة الخصوصية</a>
+                <a href="/terms">شروط الاستخدام</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop" aria-label="العودة للأعلى">▲</button>
+
+<script src="script.js"></script>
+</body>
+</html>
