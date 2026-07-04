@@ -457,18 +457,39 @@ async function fetchAllSources() {
 
 // ===== PRESET ARABIC NEWS SOURCES =====
 const PRESET_SOURCES = [
-    { name: 'عاجل', url: 'https://ajel.sa/rss', type: 'rss', default_category: 'local', attribution: 'عاجل' },
-    { name: 'العربية', url: 'https://www.alarabiya.net/feed/rss2', type: 'rss', default_category: 'international', attribution: 'العربية' },
-    { name: 'الجزيرة', url: 'https://www.aljazeera.net/aljazeerarss/a7c186be-1baa-4bd4-9d80-a84db769f779/73d0e1b4-532f-45ef-b135-bfdff8b8cab9', type: 'rss', default_category: 'international', attribution: 'الجزيرة' },
+    // World News
     { name: 'BBC عربي', url: 'https://feeds.bbci.co.uk/arabic/rss.xml', type: 'rss', default_category: 'international', attribution: 'BBC عربي' },
-    { name: 'رويترز عربي', url: 'https://www.reutersagency.com/feed/', type: 'rss', default_category: 'international', attribution: 'رويترز' },
+    { name: 'الجزيرة', url: 'https://www.aljazeera.net/aljazeerarss/a7c186be-1baa-4bd4-9d80-a84db769f779/73d0e1b4-532f-45ef-b135-bfdff8b8cab9', type: 'rss', default_category: 'international', attribution: 'الجزيرة' },
+    { name: 'العربية', url: 'https://www.alarabiya.net/feed/rss2', type: 'rss', default_category: 'international', attribution: 'العربية' },
     { name: 'سكاي نيوز عربي', url: 'https://www.skynewsarabia.com/rss', type: 'rss', default_category: 'international', attribution: 'سكاي نيوز عربي' },
-    { name: 'الإمارات اليوم', url: 'https://www.emaratalyoum.com/rss', type: 'rss', default_category: 'local', attribution: 'الإمارات اليوم' },
-    { name: 'الوطن', url: 'https://alwatan.com/feed', type: 'rss', default_category: 'local', attribution: 'الوطن' },
-    { name: 'سبق', url: 'https://sabq.org/rss', type: 'rss', default_category: 'local', attribution: 'سبق' },
-    { name: 'الأهرام', url: 'https://www.ahram.org.eg/rss', type: 'rss', default_category: 'international', attribution: 'الأهرام' },
-    { name: 'CNN عربي', url: 'https://arabic.cnn.com/api/rss', type: 'rss', default_category: 'international', attribution: 'CNN عربي' },
     { name: 'France24 عربي', url: 'https://www.francetvinfo.fr/titres.rss', type: 'rss', default_category: 'international', attribution: 'France24' },
+    { name: 'DW عربي', url: 'https://rss.dw.com/rdf/rss-en-all', type: 'rss', default_category: 'international', attribution: 'DW' },
+    { name: 'CNN', url: 'http://rss.cnn.com/rss/edition.rss', type: 'rss', default_category: 'international', attribution: 'CNN' },
+    { name: 'RT', url: 'https://www.rt.com/rss/', type: 'rss', default_category: 'international', attribution: 'RT' },
+    { name: 'TRT عربي', url: 'https://www.trt.net.tr/rss', type: 'rss', default_category: 'international', attribution: 'TRT' },
+    { name: 'ABC News', url: 'https://feeds.abcnews.com/abcnews/topstories', type: 'rss', default_category: 'international', attribution: 'ABC News' },
+    { name: 'NY Times', url: 'https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml', type: 'rss', default_category: 'international', attribution: 'NY Times' },
+    { name: 'The Guardian', url: 'https://www.theguardian.com/world/rss', type: 'rss', default_category: 'international', attribution: 'The Guardian' },
+    // Local
+    { name: 'Arab News', url: 'https://www.arabnews.com/rss.xml', type: 'rss', default_category: 'local', attribution: 'Arab News' },
+    { name: 'Gulf News', url: 'https://gulfnews.com/rss', type: 'rss', default_category: 'local', attribution: 'Gulf News' },
+    { name: 'عاجل', url: 'https://ajel.sa/rss', type: 'rss', default_category: 'local', attribution: 'عاجل' },
+    { name: 'سبق', url: 'https://sabq.org/rss', type: 'rss', default_category: 'local', attribution: 'سبق' },
+    // Sports
+    { name: 'BBC Sport', url: 'https://feeds.bbci.co.uk/sport/rss.xml', type: 'rss', default_category: 'sports', attribution: 'BBC Sport' },
+    { name: 'ESPN', url: 'https://www.espn.com/espn/rss/news', type: 'rss', default_category: 'sports', attribution: 'ESPN' },
+    { name: 'Sky Sports', url: 'https://www.skysports.com/rss/12040', type: 'rss', default_category: 'sports', attribution: 'Sky Sports' },
+    // Economy
+    { name: 'Bloomberg', url: 'https://feeds.bloomberg.com/markets/news.rss', type: 'rss', default_category: 'economy', attribution: 'Bloomberg' },
+    { name: 'Financial Times', url: 'https://www.ft.com/rss/home', type: 'rss', default_category: 'economy', attribution: 'Financial Times' },
+    { name: 'Wall Street Journal', url: 'https://feeds.a.dj.com/rss/RSSWorldNews.xml', type: 'rss', default_category: 'economy', attribution: 'WSJ' },
+    { name: 'CNBC', url: 'https://www.cnbc.com/id/100003114/device/rss/rss.html', type: 'rss', default_category: 'economy', attribution: 'CNBC' },
+    // Tech
+    { name: 'TechCrunch', url: 'https://techcrunch.com/feed/', type: 'rss', default_category: 'misc', attribution: 'TechCrunch' },
+    { name: 'The Verge', url: 'https://www.theverge.com/rss/index.xml', type: 'rss', default_category: 'misc', attribution: 'The Verge' },
+    { name: 'WIRED', url: 'https://www.wired.com/feed/rss', type: 'rss', default_category: 'misc', attribution: 'WIRED' },
+    // Science
+    { name: 'NASA', url: 'https://www.nasa.gov/rss/dyn/breaking_news.rss', type: 'rss', default_category: 'international', attribution: 'NASA' },
 ];
 
 module.exports = {

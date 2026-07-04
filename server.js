@@ -541,7 +541,28 @@ app.get('/api/sources', authMiddleware, (req, res) => {
 });
 
 app.get('/api/sources/presets', authMiddleware, (req, res) => {
-    res.json(newsFetcher.PRESET_SOURCES);
+    const extendedPresets = [
+        ...newsFetcher.PRESET_SOURCES,
+        { name: 'RT', url: 'https://www.rt.com/rss/', type: 'rss', default_category: 'international', attribution: 'RT' },
+        { name: 'TRT عربي', url: 'https://www.trt.net.tr/rss', type: 'rss', default_category: 'international', attribution: 'TRT' },
+        { name: 'ABC News', url: 'https://feeds.abcnews.com/abcnews/topstories', type: 'rss', default_category: 'international', attribution: 'ABC News' },
+        { name: 'CNN', url: 'http://rss.cnn.com/rss/edition.rss', type: 'rss', default_category: 'international', attribution: 'CNN' },
+        { name: 'NY Times', url: 'https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml', type: 'rss', default_category: 'international', attribution: 'NY Times' },
+        { name: 'The Guardian', url: 'https://www.theguardian.com/world/rss', type: 'rss', default_category: 'international', attribution: 'The Guardian' },
+        { name: 'Arab News', url: 'https://www.arabnews.com/rss.xml', type: 'rss', default_category: 'local', attribution: 'Arab News' },
+        { name: 'Gulf News', url: 'https://gulfnews.com/rss', type: 'rss', default_category: 'local', attribution: 'Gulf News' },
+        { name: 'BBC Sport', url: 'https://feeds.bbci.co.uk/sport/rss.xml', type: 'rss', default_category: 'sports', attribution: 'BBC Sport' },
+        { name: 'ESPN', url: 'https://www.espn.com/espn/rss/news', type: 'rss', default_category: 'sports', attribution: 'ESPN' },
+        { name: 'Sky Sports', url: 'https://www.skysports.com/rss/12040', type: 'rss', default_category: 'sports', attribution: 'Sky Sports' },
+        { name: 'Bloomberg', url: 'https://feeds.bloomberg.com/markets/news.rss', type: 'rss', default_category: 'economy', attribution: 'Bloomberg' },
+        { name: 'Financial Times', url: 'https://www.ft.com/rss/home', type: 'rss', default_category: 'economy', attribution: 'Financial Times' },
+        { name: 'Wall Street Journal', url: 'https://feeds.a.dj.com/rss/RSSWorldNews.xml', type: 'rss', default_category: 'economy', attribution: 'WSJ' },
+        { name: 'TechCrunch', url: 'https://techcrunch.com/feed/', type: 'rss', default_category: 'misc', attribution: 'TechCrunch' },
+        { name: 'The Verge', url: 'https://www.theverge.com/rss/index.xml', type: 'rss', default_category: 'misc', attribution: 'The Verge' },
+        { name: 'WIRED', url: 'https://www.wired.com/feed/rss', type: 'rss', default_category: 'misc', attribution: 'WIRED' },
+        { name: 'NASA', url: 'https://www.nasa.gov/rss/dyn/breaking_news.rss', type: 'rss', default_category: 'international', attribution: 'NASA' },
+    ];
+    res.json(extendedPresets);
 });
 
 app.post('/api/sources', authMiddleware, (req, res) => {

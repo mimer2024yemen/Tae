@@ -757,6 +757,19 @@ document.getElementById('sourceForm')?.addEventListener('submit', async (e) => {
 document.getElementById('sourceType')?.addEventListener('change', function() { document.getElementById('selectorsGroup').style.display = this.value === 'web' ? 'block' : 'none'; });
 
 async function deleteSource(id) { if (!confirm('حذف المصدر؟')) return; await api('/api/sources/'+id,{method:'DELETE'}); toast('تم الحذف','success'); loadSources(); }
+
+async function deleteAllSources() {
+    if (!confirm('هل أنت متأكد من حذف جميع المصادر؟')) return;
+    if (!confirm('تأكيد أخير: سيتم حذف جميع المصادر نهائياً!')) return;
+    try {
+        const sources = await api('/api/sources');
+        for (const s of sources) {
+            await api('/api/sources/'+s.id, {method:'DELETE'});
+        }
+        toast('تم حذف جميع المصادر', 'success');
+        loadSources();
+    } catch (err) { toast('خطأ', 'error'); }
+}
 async function toggleSourceActive(id, cur) { await api('/api/sources/'+id,{method:'PUT',body:JSON.stringify({is_active:cur?0:1})}); loadSources(); }
 
 async function fetchSingleSource(id) { toast('جاري الجلب...','info'); const r = await api('/api/sources/'+id+'/fetch',{method:'POST'}); toast('تم جلب '+(r.newCount||0)+' خبر','success'); loadSources(); loadFetchLogs(); }
@@ -796,8 +809,32 @@ async function addSelectedPresets() {
     if (!cbs.length) return toast('اختر مصادر','info');
     const presets = await api('/api/sources/presets');
     let n=0;
-    for (const cb of cbs) { try { await api('/api/sources',{method:'POST',body:JSON.stringify(presets[parseInt(cb.value)])}); n++; } catch(e){} }
-    toast('تم إضافة '+n+' مصدر','success'); closePresetsModal(); loadSources();
+    let errors=0;
+    for (const cb of cbs) {
+        try {
+            await api('/api/sources',{method:'POST',body:JSON.stringify(presets[parseInt(cb.value)])});
+            n++;
+        } catch(e){ errors++; }
+    }
+    toast(`تم إضافة ${n} مصدر${errors?' ('+errors+' أخطاء)':''}`,'success');
+    closePresetsModal();
+    loadSources();
+}
+
+async function addAllPresets() {
+    if (!confirm('إضافة جميع المصادر الجاهزة (27+ مصدر)؟')) return;
+    const presets = await api('/api/sources/presets');
+    const existing = await api('/api/sources');
+    const existingUrls = new Set(existing.map(s=>s.url));
+    let n=0;
+    for (const p of presets) {
+        if (!existingUrls.has(p.url)) {
+            try { await api('/api/sources',{method:'POST',body:JSON.stringify(p)}); n++; } catch(e){}
+        }
+    }
+    toast(`تم إضافة ${n} مصدر جديد`,'success');
+    closePresetsModal();
+    loadSources();
 }
 
 // Navigate to sources

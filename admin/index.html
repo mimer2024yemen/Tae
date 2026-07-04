@@ -420,9 +420,10 @@
                 <div class="page-header">
                     <h2>مصادر الأخبار التلقائية</h2>
                     <div style="display:flex;gap:10px;">
-                        <button class="btn btn-primary" onclick="showAddSourceModal()">➕ إضافة مصدر</button>
-                        <button class="btn btn-success" onclick="showPresetsModal()">📋 مصادر جاهزة</button>
+                        <button class="btn btn-primary" onclick="showAddSourceModal()">➕ إضافة مصدر يدوي</button>
+                        <button class="btn btn-success" onclick="showPresetsModal()">📋 مصادر جاهزة (27+)</button>
                         <button class="btn" id="fetchAllBtn" onclick="fetchAllSources()">🔄 جلب الكل الآن</button>
+                        <button class="btn btn-danger" onclick="deleteAllSources()">🗑️ حذف الكل</button>
                     </div>
                 </div>
 
@@ -591,6 +592,7 @@
                     <div id="presetsList" style="max-height:400px;overflow-y:auto;"></div>
                     <div class="form-actions">
                         <button class="btn btn-primary" onclick="addSelectedPresets()">➕ إضافة المحددة</button>
+                        <button class="btn btn-success" onclick="addAllPresets()">📋 إضافة الكل (27+)</button>
                         <button class="btn" onclick="closePresetsModal()">إغلاق</button>
                     </div>
                 </div>

@@ -26,15 +26,38 @@ const rssParser = new RSSParser({
 });
 
 const SOURCES = [
+    // World News
     { id: 'bbc', name: 'BBC عربي', url: 'https://feeds.bbci.co.uk/arabic/rss.xml', category: 'international', logo: '🇬🇧' },
     { id: 'sky', name: 'سكاي نيوز عربي', url: 'https://www.skynewsarabia.com/rss', category: 'international', logo: '🔵' },
     { id: 'aljazeera', name: 'الجزيرة', url: 'https://www.aljazeera.net/aljazeerarss/a7c186be-1baa-4bd4-9d80-a84db769f779/73d0e1b4-532f-45ef-b135-bfdff8b8cab9', category: 'international', logo: '🌐' },
     { id: 'cnbc', name: 'CNBC', url: 'https://www.cnbc.com/id/100003114/device/rss/rss.html', category: 'economy', logo: '💹' },
-    { id: 'espn', name: 'ESPN', url: 'https://www.espn.com/espn/rss/news', category: 'sports', logo: '⚽' },
-    { id: 'reuters', name: 'رويترز', url: 'https://www.reutersagency.com/feed/', category: 'international', logo: '📰' },
-    { id: 'france24', name: 'France24', url: 'https://www.francetvinfo.fr/titres.rss', category: 'international', logo: '🇫🇷' },
-    { id: 'nhk', name: 'NHK World', url: 'https://www3.nhk.or.jp/nhkworld/en/news/feeds/', category: 'international', logo: '🇯🇵' },
-    { id: 'dw', name: 'DW', url: 'https://rss.dw.com/rdf/rss-en-all', category: 'international', logo: '🇩🇪' },
+    { id: 'france24', name: 'France24 عربي', url: 'https://www.francetvinfo.fr/titres.rss', category: 'international', logo: '🇫🇷' },
+    { id: 'dw', name: 'DW عربي', url: 'https://rss.dw.com/rdf/rss-en-all', category: 'international', logo: '🇩🇪' },
+    { id: 'rt', name: 'RT', url: 'https://www.rt.com/rss/', category: 'international', logo: '🇷🇺' },
+    { id: 'trt', name: 'TRT عربي', url: 'https://www.trt.net.tr/rss', category: 'international', logo: '🇹🇷' },
+    { id: 'abc', name: 'ABC News', url: 'https://feeds.abcnews.com/abcnews/topstories', category: 'international', logo: '🇺🇸' },
+    { id: 'cnn', name: 'CNN', url: 'http://rss.cnn.com/rss/edition.rss', category: 'international', logo: '📺' },
+    { id: 'nyt', name: 'NY Times', url: 'https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml', category: 'international', logo: '📰' },
+    { id: 'guardian', name: 'The Guardian', url: 'https://www.theguardian.com/world/rss', category: 'international', logo: '🇬🇧' },
+    { id: 'al', name: 'العربية', url: 'https://www.alarabiya.net/feed/rss2', category: 'international', logo: '🟥' },
+    { id: 'arabnews', name: 'Arab News', url: 'https://www.arabnews.com/rss.xml', category: 'local', logo: '🇸🇦' },
+    { id: 'gulfnews', name: 'Gulf News', url: 'https://gulfnews.com/rss', category: 'local', logo: '🇦🇪' },
+    // Sports
+    { id: 'bbc-sport', name: 'BBC Sport', url: 'https://feeds.bbci.co.uk/sport/rss.xml', category: 'sports', logo: '⚽' },
+    { id: 'espn', name: 'ESPN', url: 'https://www.espn.com/espn/rss/news', category: 'sports', logo: '🏈' },
+    { id: 'skysports', name: 'Sky Sports', url: 'https://www.skysports.com/rss/12040', category: 'sports', logo: '⚽' },
+    { id: 'goal', name: 'Goal.com', url: 'https://www.goal.com/en/feeds/news?fmt=rss', category: 'sports', logo: '🥅' },
+    // Economy
+    { id: 'bloomberg', name: 'Bloomberg', url: 'https://feeds.bloomberg.com/markets/news.rss', category: 'economy', logo: '📊' },
+    { id: 'ft', name: 'Financial Times', url: 'https://www.ft.com/rss/home', category: 'economy', logo: '💼' },
+    { id: 'wsj', name: 'Wall Street Journal', url: 'https://feeds.a.dj.com/rss/RSSWorldNews.xml', category: 'economy', logo: '📈' },
+    // Tech
+    { id: 'techcrunch', name: 'TechCrunch', url: 'https://techcrunch.com/feed/', category: 'technology', logo: '💻' },
+    { id: 'verge', name: 'The Verge', url: 'https://www.theverge.com/rss/index.xml', category: 'technology', logo: '📱' },
+    { id: 'wired', name: 'WIRED', url: 'https://www.wired.com/feed/rss', category: 'technology', logo: '🔌' },
+    // Science & Health
+    { id: 'natgeo', name: 'National Geographic', url: 'https://www.nationalgeographic.com/page/rss', category: 'science', logo: '🔬' },
+    { id: 'nasa', name: 'NASA', url: 'https://www.nasa.gov/rss/dyn/breaking_news.rss', category: 'science', logo: '🚀' },
 ];
 
 function extractImage(item) {

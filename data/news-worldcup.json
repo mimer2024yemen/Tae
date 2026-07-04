@@ -1,19 +1,55 @@
 {
   "category": "worldcup",
-  "updated": "2026-07-04T20:01:26.374Z",
-  "count": 4,
+  "updated": "2026-07-04T20:24:51.833Z",
+  "count": 20,
   "articles": [
+    {
+      "id": "bbc-sport_xgbubg",
+      "title": "Morocco reach quarter-finals as co-hosts Canada knocked out",
+      "summary": "Canada become the first of co-hosts to exit the 2026 World Cup, after being beaten 3-0 by Morocco in Houston.",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/c352/live/7099b550-77df-11f1-a627-714adb4eed6e.jpg",
+      "link": "https://www.bbc.co.uk/sport/football/videos/cddlpql2e98o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Sport",
+      "sourceLogo": "⚽",
+      "category": "worldcup",
+      "date": "2026-07-04T19:49:57.000Z",
+      "timeAgo": "قبل 34 دقيقة"
+    },
+    {
+      "id": "bbc-sport_ctad4i",
+      "title": "Ounahi gives Morocco the lead against Canada",
+      "summary": "Azzedine Ounahi scores the opener for Morocco against Canada in the last 32 of the 2026 World Cup.",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/5619/live/826ce4f0-77d5-11f1-b976-0b9c15b0ccfc.jpg",
+      "link": "https://www.bbc.co.uk/sport/football/videos/c9q23dlgw72o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Sport",
+      "sourceLogo": "⚽",
+      "category": "worldcup",
+      "date": "2026-07-04T19:04:56.000Z",
+      "timeAgo": "قبل 1 ساعة"
+    },
+    {
+      "id": "bloomberg_y0ap17",
+      "title": "Bloomberg This Weekend 07/04/2026",
+      "summary": "The news doesn’t stop when markets close. Hosts David Gura, Christina Ruffini and Lisa Mateo bring clarity, context and a bit of humor to the weekend’s biggest headlines, LIVE from New York. Joined by Rutgers University Professor Emeritus of American Studies Robert Synder, Retired Navy Vice Admiral ",
+      "image": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iabPzDrx7tdA/v3/1200x-1.jpg",
+      "link": "https://www.bloomberg.com/news/videos/2026-07-04/bloomberg-this-weekend-07-04-2026-video",
+      "source": "Bloomberg",
+      "sourceLogo": "📊",
+      "category": "worldcup",
+      "date": "2026-07-04T18:50:38.000Z",
+      "timeAgo": "قبل 1 ساعة"
+    },
     {
       "id": "france24_q1bvzb",
       "title": "Jonas Vingegaard premier maillot jaune du Tour de France 2026, après la victoire de Team Visma | Lease a Bike sur le contre-la-montre par équipes à Barcelone",
       "summary": "Le Danois a remporté la 1ere étape samedi, à Barcelone, et retrouve le maillot jaune pour la première fois depuis le Tour de France 2023.",
       "image": "https://www.franceinfo.fr/pictures/Lry6H0X-TTlmX5_kDXavBBEPoFM/0x106:1024x682/432x243/filters:format(jpg)/2026/07/04/6a4947b50a77b893851371.jpg",
       "link": "https://www.franceinfo.fr/tour-de-france/jonas-vingegaard-premier-maillot-jaune-du-tour-de-france-2026-apres-la-victoire-de-visma-lease-a-bike-sur-le-contre-la-montre-par-equipes-de-la-1ere-etape_8094068.html#xtor=RSS-3-[lestitres]",
-      "source": "France24",
+      "source": "France24 عربي",
       "sourceLogo": "🇫🇷",
       "category": "worldcup",
       "date": "2026-07-04T18:01:31.000Z",
-      "timeAgo": "قبل 1 ساعة"
+      "timeAgo": "قبل 2 ساعة"
     },
     {
       "id": "france24_xviquh",
@@ -21,10 +57,22 @@
       "summary": "Plusieurs centaines de personnes ont participé, samedi 4 juillet 2026 à Carcassonne, à une marche blanche pour Louis, adolescent de 17 ans mort fin juin des suites d'un passage à tabac. Un rassemblement organisé à l'appel du père de l'adolescent.",
       "image": "https://www.franceinfo.fr/pictures/O-NAyq1OUn8X_NFQUuGiWRLq_lc/432x243/filters:format(jpg)/2026/07/04/6a49386b9a338050832057.jpg",
       "link": "https://france3-regions.franceinfo.fr/occitanie/aude/narbonne/louis-on-t-aime-une-marche-blanche-en-hommage-a-l-adolescent-de-17-ans-tue-dans-un-guet-apens-reunit-plusieurs-centaines-de-personnes-3381466.html#xtor=RSS-3-[lestitres]",
-      "source": "France24",
+      "source": "France24 عربي",
       "sourceLogo": "🇫🇷",
       "category": "worldcup",
       "date": "2026-07-04T16:44:28.000Z",
+      "timeAgo": "قبل 3 ساعة"
+    },
+    {
+      "id": "aljazeera_ijta39",
+      "title": "ما خيارات مالي في ظل التقدم المتواصل للمسلحين؟",
+      "summary": "لا يبدو الجيش المالي قادرا على حسم الصراع مع المسلحين الذين يتقدمون مرة بعد أخرى في هجمات منسقة وواسعة، قال محللون لحلقة 2026/7/4 من برنامج \"ما وراء الخبر\" إنها تزيد من سيطرتهم على حساب الحكومة.",
+      "image": "",
+      "link": "https://www.aljazeera.net/video/behindthenews/2026/7/4/%d9%85%d8%a7-%d8%ae%d9%8a%d8%a7%d8%b1%d8%a7%d8%aa-%d9%85%d8%a7%d9%84%d9%8a-%d9%81%d9%8a-%d8%b8%d9%84-%d8%a7%d9%84%d8%aa%d9%82%d8%af%d9%85-%d8%a7%d9%84%d9%85%d8%aa%d9%88%d8%a7%d8%b5%d9%84?traffic_source=rss",
+      "source": "الجزيرة",
+      "sourceLogo": "🌐",
+      "category": "worldcup",
+      "date": "2026-07-04T16:37:42.000Z",
       "timeAgo": "قبل 3 ساعة"
     },
     {
@@ -33,11 +81,11 @@
       "summary": "Plusieurs organisations professionnelles ont tiré la sonnette d'alarme sur les conséquences de l'annulation des crédits budgétaires pour le deuxième semestre 2026.",
       "image": "https://www.franceinfo.fr/pictures/ezgFQjPDIYcl5W8EkKxYp2DVNfw/0x44:1024x620/432x243/filters:format(jpg)/2026/07/04/6a4916af798e4134160921.jpg",
       "link": "https://www.franceinfo.fr/culture/spectacle-vivant-le-ministere-de-la-culture-assure-qu-une-partie-des-credits-sera-versee-la-semaine-prochaine_8093897.html#xtor=RSS-3-[lestitres]",
-      "source": "France24",
+      "source": "France24 عربي",
       "sourceLogo": "🇫🇷",
       "category": "worldcup",
       "date": "2026-07-04T14:22:56.000Z",
-      "timeAgo": "قبل 5 ساعة"
+      "timeAgo": "قبل 6 ساعة"
     },
     {
       "id": "cnbc_m21fhq",
@@ -50,6 +98,150 @@
       "category": "worldcup",
       "date": "2026-07-04T12:54:04.000Z",
       "timeAgo": "قبل 7 ساعة"
+    },
+    {
+      "id": "guardian_18wd6g",
+      "title": "How the 1986 Mexico World Cup was almost cancelled after a devastating earthquake",
+      "summary": "Guardian reports after the disaster told of 5,000 deaths, much of the capital being razed, and doubts about Mexico hosting the finals Mexico last hosted the World Cup in 1986, but the competition was almost cancelled several months before the start when an earthquake struck the capital, Mexico City,",
+      "image": "https://i.guim.co.uk/img/media/e1aaede31dec3f22e9f284dc77dc5ca56b6dbb3e/107_9_1027_821/master/1027.jpg?width=140&quality=85&auto=format&fit=max&s=3a3168bdc98ccbbd7d52cb46936733f1",
+      "link": "https://www.theguardian.com/football/2026/jul/04/how-the-1986-mexico-world-cup-almost-cancelled-after-earthquake-1986",
+      "source": "The Guardian",
+      "sourceLogo": "🇬🇧",
+      "category": "worldcup",
+      "date": "2026-07-04T11:40:31.000Z",
+      "timeAgo": "قبل 8 ساعة"
+    },
+    {
+      "id": "wired_5dupu3",
+      "title": "15 Best MagSafe Wireless Chargers (2026): Power Banks, Stands, Pads, and Travel Chargers",
+      "summary": "Top up your Qi2 Android phone or MagSafe iPhone with a magnetic wireless charging stand, pad, car charger, or power bank.",
+      "image": "https://media.wired.com/photos/685ab0fbecbfc34a8f85ebcc/master/pass/MagSafe%20Chargers%20Reviewer%20Collage_Source_Amazon.png",
+      "link": "https://www.wired.com/gallery/best-magsafe-wireless-chargers/",
+      "source": "WIRED",
+      "sourceLogo": "🔌",
+      "category": "worldcup",
+      "date": "2026-07-04T11:30:00.000Z",
+      "timeAgo": "قبل 8 ساعة"
+    },
+    {
+      "id": "bbc-sport_8cx3zw",
+      "title": "Lightning, hotel security and spying - issues England face in Mexico",
+      "summary": "England are booed as they arrive at their Mexico City hotel to prepare for their World Cup last-16 game against Mexico - and it's not the only issue they face.",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/90b1/live/6108c870-7784-11f1-a146-99f41269c606.png",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cx2x1gwwjego?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Sport",
+      "sourceLogo": "⚽",
+      "category": "worldcup",
+      "date": "2026-07-04T11:23:54.000Z",
+      "timeAgo": "قبل 9 ساعة"
+    },
+    {
+      "id": "wired_ntmam",
+      "title": "The Best Fourth of July Mattress Sales on Beds We Actually Sleep On (2026)",
+      "summary": "From cooling hybrids to organic latex beds, these are the mattresses WIRED reviewers actually sleep on and recommend.",
+      "image": "https://media.wired.com/photos/6a469972cb22d2a872419b3a/master/pass/The-Best-Fourth-of-July-Mattress-Deals,-According-to-WIRED-Testers-(2026).jpg",
+      "link": "https://www.wired.com/story/best-july-fourth-mattress-deals-2026/",
+      "source": "WIRED",
+      "sourceLogo": "🔌",
+      "category": "worldcup",
+      "date": "2026-07-04T09:08:00.000Z",
+      "timeAgo": "قبل 11 ساعة"
+    },
+    {
+      "id": "rt_xgn43m",
+      "title": "US heatwave threatens World Cup matches",
+      "summary": "A severe heatwave across the US is raising concerns for World Cup matches and major Fourth of July events Read Full Article at RT.com",
+      "image": "https://mf.b37mrtl.ru/files/2026.07/thumbnail/6a47d5f285f5405da919b898.jpg",
+      "link": "https://www.rt.com/news/642555-us-world-cup-heatwave/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+      "source": "RT",
+      "sourceLogo": "🇷🇺",
+      "category": "worldcup",
+      "date": "2026-07-04T01:06:39.000Z",
+      "timeAgo": "قبل 19 ساعة"
+    },
+    {
+      "id": "verge_1ms8ir",
+      "title": "While you’re watching the World Cup, the feds may be watching you",
+      "summary": "It's a big year for America. It's the semiquincentennial, otherwise known as America250, and the United States is cohosting the World Cup. But spectators at these events - and the millions of people who live in the cities hosting them - may not realize that they, too, are being watched. From Kansas ",
+      "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/02/STKS525_MASS_SURVEILLANCE6.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+      "link": "https://www.theverge.com/policy/961004/world-cup-america-250-surveillance-drones-cameras",
+      "source": "The Verge",
+      "sourceLogo": "📱",
+      "category": "worldcup",
+      "date": "2026-07-03T15:00:00.000Z",
+      "timeAgo": "قبل 1 يوم"
+    },
+    {
+      "id": "wired_h2voe2",
+      "title": "Best Bone Conduction Headphones (2026): Shokz, Suunto, Mojawa",
+      "summary": "Everyone needs a safe way to listen to music on outdoor runs. We’ve found the bone conduction headphones to grab on your way out the door.",
+      "image": "https://media.wired.com/photos/6966abea428592e866cf6614/master/pass/The%20Best%20Bone%20Conduction%20Headphones.png",
+      "link": "https://www.wired.com/gallery/best-bone-conduction-headphones/",
+      "source": "WIRED",
+      "sourceLogo": "🔌",
+      "category": "worldcup",
+      "date": "2026-07-03T11:30:00.000Z",
+      "timeAgo": "قبل 1 يوم"
+    },
+    {
+      "id": "wired_y2t66p",
+      "title": "7 Best Phones You Can’t Buy in the US (2026)",
+      "summary": "Avoid phone FOMO with our favorite smartphones that aren’t officially sold stateside but are available in markets like the UK and Europe.",
+      "image": "https://media.wired.com/photos/69bdf168d86dbf7bd47a3b44/master/pass/Best%20Non%20US%20Phones%20Update%202%20SOURCE%20Simon%20Hill.jpg",
+      "link": "https://www.wired.com/gallery/best-phones-you-cant-buy-in-the-united-states/",
+      "source": "WIRED",
+      "sourceLogo": "🔌",
+      "category": "worldcup",
+      "date": "2026-07-03T10:31:00.000Z",
+      "timeAgo": "قبل 1 يوم"
+    },
+    {
+      "id": "wired_w6nuvh",
+      "title": "The Best Ultralight Backpacking Quilts (2026): Zenbivy, REI",
+      "summary": "Lighten your pack this summer—skip the sleeping bag and carry one of our favorite ultralight backpacking quilts instead.",
+      "image": "https://media.wired.com/photos/6a4706d127890b0c3ffffb66/master/pass/The-Best-Ultralight-Backpacking-Quilts-for-Ounce-Counting-Cubicle-Refugees.jpg",
+      "link": "https://www.wired.com/story/the-best-ultralight-backpacking-quilts/",
+      "source": "WIRED",
+      "sourceLogo": "🔌",
+      "category": "worldcup",
+      "date": "2026-07-03T10:06:00.000Z",
+      "timeAgo": "قبل 1 يوم"
+    },
+    {
+      "id": "wired_gbhx31",
+      "title": "The 11 Best TV Shows to Stream This Month (July 2026)",
+      "summary": "House of the Dragon, Adventure Time: Side Quests, and The Man Will Burn are just a few of the TV shows you should be watching right now.",
+      "image": "https://media.wired.com/photos/6a440581ba8a42527760db43/master/pass/Show-Guide-emma-d-arcy_2-Culture.jpg",
+      "link": "https://www.wired.com/story/the-11-best-shows-to-stream-right-now/",
+      "source": "WIRED",
+      "sourceLogo": "🔌",
+      "category": "worldcup",
+      "date": "2026-07-03T09:00:00.000Z",
+      "timeAgo": "قبل 1 يوم"
+    },
+    {
+      "id": "nasa_xlqjgs",
+      "title": "Good Morning, Earth!",
+      "summary": "NASA astronaut Chris Williams took this photo of an orbital sunrise from the International Space Station on June 26, 2026. In 24 hours, the space station makes 16 orbits of Earth, traveling through 16 sunrises and sunsets. Learn more about the orbiting laboratory. Image credit: NASA/Chris Williams",
+      "image": "https://www.nasa.gov/wp-content/uploads/2026/07/iss074e0779393orig.jpg?w=2048",
+      "link": "https://www.nasa.gov/image-article/good-morning-earth/",
+      "source": "NASA",
+      "sourceLogo": "🚀",
+      "category": "worldcup",
+      "date": "2026-07-02T14:41:24.000Z",
+      "timeAgo": "قبل 2 يوم"
+    },
+    {
+      "id": "nasa_u7nvas",
+      "title": "What’s Up: July 2026 Skywatching Tips from NASA",
+      "summary": "A predawn Moon-and-planets meetup, a returning comet, a great chance to see the Milky Way, and Saturn’s rings at a new angle. Skywatching Highlights Transcript An early morning hangout with the Moon and planets, a comet swings by, prime time for the Milky Way, and Saturn’s rings shine at a new angle",
+      "image": "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/ciencia/ciencias-terrestres/2026/Moon_planets_July2026.png?w=2408&#038;h=1348&#038;fit=clip&#038;crop=faces%2Cfocalpoint",
+      "link": "https://science.nasa.gov/solar-system/whats-up-july-2026-skywatching-tips-from-nasa/",
+      "source": "NASA",
+      "sourceLogo": "🚀",
+      "category": "worldcup",
+      "date": "2026-07-02T00:22:22.000Z",
+      "timeAgo": "قبل 2 يوم"
     }
   ]
 }
