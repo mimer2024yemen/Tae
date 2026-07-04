@@ -1,0 +1,31 @@
+{
+  "category": "tourism",
+  "updated": "2026-07-04T19:44:51.675Z",
+  "count": 2,
+  "articles": [
+    {
+      "id": "sky_mq6v7a",
+      "title": "فيديو.. أمطار غزيرة تغرق شوارع إسطنبول",
+      "summary": "اجتاحت سيول وفيضانات مفاجئة أجزاء واسعة من مدينة إسطنبول، العاصمة الاقتصادية لتركيا، إثر عاصفة مطرية غزيرة غير متوقعة، مما أسفر عن شلل شبه تام في حركة المرور وتضرر كبير في البنية التحتية والمناطق التجارية.",
+      "image": "https://images.skynewsarabia.com/images/v1/2026/07/04/1879172/95/53/1-1879172.png",
+      "link": "https://www.skynewsarabia.com/varieties/1879173-%D9%81%D9%8A%D8%AF%D9%8A%D9%88-%D8%A3%D9%85%D8%B7%D8%A7%D8%B1-%D8%BA%D8%B2%D9%8A%D8%B1%D8%A9-%D8%AA%D8%BA%D8%B1%D9%82-%D8%B4%D9%88%D8%A7%D8%B1%D8%B9-%D8%A5%D8%B3%D8%B7%D9%86%D8%A8%D9%88%D9%84",
+      "source": "سكاي نيوز عربي",
+      "sourceLogo": "🔵",
+      "category": "tourism",
+      "date": "2026-07-04T17:01:32.000Z",
+      "timeAgo": "قبل 2 ساعة"
+    },
+    {
+      "id": "cnbc_2vtg62",
+      "title": "Extreme heat wave threatens U.S. power grids and July 4 travel",
+      "summary": "The heat wave threatens to overwhelm U.S. grids and may force some to change their plans on one of the busiest travel weeks of the year.",
+      "image": "",
+      "link": "https://www.cnbc.com/2026/07/03/extreme-heat-us-power-grids-july-4-travel.html",
+      "source": "CNBC",
+      "sourceLogo": "💹",
+      "category": "tourism",
+      "date": "2026-07-03T19:00:44.000Z",
+      "timeAgo": "قبل 1 يوم"
+    }
+  ]
+}

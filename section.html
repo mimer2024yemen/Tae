@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="metaTitle">عاجل — أخبار</title>
+    <meta name="description" id="metaDesc" content="صحيفة عاجل الإلكترونية - أخبار السعودية والخليج والعالم لحظة بلحظة">
+
+    <!-- Open Graph - defaults, overridden by JS -->
+    <meta property="og:type" content="website" id="ogType">
+    <meta property="og:title" content="عاجل — أخبار" id="ogTitle">
+    <meta property="og:description" content="صحيفة عاجل الإلكترونية" id="ogDesc">
+    <meta property="og:url" content="" id="ogUrl">
+    <meta property="og:site_name" content="عاجل">
+    <meta property="og:locale" content="ar_SA">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" id="twCard">
+    <meta name="twitter:title" content="عاجل — أخبار" id="twTitle">
+    <meta name="twitter:description" content="" id="twDesc">
+
+    <link rel="canonical" href="" id="canonicalLink">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    <div class="container">
+        <div class="top-bar-right">
+            <span>صحيفة عاجل الإلكترونية</span>
+            <a href="#">النشرة البريدية</a>
+            <a href="#">اتصل بنا</a>
+        </div>
+        <div class="top-bar-left">
+            <span>تابعنا:</span>
+            <a href="#" class="social-icon">𝕏</a>
+            <a href="#" class="social-icon">f</a>
+            <a href="#" class="social-icon">▶</a>
+            <a href="#" class="social-icon">IG</a>
+            <a href="#" class="social-icon">TT</a>
+        </div>
+    </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="container">
+        <div class="header-inner">
+            <div class="logo">
+                <a href="/">
+                    <svg viewBox="0 0 120 50" width="140" height="58">
+                        <rect x="0" y="0" width="120" height="50" rx="6" fill="#d71920"/>
+                        <text x="60" y="36" text-anchor="middle" fill="#fff" font-size="32" font-weight="900" font-family="'Noto Kufi Arabic', sans-serif">عاجل</text>
+                    </svg>
+                </a>
+            </div>
+            <div class="header-search">
+                <form onsubmit="return false;">
+                    <input type="text" placeholder="ابحث في عاجل…" id="searchInput">
+                    <button type="submit">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    </button>
+                </form>
+            </div>
+            <div class="header-lang"><a href="/en">EN</a></div>
+        </div>
+    </div>
+</header>
+
+<!-- NAV -->
+<nav class="main-nav" id="mainNav">
+    <div class="container">
+        <button class="mobile-menu-btn" id="mobileMenuBtn"><span></span><span></span><span></span></button>
+        <ul class="nav-list" id="navList">
+            <li><a href="/">الرئيسية</a></li>
+            <li><a href="/local">المحليات</a></li>
+            <li><a href="/economy">الاقتصاد</a></li>
+            <li><a href="/sports">رياضة</a></li>
+            <li><a href="/international">مدارات عالمية</a></li>
+            <li><a href="/jobs">وظائف</a></li>
+            <li><a href="/entertainment">الترفيه</a></li>
+            <li><a href="/misc">منوعات</a></li>
+            <li><a href="/tourism">سياحة وسفر</a></li>
+            <li><a href="/society">مجتمع</a></li>
+            <li class="nav-highlight"><a href="/worldcup">المونديال</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main id="content">
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="sectionTitle">الأخبار</h2>
+                <a href="/latest-news" class="view-all" id="sectionLink">عرض الكل ←</a>
+            </div>
+
+            <!-- Article View (hidden by default) -->
+            <div id="articleView" style="display:none;">
+                <div class="article-page">
+                    <div class="article-header">
+                        <a id="articleSectionLink" href="#" class="slide-category" style="display:inline-block;text-decoration:none;"></a>
+                        <h1 id="articleTitle"></h1>
+                        <div class="article-meta">
+                            <span id="articleDate"></span>
+                            <span id="articleAuthor"></span>
+                            <span id="articleViews"></span>
+                        </div>
+                    </div>
+                    <div class="article-image" id="articleImage"></div>
+                    <div class="article-body" id="articleBody"></div>
+
+                    <!-- Share Buttons -->
+                    <div class="share-section" id="shareSection">
+                        <h3>مشاركة الخبر</h3>
+                        <div class="share-buttons">
+                            <a id="shareTwitter" href="#" target="_blank" rel="noopener" class="share-btn share-twitter" title="مشاركة على X">
+                                <span>𝕏</span>
+                                <small>تويتر</small>
+                            </a>
+                            <a id="shareFacebook" href="#" target="_blank" rel="noopener" class="share-btn share-facebook" title="مشاركة على فيسبوك">
+                                <span>f</span>
+                                <small>فيسبوك</small>
+                            </a>
+                            <a id="shareWhatsapp" href="#" target="_blank" rel="noopener" class="share-btn share-whatsapp" title="مشاركة على واتساب">
+                                <span>📱</span>
+                                <small>واتساب</small>
+                            </a>
+                            <a id="shareTelegram" href="#" target="_blank" rel="noopener" class="share-btn share-telegram" title="مشاركة على تلجرام">
+                                <span>✈️</span>
+                                <small>تلجرام</small>
+                            </a>
+                            <a id="shareLinkedin" href="#" target="_blank" rel="noopener" class="share-btn share-linkedin" title="مشاركة على لينكدإن">
+                                <span>in</span>
+                                <small>لينكدإن</small>
+                            </a>
+                            <button id="shareCopy" class="share-btn share-copy" title="نسخ الرابط">
+                                <span>🔗</span>
+                                <small>نسخ الرابط</small>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Related Articles -->
+                    <div class="related-section" id="relatedSection" style="display:none;">
+                        <div class="section-header" style="border-bottom-color:#d71920;">
+                            <h2 style="font-size:18px;">أخبار ذات صلة</h2>
+                        </div>
+                        <div class="related-grid" id="relatedGrid"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Articles List -->
+            <div id="articlesList">
+                <div class="latest-grid" id="articlesGrid"></div>
+                <div class="load-more-wrap">
+                    <button class="load-more-btn" id="loadMoreBtn" onclick="loadMoreArticles()">تحميل المزيد</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <svg viewBox="0 0 120 50" width="120" height="50">
+                    <rect x="0" y="0" width="120" height="50" rx="6" fill="#d71920"/>
+                    <text x="60" y="36" text-anchor="middle" fill="#fff" font-size="32" font-weight="900" font-family="'Noto Kufi Arabic', sans-serif">عاجل</text>
+                </svg>
+                <p>صحيفة إلكترونية سعودية تم تأسيسها عام 2007م تهتم بنشر الأخبار المحلية والمنافسة في سبق الأخبار بمهنية ومصداقية وموضوعية</p>
+            </div>
+            <div class="footer-links-group">
+                <div class="footer-col">
+                    <h4>الأقسام</h4>
+                    <ul>
+                        <li><a href="/local">المحليات</a></li>
+                        <li><a href="/economy">الاقتصاد</a></li>
+                        <li><a href="/sports">رياضة</a></li>
+                        <li><a href="/international">مدارات عالمية</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="/">الرئيسية</a></li>
+                        <li><a href="/opinion">مقالات الرأي</a></li>
+                        <li><a href="/sitemap.xml">خريطة الموقع</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>الصحيفة</h4>
+                    <ul>
+                        <li><a href="#">من نحن</a></li>
+                        <li><a href="#">اتصل بنا</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>جميع الحقوق محفوظة لـ شركة إيجاز للنشر الإلكتروني المالكة لصحيفة عاجل</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Toast -->
+<div id="toast" style="display:none;position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#333;color:#fff;padding:12px 24px;border-radius:8px;font-size:14px;font-weight:600;z-index:9999;box-shadow:0 4px 15px rgba(0,0,0,0.3);">تم النسخ</div>
+
+<style>
+/* Article Page */
+.article-page { max-width: 800px; margin: 0 auto; }
+.article-header { margin-bottom: 25px; }
+.article-header h1 { font-size: 28px; font-weight: 800; line-height: 1.5; margin: 12px 0; font-family: 'Noto Kufi Arabic', sans-serif; }
+.article-meta { display: flex; gap: 20px; font-size: 13px; color: #888; flex-wrap: wrap; }
+.article-meta span::before { content: '•'; margin-left: 8px; color: #ccc; }
+.article-meta span:first-child::before { display: none; }
+.article-image { margin-bottom: 25px; border-radius: 8px; overflow: hidden; }
+.article-image img { width: 100%; max-height: 450px; object-fit: cover; }
+.article-body { font-size: 17px; line-height: 2; color: #333; margin-bottom: 30px; }
+.article-body p { margin-bottom: 18px; }
+
+/* Share Section */
+.share-section {
+    margin: 30px 0;
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid #e8ecf1;
+}
+.share-section h3 {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+    font-family: 'Noto Kufi Arabic', sans-serif;
+}
+.share-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.share-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Noto Kufi Arabic', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    min-width: 80px;
+}
+.share-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    color: #fff;
+}
+.share-btn span { font-size: 20px; font-weight: 800; }
+.share-btn small { font-size: 11px; opacity: 0.9; }
+.share-twitter { background: #000; }
+.share-facebook { background: #1877f2; }
+.share-whatsapp { background: #25d366; }
+.share-telegram { background: #0088cc; }
+.share-linkedin { background: #0a66c2; }
+.share-copy { background: #666; }
+
+/* Related */
+.related-section { margin-top: 30px; }
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+.related-item {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    transition: all 0.2s;
+}
+.related-item:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
+.related-item img { width: 100%; height: 130px; object-fit: cover; }
+.related-item-body { padding: 10px; }
+.related-item-body h4 { font-size: 13px; font-weight: 700; line-height: 1.5; font-family: 'Noto Kufi Arabic', sans-serif; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.related-item-body span { font-size: 11px; color: #888; display: block; margin-top: 4px; }
+
+@media (max-width: 480px) {
+    .share-buttons { justify-content: center; }
+    .share-btn { min-width: 70px; padding: 10px 14px; }
+    .article-header h1 { font-size: 20px; }
+}
+</style>
+
+<script>
+const API_BASE = '';
+let currentOffset = 0;
+const limit = 12;
+let currentSection = '';
+let isLoading = false;
+
+// Parse URL
+const path = window.location.pathname;
+const pathParts = path.split('/').filter(Boolean);
+const params = new URLSearchParams(window.location.search);
+
+// Route detection
+let pageType = 'section'; // section | article | opinion | latest
+let articleId = null;
+
+if (path.startsWith('/article/')) {
+    pageType = 'article';
+    articleId = pathParts[1]; // /article/123 or /article/123/slug
+} else if (path.startsWith('/opinion/')) {
+    pageType = 'opinion';
+    articleId = pathParts[1];
+} else if (params.get('id')) {
+    // Legacy ?id= support
+    pageType = params.get('type') === 'opinion' ? 'opinion' : 'article';
+    articleId = params.get('id');
+} else if (path === '/latest-news' || path === '/latest') {
+    pageType = 'latest';
+} else if (pathParts[0]) {
+    pageType = 'section';
+    currentSection = pathParts[0];
+}
+
+// Init
+if (pageType === 'article' || pageType === 'opinion') {
+    document.getElementById('articlesList').style.display = 'none';
+    document.getElementById('articleView').style.display = 'block';
+    loadArticle(articleId, pageType);
+} else {
+    loadSectionArticles();
+    if (currentSection) setActiveNav(currentSection);
+}
+
+// Load article with share URLs
+async function loadArticle(id, type) {
+    try {
+        const endpoint = type === 'opinion' ? '/api/opinions/' : '/api/articles/';
+        const article = await fetch(API_BASE + endpoint + id).then(r => r.json());
+        if (article.error) throw new Error(article.error);
+
+        // Update page title & meta
+        document.getElementById('sectionTitle').textContent = article.section_name || article.author_name || 'المقال';
+        document.title = article.title + ' — عاجل';
+
+        // Update OG tags
+        document.getElementById('metaTitle').content = article.title + ' — عاجل';
+        document.getElementById('metaDesc').content = (article.summary || article.title).substring(0, 160);
+        document.getElementById('ogType').content = 'article';
+        document.getElementById('ogTitle').content = article.title;
+        document.getElementById('ogDesc').content = (article.summary || article.title).substring(0, 160);
+        document.getElementById('ogUrl').content = article.url || window.location.href;
+        document.getElementById('twTitle').content = article.title;
+        document.getElementById('twDesc').content = (article.summary || article.title).substring(0, 160);
+        document.getElementById('canonicalLink').href = article.url || window.location.href;
+
+        // Update URL to clean slug URL (without reload)
+        if (article.url && type === 'article') {
+            const cleanPath = new URL(article.url).pathname;
+            if (window.location.pathname !== cleanPath) {
+                history.replaceState(null, '', cleanPath);
+            }
+        }
+
+        // Section link
+        const sectionLink = document.getElementById('articleSectionLink');
+        if (article.section_slug) {
+            sectionLink.textContent = article.section_name;
+            sectionLink.href = '/' + article.section_slug;
+            sectionLink.style.display = 'inline-block';
+        } else {
+            sectionLink.style.display = 'none';
+        }
+
+        document.getElementById('articleTitle').textContent = article.title;
+        document.getElementById('articleDate').textContent = formatDateAr(article.created_at);
+        document.getElementById('articleAuthor').textContent = article.author_name || 'عاجل';
+        document.getElementById('articleViews').textContent = (article.views || 0) + ' مشاهدة';
+
+        if (article.image) {
+            document.getElementById('articleImage').innerHTML = `<img src="${article.image}" alt="${article.title}">`;
+            // Update OG image
+            let ogImg = document.querySelector('meta[property="og:image"]');
+            if (!ogImg) { ogImg = document.createElement('meta'); ogImg.setAttribute('property', 'og:image'); document.head.appendChild(ogImg); }
+            ogImg.content = article.image;
+        }
+
+        // Body content
+        const body = article.content || article.summary || '';
+        document.getElementById('articleBody').innerHTML = body.split('\n').map(p => p.trim() ? `<p>${p}</p>` : '').join('');
+
+        // Share buttons
+        const share = article.share || {};
+        setShareUrl('shareTwitter', share.twitter);
+        setShareUrl('shareFacebook', share.facebook);
+        setShareUrl('shareWhatsapp', share.whatsapp);
+        setShareUrl('shareTelegram', share.telegram);
+        setShareUrl('shareLinkedin', share.linkedin);
+
+        // Copy link
+        document.getElementById('shareCopy').onclick = () => {
+            const url = share.copy || share.share_url || window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                const toast = document.getElementById('toast');
+                toast.style.display = 'block';
+                toast.textContent = '✅ تم نسخ الرابط';
+                setTimeout(() => toast.style.display = 'none', 2000);
+            });
+        };
+
+        // Related articles
+        if (article.related && article.related.length > 0) {
+            document.getElementById('relatedSection').style.display = 'block';
+            document.getElementById('relatedGrid').innerHTML = article.related.map(r => `
+                <a href="/article/${r.id}" class="related-item">
+                    ${r.image ? `<img src="${r.image}" alt="" loading="lazy">` : '<div style="height:130px;background:#f0f0f0;"></div>'}
+                    <div class="related-item-body">
+                        <h4>${r.title}</h4>
+                        <span>${formatDateAr(r.created_at)}</span>
+                    </div>
+                </a>
+            `).join('');
+        }
+
+    } catch (err) {
+        document.getElementById('articleView').innerHTML = `
+            <div style="text-align:center;padding:80px 20px;">
+                <div style="font-size:64px;margin-bottom:20px;">📰</div>
+                <h2 style="margin-bottom:10px;">المقال غير موجود</h2>
+                <p style="color:#888;margin-bottom:20px;">ربما تم حذف هذا الخبر أو أن الرابط غير صحيح</p>
+                <a href="/" style="color:#d71920;font-weight:700;font-size:16px;">← العودة للرئيسية</a>
+            </div>`;
+    }
+}
+
+function setShareUrl(id, url) {
+    const el = document.getElementById(id);
+    if (el && url) {
+        if (el.tagName === 'A') el.href = url;
+    }
+}
+
+async function loadSectionArticles() {
+    if (isLoading) return;
+    isLoading = true;
+
+    const sectionNames = {
+        'local': 'المحليات', 'economy': 'الاقتصاد', 'sports': 'رياضة',
+        'international': 'مدارات عالمية', 'jobs': 'وظائف', 'entertainment': 'الترفيه',
+        'misc': 'منوعات', 'tourism': 'سياحة وسفر', 'society': 'مجتمع', 'worldcup': 'المونديال',
+        'opinion': 'مقالات الرأي', 'latest-news': 'آخر الأخبار'
+    };
+
+    document.getElementById('sectionTitle').textContent = sectionNames[currentSection] || 'آخر الأخبار';
+    document.title = (sectionNames[currentSection] || 'آخر الأخبار') + ' — عاجل';
+
+    try {
+        let articles;
+        if (currentSection === 'opinion') {
+            articles = await fetch(API_BASE + '/api/opinions?limit=' + limit).then(r => r.json());
+            renderOpinions(articles);
+        } else {
+            let url = API_BASE + '/api/articles?limit=' + limit + '&offset=' + currentOffset;
+            if (currentSection && currentSection !== 'latest-news') url += '&section=' + currentSection;
+            articles = await fetch(url).then(r => r.json());
+            renderArticles(articles);
+        }
+    } catch (err) {
+        console.error('Error:', err);
+    }
+
+    isLoading = false;
+}
+
+function renderArticles(articles) {
+    const grid = document.getElementById('articlesGrid');
+
+    if (articles.length === 0 && currentOffset === 0) {
+        grid.innerHTML = '<div style="text-align:center;padding:60px;color:#888;"><div style="font-size:48px;margin-bottom:10px;">📭</div><p>لا توجد أخبار في هذا القسم حالياً</p></div>';
+        document.getElementById('loadMoreBtn').style.display = 'none';
+        return;
+    }
+
+    const html = articles.map(a => `
+        <a href="/article/${a.id}" class="latest-card">
+            ${a.image ? `<img src="${a.image}" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:6px 6px 0 0;" loading="lazy">` : `<div class="img-placeholder card" style="background:#e63946;"><span>صورة</span></div>`}
+            <div class="latest-card-body">
+                <span class="card-cat">${a.section_name || ''}</span>
+                <h3>${a.title}</h3>
+                <span class="card-date">${formatDateAr(a.created_at)}</span>
+                <span class="read-more">اقرأ المزيد ←</span>
+            </div>
+        </a>
+    `).join('');
+
+    if (currentOffset === 0) grid.innerHTML = html;
+    else grid.innerHTML += html;
+
+    currentOffset += limit;
+    if (articles.length < limit) document.getElementById('loadMoreBtn').style.display = 'none';
+}
+
+function renderOpinions(opinions) {
+    const grid = document.getElementById('articlesGrid');
+    if (opinions.length === 0) {
+        grid.innerHTML = '<div style="text-align:center;padding:60px;color:#888;"><p>لا توجد مقالات رأي</p></div>';
+        return;
+    }
+    grid.innerHTML = opinions.map(o => `
+        <a href="/opinion/${o.id}" class="latest-card">
+            <div class="latest-card-body">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+                    <div style="width:40px;height:40px;background:${o.author_color || '#d71920'};color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;">${o.author_letter || o.author_name.charAt(0)}</div>
+                    <span style="font-weight:700;font-size:13px;">${o.author_name}</span>
+                </div>
+                <h3>${o.title}</h3>
+                <p style="font-size:13px;color:#666;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">${o.summary || ''}</p>
+                <span class="card-date">${formatDateAr(o.created_at)}</span>
+            </div>
+        </a>
+    `).join('');
+    document.getElementById('loadMoreBtn').style.display = 'none';
+}
+
+function loadMoreArticles() { loadSectionArticles(); }
+
+function setActiveNav(slug) {
+    document.querySelectorAll('.nav-list li').forEach(li => li.classList.remove('active'));
+    document.querySelectorAll('.nav-list a').forEach(a => {
+        if (a.getAttribute('href') === '/' + slug) a.parentElement.classList.add('active');
+    });
+}
+
+function formatDateAr(d) {
+    if (!d) return '';
+    const date = new Date(d);
+    const days = ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
+    const months = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'];
+    return days[date.getDay()] + ' ' + date.getDate() + ' ' + months[date.getMonth()] + ' ' + date.getFullYear();
+}
+
+// Mobile menu
+document.getElementById('mobileMenuBtn')?.addEventListener('click', () => {
+    document.getElementById('navList').classList.toggle('open');
+});
+</script>
+
+</body>
+</html>
