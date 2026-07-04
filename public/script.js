@@ -166,6 +166,143 @@ async function loadSectionPage(section, articleId, articleType) {
     }
 }
 
+// ===== PAGINATION SYSTEM =====
+const Pagination = {
+    currentPage: 1,
+    itemsPerPage: 12,
+    totalItems: 0,
+    totalPages: 0,
+    allArticles: [],
+
+    init(articles) {
+        this.allArticles = articles;
+        this.totalItems = articles.length;
+        this.totalPages = Math.ceil(this.totalItems / this.itemsPerPage);
+        this.currentPage = 1;
+        this.render();
+    },
+
+    getPageArticles(page) {
+        const start = (page - 1) * this.itemsPerPage;
+        const end = start + this.itemsPerPage;
+        return this.allArticles.slice(start, end);
+    },
+
+    render() {
+        const wrap = document.getElementById('paginationWrap');
+        const info = document.getElementById('paginationInfo');
+        const controls = document.getElementById('paginationControls');
+        const loadMore = document.getElementById('loadMoreWrap');
+
+        if (!wrap || !info || !controls) return;
+
+        if (this.totalPages <= 1) {
+            wrap.style.display = 'none';
+            if (loadMore) loadMore.style.display = 'none';
+            return;
+        }
+
+        wrap.style.display = 'flex';
+        if (loadMore) loadMore.style.display = 'none';
+
+        // Info text
+        const start = (this.currentPage - 1) * this.itemsPerPage + 1;
+        const end = Math.min(this.currentPage * this.itemsPerPage, this.totalItems);
+        info.textContent = `عرض ${start}-${end} من ${this.totalItems} خبر`;
+
+        // Controls
+        let html = '';
+
+        // Previous button
+        if (this.currentPage > 1) {
+            html += `<button class="page-btn" onclick="Pagination.goToPage(${this.currentPage - 1})">→ السابق</button>`;
+        }
+
+        // Page numbers
+        const maxVisible = 5;
+        let startPage = Math.max(1, this.currentPage - Math.floor(maxVisible / 2));
+        let endPage = Math.min(this.totalPages, startPage + maxVisible - 1);
+        if (endPage - startPage < maxVisible - 1) {
+            startPage = Math.max(1, endPage - maxVisible + 1);
+        }
+
+        if (startPage > 1) {
+            html += `<button class="page-btn" onclick="Pagination.goToPage(1)">1</button>`;
+            if (startPage > 2) html += `<span class="page-dots">...</span>`;
+        }
+
+        for (let i = startPage; i <= endPage; i++) {
+            html += `<button class="page-btn ${i === this.currentPage ? 'active' : ''}" onclick="Pagination.goToPage(${i})">${i}</button>`;
+        }
+
+        if (endPage < this.totalPages) {
+            if (endPage < this.totalPages - 1) html += `<span class="page-dots">...</span>`;
+            html += `<button class="page-btn" onclick="Pagination.goToPage(${this.totalPages})">${this.totalPages}</button>`;
+        }
+
+        // Next button
+        if (this.currentPage < this.totalPages) {
+            html += `<button class="page-btn" onclick="Pagination.goToPage(${this.currentPage + 1})">التالي ←</button>`;
+        }
+
+        controls.innerHTML = html;
+    },
+
+    async goToPage(page) {
+        if (page < 1 || page > this.totalPages) return;
+        this.currentPage = page;
+
+        // Get articles for this page
+        const articles = this.getPageArticles(page);
+
+        // Render articles
+        const grid = document.getElementById('articlesGrid');
+        if (grid && window.AjelNews) {
+            window.AjelNews.renderNewsCards(articles, 'articlesGrid');
+        }
+
+        // Update pagination
+        this.render();
+
+        // Scroll to top of news section
+        const section = document.querySelector('.latest-section');
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Update URL without reload
+        const url = new URL(window.location);
+        url.searchParams.set('page', page);
+        history.pushState({}, '', url);
+    }
+};
+
+// Load more news (for initial load)
+async function loadMoreNews() {
+    const btn = document.getElementById('loadMoreBtn');
+    if (btn) {
+        btn.textContent = 'جاري التحميل...';
+        btn.disabled = true;
+    }
+
+    try {
+        const articles = await window.AjelNews.fetchAllNews();
+        if (articles && articles.length > 0) {
+            Pagination.init(articles);
+            const pageArticles = Pagination.getPageArticles(1);
+            window.AjelNews.renderNewsCards(pageArticles, 'articlesGrid');
+            Pagination.render();
+        }
+    } catch (err) {
+        console.error('Load more error:', err);
+    }
+
+    if (btn) {
+        btn.textContent = 'تحميل المزيد من الأخبار';
+        btn.disabled = false;
+    }
+}
+
 // ===== LIVE NEWS (Static data + Client-side RSS fallback) =====
 async function loadLiveNews() {
     try {

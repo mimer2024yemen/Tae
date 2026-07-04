@@ -384,8 +384,13 @@
                 </div>
             </a>
         </div>
-        <div class="load-more-wrap">
-            <a href="/latest-news" class="load-more-btn">تحميل المزيد من الأخبار</a>
+        <!-- Pagination -->
+        <div class="pagination-wrap" id="paginationWrap" style="display:none;">
+            <div class="pagination-info" id="paginationInfo"></div>
+            <div class="pagination-controls" id="paginationControls"></div>
+        </div>
+        <div class="load-more-wrap" id="loadMoreWrap">
+            <button class="load-more-btn" id="loadMoreBtn" onclick="loadMoreNews()">تحميل المزيد من الأخبار</button>
         </div>
     </div>
 </section>

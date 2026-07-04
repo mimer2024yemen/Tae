@@ -209,7 +209,7 @@ async function fetchAllNews() {
         }
     });
 
-    // Sort by date (newest first)
+    // Sort by date (newest first) - critical for showing latest news
     allArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     // Remove duplicates by title similarity
@@ -396,8 +396,17 @@ function startAutoRefresh(intervalMs = 5 * 60 * 1000) {
 function updateHomePage(articles) {
     renderSliderNews(articles, 'heroSlider');
     renderBreakingNews(articles, 'tickerContent');
-    renderNewsCards(articles.slice(0, 6), 'articlesGrid');
-    renderNewsCards(articles, 'latestGrid');
+
+    // Initialize pagination for latest news
+    if (window.Pagination && articles.length > 12) {
+        Pagination.init(articles);
+        const pageArticles = Pagination.getPageArticles(1);
+        renderNewsCards(pageArticles, 'articlesGrid');
+    } else {
+        renderNewsCards(articles.slice(0, 12), 'articlesGrid');
+    }
+
+    renderNewsCards(articles.slice(0, 6), 'latestGrid');
 }
 
 // ===== CATEGORY FILTER =====

@@ -1246,6 +1246,88 @@ img[loading="lazy"]::before {
 }
 .card-share-btn:hover { background: var(--red); color: var(--white); }
 
+/* ===== PAGINATION ===== */
+.pagination-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 32px 0;
+    margin-top: 20px;
+    border-top: 2px solid var(--gray-light);
+}
+
+.pagination-info {
+    font-size: 13px;
+    color: var(--gray-3);
+    font-family: var(--font-ui);
+}
+
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 12px;
+    border: 2px solid var(--gray-light);
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--dark);
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--font-ui);
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.page-btn:hover {
+    border-color: var(--red);
+    color: var(--red);
+    background: var(--red-light);
+}
+
+.page-btn.active {
+    background: var(--red);
+    color: var(--white);
+    border-color: var(--red);
+    font-weight: 800;
+}
+
+.page-dots {
+    color: var(--gray-4);
+    font-size: 14px;
+    padding: 0 4px;
+}
+
+/* Dark mode pagination */
+.dark-mode .page-btn {
+    background: #1a1a1a;
+    border-color: #333;
+    color: #e0e0e0;
+}
+.dark-mode .page-btn:hover {
+    border-color: var(--red);
+    color: var(--red);
+    background: #2a1010;
+}
+.dark-mode .page-btn.active {
+    background: var(--red);
+    color: var(--white);
+    border-color: var(--red);
+}
+.dark-mode .pagination-wrap {
+    border-top-color: #2a2a2a;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
     .hero-grid { grid-template-columns: 1fr; }
