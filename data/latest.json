@@ -1,30 +1,6 @@
 {
-  "updated": "2026-07-04T20:24:51.916Z",
+  "updated": "2026-07-04T20:33:01.716Z",
   "articles": [
-    {
-      "id": "cnn_ekazm5",
-      "title": "READ: Trump indictment related to hush money payment",
-      "summary": "",
-      "image": "",
-      "link": "https://cnn.it/411KYN7",
-      "source": "CNN",
-      "sourceLogo": "📺",
-      "category": "international",
-      "date": "2026-07-04T20:24:38.017Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "cnn_n68ymp",
-      "title": "Russian authorities detain suspect over St. Petersburg cafe blast",
-      "summary": "",
-      "image": "",
-      "link": "https://edition.cnn.com/webview/europe/live-news/russia-ukraine-war-news-04-03-23/index.html",
-      "source": "CNN",
-      "sourceLogo": "📺",
-      "category": "international",
-      "date": "2026-07-04T20:24:38.017Z",
-      "timeAgo": "الآن"
-    },
     {
       "id": "cnn_1ofomg",
       "title": "Hundreds of millions at risk from Chinese shopping app malware",
@@ -34,259 +10,43 @@
       "source": "CNN",
       "sourceLogo": "📺",
       "category": "international",
-      "date": "2026-07-04T20:24:38.017Z",
+      "date": "2026-07-04T20:32:49.248Z",
+      "timeAgo": "الآن"
+    },
+    {
+      "id": "cnn_n68ymp",
+      "title": "Russian authorities detain suspect over St. Petersburg cafe blast",
+      "summary": "",
+      "image": "https://media.cnn.com/api/v1/images/stellar/prod/230402121439-03-ukraine-counter-offensive.jpg?c=16x9&q=w_800,c_fill",
+      "link": "https://edition.cnn.com/webview/europe/live-news/russia-ukraine-war-news-04-03-23/index.html",
+      "source": "CNN",
+      "sourceLogo": "📺",
+      "category": "international",
+      "date": "2026-07-04T20:32:48.744Z",
+      "timeAgo": "الآن"
+    },
+    {
+      "id": "cnn_ekazm5",
+      "title": "READ: Trump indictment related to hush money payment",
+      "summary": "",
+      "image": "https://media.cnn.com/api/v1/images/stellar/prod/230404161048-02-trump-indictment-unsealed.jpg?c=16x9&q=w_800,c_fill",
+      "link": "https://cnn.it/411KYN7",
+      "source": "CNN",
+      "sourceLogo": "📺",
+      "category": "international",
+      "date": "2026-07-04T20:32:48.682Z",
       "timeAgo": "الآن"
     },
     {
       "id": "cnn_mukck3",
       "title": "Trump pleads not guilty to 34 felony counts",
       "summary": "",
-      "image": "",
+      "image": "https://media.cnn.com/api/v1/images/stellar/prod/230331140346-donald-trump-230304.jpg?c=16x9&q=w_800,c_fill",
       "link": "https://edition.cnn.com/webview/politics/live-news/trump-indictment-stormy-daniels-news-04-03-23/index.html",
       "source": "CNN",
       "sourceLogo": "📺",
       "category": "international",
-      "date": "2026-07-04T20:24:38.016Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_i365bp",
-      "title": "Ukraine strikes oil terminals near St. Petersburg in Russia",
-      "summary": "The long-range strikes are the latest salvo in Ukraine’s expanding campaign to inflict economic damage on Russia and hinder its war machine.",
-      "image": "",
-      "link": "https://www.dw.com/en/ukraine-strikes-oil-terminals-near-st-petersburg-in-russia/a-77830574?maca=en-rss-en-all-1573-rdf",
-      "source": "DW عربي",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T20:24:31.310Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_qluqmj",
-      "title": "US 250th Independence Day: Merz, Modi extend congratulations",
-      "summary": "The US is celebrating 250 years of independence with a massive fireworks display and military flyovers in the capital. Leaders from German Chancellor Friedrich Merz to India's PM Narendra Modi sent their well-wishes.",
-      "image": "",
-      "link": "https://www.dw.com/en/us-250th-independence-day-merz-modi-extend-congratulations/live-77833580?maca=en-rss-en-all-1573-rdf",
-      "source": "DW عربي",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T20:24:31.310Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_8ya6ed",
-      "title": "Mali rebels target army bases, prison in fresh attacks",
-      "summary": "The army claimed it had regained control after the coordinated assaults on several towns and cities by Tuareg rebels and Islamists.",
-      "image": "",
-      "link": "https://www.dw.com/en/mali-rebels-target-army-bases-prison-in-fresh-attacks/a-77833144?maca=en-rss-en-all-1573-rdf",
-      "source": "DW عربي",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T20:24:31.310Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_250v4y",
-      "title": "Germany news: AfD elects leaders amid massive protests",
-      "summary": "Party delegates of the far-right AfD are meeting in Erfurt as tens of thousands of people are protesting the event. Meanwhile, Jürgen Klopp said he was \"ready\" to jump in as Germany's head coach. DW has more.",
-      "image": "",
-      "link": "https://www.dw.com/en/germany-news-afd-elects-leaders-amid-massive-protests/live-77830605?maca=en-rss-en-all-1573-rdf",
-      "source": "DW عربي",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T20:24:31.310Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_7beifl",
-      "title": "Welcoming the Taliban? — Germany's new Afghanistan policy",
-      "summary": "To facilitate the deportation of criminals to Afghanistan, the German government is allowing Taliban diplomats into the country.",
-      "image": "",
-      "link": "https://www.dw.com/en/welcoming-the-taliban-germany-s-new-afghanistan-policy/a-77786384?maca=en-rss-en-all-1573-rdf",
-      "source": "DW عربي",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T20:24:31.310Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_9bteux",
-      "title": "Pope Leo calls on Europe to do more for migrants",
-      "summary": "The pontiff's trip to the migration frontline of Lampedusa underscored a stark message for Europe and the United States as intolerance and indifference rise.",
-      "image": "",
-      "link": "https://www.dw.com/en/pope-leo-calls-on-europe-to-do-more-for-migrants/a-77831684?maca=en-rss-en-all-1573-rdf",
-      "source": "DW عربي",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T20:24:31.310Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_e4e1j3",
-      "title": "India news: Government lists 23 Pakistanis as 'terrorists'",
-      "summary": "Indian government has designated 23 Pakistan-based individuals as \"terrorists\" under its anti-terror law. Follow DW for more.",
-      "image": "",
-      "link": "https://www.dw.com/en/india-news-government-lists-23-pakistanis-as-terrorists/live-77830565?maca=en-rss-en-all-1573-rdf",
-      "source": "DW عربي",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T20:24:31.310Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_b2dpmm",
-      "title": "Australia's Great Barrier Reef again avoids 'in danger' label",
-      "summary": "UNESCO acknowledged Australia's efforts towards the Great Barrier Reef's health but raised concerns over mass bleaching. For now, the popular marine site seems to have dodged the \"endangered\" tag.",
-      "image": "",
-      "link": "https://www.dw.com/en/australia-s-great-barrier-reef-again-avoids-in-danger-label/a-77829982?maca=en-rss-en-all-1573-rdf",
-      "source": "DW عربي",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T20:24:31.310Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_8pvzlj",
-      "title": "Trump set to put NATO unity to the test at Turkey summit",
-      "summary": "NATO Secretary-General Mark Rutte is working to keep the alliance united and Donald Trump engaged. But disputes over burden sharing, US military commitments, and the Iran war are creating a major test for NATO unity.",
-      "image": "",
-      "link": "https://www.dw.com/en/trump-set-to-put-nato-unity-to-the-test-at-turkey-summit/a-77824515?maca=en-rss-en-all-1573-rdf",
-      "source": "DW عربي",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T20:24:31.310Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_q50ctu",
-      "title": "Kielce pogrom in Poland: 80th anniversary of 1946 massacre",
-      "summary": "Just over a year after World War II ended, a mob in the Polish city of Kielce killed around 40 Jews, some of them Holocaust survivors. A lie about ritual child murder escalated the violence.",
-      "image": "",
-      "link": "https://www.dw.com/en/kielce-pogrom-in-poland-80th-anniversary-of-1946-massacre/a-77826002?maca=en-rss-en-all-1573-rdf",
-      "source": "DW عربي",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T20:24:31.310Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_m8847h",
-      "title": "US: President Trump pardons 11 people, including Clean Air Act violators",
-      "summary": "Donald Trump has granted pardons to nine people convicted of violating a key environmental law. The US President has also pardoned an associate of convicted felon and former lobbyist Jack Abramoff.",
-      "image": "",
-      "link": "https://www.dw.com/en/us-president-trump-pardons-11-people-including-clean-air-act-violators/a-77829438?maca=en-rss-en-all-1573-rdf",
-      "source": "DW عربي",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T20:24:31.310Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_fv10iy",
-      "title": "Iran: Khamenei's funeral ceremonies officially begin",
-      "summary": "Huge crowds have gathered in Tehran to pay their final respects to Iran's supreme leader, who was killed in an airstrike at the start of the US-Israeli campaign against Iran.",
-      "image": "",
-      "link": "https://www.dw.com/en/iran-khamenei-s-funeral-ceremonies-officially-begin/a-77816592?maca=en-rss-en-all-1573-rdf",
-      "source": "DW عربي",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T20:24:31.310Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_911kx0",
-      "title": "Heat wave upends July Fourth celebrations across US",
-      "summary": "A dangerous heat wave has disrupted July Fourth events across the United States, including Donald Trump's flagship Great American State Fair, as the nation prepares to mark its 250th birthday.",
-      "image": "",
-      "link": "https://www.dw.com/en/heat-wave-upends-july-fourth-celebrations-across-us/a-77827949?maca=en-rss-en-all-1573-rdf",
-      "source": "DW عربي",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T20:24:31.310Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_spsky",
-      "title": "Taylor Swift, Travis Kelce tie knot in star-studded ceremony",
-      "summary": "The couple got married in a major star-studded celebration at Madison Square Garden over the Fourth of July weekend.",
-      "image": "",
-      "link": "https://www.dw.com/en/taylor-swift-travis-kelce-tie-knot-in-star-studded-ceremony/a-77812947?maca=en-rss-en-all-1573-rdf",
-      "source": "DW عربي",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T20:24:31.310Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_ey6b36",
-      "title": "NASA launches spacecraft to recover sinking telescope",
-      "summary": "The Swift telescope has been affected by recent solar storms and is sinking faster than ever, heading toward Earth. A NASA mission will try to capture it and boost its orbit.",
-      "image": "",
-      "link": "https://www.dw.com/en/nasa-launches-spacecraft-to-recover-sinking-telescope/a-77826514?maca=en-rss-en-all-1573-rdf",
-      "source": "DW عربي",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T20:24:31.310Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_obf16j",
-      "title": "Lyra McKee: 3 men acquitted of killing N. Irish journalist",
-      "summary": "McKee was killed while covering clashes between Republicans and police in 2019. Judge Patricia Smyth said evidence was insufficient for a conviction, while McKee's family expressed disappointment.",
-      "image": "",
-      "link": "https://www.dw.com/en/lyra-mckee-3-men-acquitted-of-killing-n-irish-journalist/a-77825712?maca=en-rss-en-all-1573-rdf",
-      "source": "DW عربي",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T20:24:31.310Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_jf0xd2",
-      "title": "Maltese tycoon faces trial over Caruana Galizia murder",
-      "summary": "The Maltese businessman accused of masterminding journalist Daphne Caruana Galizia’s 2017 murder is in court — seven years after his arrest. Five other men have already been found guilty for their roles in the murder.",
-      "image": "",
-      "link": "https://www.dw.com/en/maltese-tycoon-faces-trial-over-caruana-galizia-murder/a-77823553?maca=en-rss-en-all-1573-rdf",
-      "source": "DW عربي",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T20:24:31.310Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_7dycfx",
-      "title": "Pope Leo defends US immigrant history at 250th anniversary",
-      "summary": "The first US pope said \"successive waves of immigrants\" played a role in shaping the United States, which marks its 250th anniversary on Saturday. Leo's remarks have made him a target of President Donald Trump.",
-      "image": "",
-      "link": "https://www.dw.com/en/pope-leo-defends-us-immigrant-history-at-250th-anniversary/a-77825299?maca=en-rss-en-all-1573-rdf",
-      "source": "DW عربي",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T20:24:31.310Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_q7q88z",
-      "title": "NATO summit: European members and Canada pledge long-term Ukraine aid",
-      "summary": "The NATO alliance's European members and Canada have signaled a readiness to fully take over the financing of Ukraine's fight against Russia.",
-      "image": "",
-      "link": "https://www.dw.com/en/nato-summit-european-members-and-canada-pledge-long-term-ukraine-aid/a-77825447?maca=en-rss-en-all-1573-rdf",
-      "source": "DW عربي",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T20:24:31.310Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_mcgqf0",
-      "title": "The moral test US founding father Thomas Jefferson failed?",
-      "summary": "Polish general and freedom fighter Thaddeus Kosciuszko presented US founding father Thomas Jefferson with a moral test. Historians still disagree on whether Jefferson passed or not.",
-      "image": "",
-      "link": "https://www.dw.com/en/the-moral-test-us-founding-father-thomas-jefferson-failed/a-77833752?maca=en-rss-en-all-1573-rdf",
-      "source": "DW عربي",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T20:24:31.309Z",
+      "date": "2026-07-04T20:32:47.992Z",
       "timeAgo": "الآن"
     },
     {
@@ -298,8 +58,20 @@
       "source": "BBC عربي",
       "sourceLogo": "🇬🇧",
       "category": "international",
-      "date": "2026-07-04T20:24:26.837Z",
+      "date": "2026-07-04T20:32:31.456Z",
       "timeAgo": "الآن"
+    },
+    {
+      "id": "abc_qkgxqv",
+      "title": "WATCH:  Dreamers and Innovators: Americans and their cars",
+      "summary": "Cars have been a unique highlight of American culture ever since the Model-T first rolled off the factory line. \"Americans have always measured freedom in miles per hour,\" Jesse Palmer says.",
+      "image": "https://s.abcnews.com/images/US/260704_abc_dca_dai_american_cars_314_hpMain_4x3_384.jpg",
+      "link": "https://abcnews.com/video/134482214/",
+      "source": "ABC News",
+      "sourceLogo": "🇺🇸",
+      "category": "international",
+      "date": "2026-07-04T20:28:29.000Z",
+      "timeAgo": "قبل 4 دقيقة"
     },
     {
       "id": "sky_8850i7",
@@ -311,7 +83,19 @@
       "sourceLogo": "🔵",
       "category": "sports",
       "date": "2026-07-04T20:23:14.000Z",
-      "timeAgo": "قبل 1 دقيقة"
+      "timeAgo": "قبل 9 دقيقة"
+    },
+    {
+      "id": "nyt_em1g9x",
+      "title": "The Funeral of Iran’s Supreme Leader, Ali Khamenei",
+      "summary": "Iran’s new leaders are commemorating Ayatollah Ali Khamenei, killed on the first day of the U.S.-Israeli war against the country, with a funeral unlike any other in recent history.",
+      "image": "https://static01.nyt.com/images/2026/07/04/multimedia/04int-Iran-Funeral-Photos-btlf/04int-Iran-Funeral-Photos-btlf-mediumSquareAt3X.jpg",
+      "link": "https://www.nytimes.com/2026/07/04/world/middleeast/the-funeral-of-irans-supreme-leader-ali-khamenei.html",
+      "source": "NY Times",
+      "sourceLogo": "📰",
+      "category": "international",
+      "date": "2026-07-04T20:22:03.000Z",
+      "timeAgo": "قبل 10 دقيقة"
     },
     {
       "id": "abc_wdvhvg",
@@ -323,7 +107,7 @@
       "sourceLogo": "🇺🇸",
       "category": "international",
       "date": "2026-07-04T20:19:26.000Z",
-      "timeAgo": "قبل 5 دقيقة"
+      "timeAgo": "قبل 13 دقيقة"
     },
     {
       "id": "bbc-sport_vzohjg",
@@ -335,7 +119,7 @@
       "sourceLogo": "⚽",
       "category": "sports",
       "date": "2026-07-04T20:19:11.000Z",
-      "timeAgo": "قبل 5 دقيقة"
+      "timeAgo": "قبل 13 دقيقة"
     },
     {
       "id": "bbc-sport_at0d2q",
@@ -347,19 +131,7 @@
       "sourceLogo": "⚽",
       "category": "sports",
       "date": "2026-07-04T20:07:24.000Z",
-      "timeAgo": "قبل 17 دقيقة"
-    },
-    {
-      "id": "nyt_em1g9x",
-      "title": "The Funeral of Iran’s Supreme Leader, Ali Khamenei",
-      "summary": "Iran’s new leaders are commemorating Ayatollah Ali Khamenei, killed on the first day of the U.S.-Israeli war against the country, with a funeral unlike any other in recent history.",
-      "image": "https://static01.nyt.com/images/2026/07/04/multimedia/04int-Iran-Funeral-Photos-btlf/04int-Iran-Funeral-Photos-btlf-mediumSquareAt3X.jpg",
-      "link": "https://www.nytimes.com/2026/07/04/world/middleeast/the-funeral-of-irans-supreme-leader-ali-khamenei.html",
-      "source": "NY Times",
-      "sourceLogo": "📰",
-      "category": "international",
-      "date": "2026-07-04T20:02:05.000Z",
-      "timeAgo": "قبل 22 دقيقة"
+      "timeAgo": "قبل 25 دقيقة"
     },
     {
       "id": "guardian_sugigl",
@@ -371,7 +143,7 @@
       "sourceLogo": "🇬🇧",
       "category": "international",
       "date": "2026-07-04T20:00:07.000Z",
-      "timeAgo": "قبل 24 دقيقة"
+      "timeAgo": "قبل 32 دقيقة"
     },
     {
       "id": "guardian_8fsecz",
@@ -383,7 +155,7 @@
       "sourceLogo": "🇬🇧",
       "category": "international",
       "date": "2026-07-04T20:00:07.000Z",
-      "timeAgo": "قبل 24 دقيقة"
+      "timeAgo": "قبل 32 دقيقة"
     },
     {
       "id": "bloomberg_hkxwq3",
@@ -395,7 +167,7 @@
       "sourceLogo": "📊",
       "category": "economy",
       "date": "2026-07-04T20:00:00.000Z",
-      "timeAgo": "قبل 24 دقيقة"
+      "timeAgo": "قبل 33 دقيقة"
     },
     {
       "id": "sky_j2ba33",
@@ -407,7 +179,7 @@
       "sourceLogo": "🔵",
       "category": "international",
       "date": "2026-07-04T19:55:59.000Z",
-      "timeAgo": "قبل 28 دقيقة"
+      "timeAgo": "قبل 37 دقيقة"
     },
     {
       "id": "bbc_m2gkmq",
@@ -419,7 +191,7 @@
       "sourceLogo": "🇬🇧",
       "category": "international",
       "date": "2026-07-04T19:53:52.000Z",
-      "timeAgo": "قبل 30 دقيقة"
+      "timeAgo": "قبل 39 دقيقة"
     },
     {
       "id": "sky_37jh5x",
@@ -431,7 +203,7 @@
       "sourceLogo": "🔵",
       "category": "international",
       "date": "2026-07-04T19:51:04.000Z",
-      "timeAgo": "قبل 33 دقيقة"
+      "timeAgo": "قبل 41 دقيقة"
     },
     {
       "id": "bbc-sport_xgbubg",
@@ -443,7 +215,7 @@
       "sourceLogo": "⚽",
       "category": "worldcup",
       "date": "2026-07-04T19:49:57.000Z",
-      "timeAgo": "قبل 34 دقيقة"
+      "timeAgo": "قبل 43 دقيقة"
     },
     {
       "id": "bbc-sport_z0i2xy",
@@ -455,7 +227,7 @@
       "sourceLogo": "⚽",
       "category": "sports",
       "date": "2026-07-04T19:48:04.000Z",
-      "timeAgo": "قبل 36 دقيقة"
+      "timeAgo": "قبل 44 دقيقة"
     },
     {
       "id": "sky_hdkapk",
@@ -467,7 +239,7 @@
       "sourceLogo": "🔵",
       "category": "sports",
       "date": "2026-07-04T19:45:48.000Z",
-      "timeAgo": "قبل 39 دقيقة"
+      "timeAgo": "قبل 47 دقيقة"
     },
     {
       "id": "france24_x31fxm",
@@ -479,7 +251,7 @@
       "sourceLogo": "🇫🇷",
       "category": "international",
       "date": "2026-07-04T19:43:30.000Z",
-      "timeAgo": "قبل 41 دقيقة"
+      "timeAgo": "قبل 49 دقيقة"
     },
     {
       "id": "france24_541yde",
@@ -491,7 +263,7 @@
       "sourceLogo": "🇫🇷",
       "category": "international",
       "date": "2026-07-04T19:38:25.000Z",
-      "timeAgo": "قبل 46 دقيقة"
+      "timeAgo": "قبل 54 دقيقة"
     },
     {
       "id": "abc_ow4o7",
@@ -503,7 +275,7 @@
       "sourceLogo": "🇺🇸",
       "category": "sports",
       "date": "2026-07-04T19:38:06.000Z",
-      "timeAgo": "قبل 46 دقيقة"
+      "timeAgo": "قبل 54 دقيقة"
     },
     {
       "id": "sky_nttf2b",
@@ -515,7 +287,7 @@
       "sourceLogo": "🔵",
       "category": "sports",
       "date": "2026-07-04T19:37:03.000Z",
-      "timeAgo": "قبل 47 دقيقة"
+      "timeAgo": "قبل 55 دقيقة"
     },
     {
       "id": "abc_adb2zr",
@@ -527,7 +299,7 @@
       "sourceLogo": "🇺🇸",
       "category": "international",
       "date": "2026-07-04T19:35:44.000Z",
-      "timeAgo": "قبل 49 دقيقة"
+      "timeAgo": "قبل 57 دقيقة"
     },
     {
       "id": "bbc-sport_q97gk2",
@@ -539,7 +311,7 @@
       "sourceLogo": "⚽",
       "category": "sports",
       "date": "2026-07-04T19:32:02.000Z",
-      "timeAgo": "قبل 52 دقيقة"
+      "timeAgo": "قبل 1 ساعة"
     },
     {
       "id": "sky_puregu",
@@ -551,7 +323,7 @@
       "sourceLogo": "🔵",
       "category": "sports",
       "date": "2026-07-04T19:31:45.000Z",
-      "timeAgo": "قبل 53 دقيقة"
+      "timeAgo": "قبل 1 ساعة"
     },
     {
       "id": "nyt_cr82cw",
@@ -600,6 +372,234 @@
       "category": "local",
       "date": "2026-07-04T19:06:27.000Z",
       "timeAgo": "قبل 1 ساعة"
+    },
+    {
+      "id": "bbc-sport_ctad4i",
+      "title": "Ounahi gives Morocco the lead against Canada",
+      "summary": "Azzedine Ounahi scores the opener for Morocco against Canada in the last 32 of the 2026 World Cup.",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/5619/live/826ce4f0-77d5-11f1-b976-0b9c15b0ccfc.jpg",
+      "link": "https://www.bbc.co.uk/sport/football/videos/c9q23dlgw72o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Sport",
+      "sourceLogo": "⚽",
+      "category": "worldcup",
+      "date": "2026-07-04T19:04:56.000Z",
+      "timeAgo": "قبل 1 ساعة"
+    },
+    {
+      "id": "sky_ib6ayy",
+      "title": "أسود الأطلس يعبرون كندا بثلاثية ويبلغون ربع نهائي المونديال",
+      "summary": "انتزع المنتخب المغربي بطاقة التأهل إلى دور الثمانية في بطولة كأس العالم، بعد تغلبه على نظيره الكندي بثلاثة أهداف دون رد في مباراة حبست أنفاس الجماهير ضمن منافسات دور الستة عشر.",
+      "image": "https://images.skynewsarabia.com/images/v1/2026/07/04/1879177/95/53/1-1879177.jpg",
+      "link": "https://www.skynewsarabia.com/sport/1879178-%D8%A3%D8%B3%D9%88%D8%AF-%D8%A7%D9%84%D8%A3%D8%B7%D9%84%D8%B3-%D9%8A%D8%B9%D8%A8%D8%B1%D9%88%D9%86-%D9%83%D9%86%D8%AF%D8%A7-%D8%A8%D8%AB%D9%84%D8%A7%D8%AB%D9%8A%D8%A9-%D9%88%D9%8A%D8%A8%D9%84%D8%BA%D9%88%D9%86-%D8%B1%D8%A8%D8%B9-%D9%86%D9%87%D8%A7%D8%A6%D9%8A-%D8%A7%D9%84%D9%85%D9%88%D9%86%D8%AF%D9%8A%D8%A7%D9%84",
+      "source": "سكاي نيوز عربي",
+      "sourceLogo": "🔵",
+      "category": "sports",
+      "date": "2026-07-04T19:04:06.000Z",
+      "timeAgo": "قبل 1 ساعة"
+    },
+    {
+      "id": "abc_fgrdaf",
+      "title": "Over 842,000 without power across the country as US is blanketed by heatwave",
+      "summary": "As America begins to celebrate its 250th birthday on Saturday, there are nearly 1 million outages being reported across multiple states.",
+      "image": "https://s.abcnews.com/images/US/us-heatwave-america-250_1783161612353_hpMain_4x3t_384.jpg",
+      "link": "https://abcnews.com/US/1-million-power-country-us-blanketed-heatwave/story?id=134467508",
+      "source": "ABC News",
+      "sourceLogo": "🇺🇸",
+      "category": "international",
+      "date": "2026-07-04T19:01:57.000Z",
+      "timeAgo": "قبل 1 ساعة"
+    },
+    {
+      "id": "bbc-sport_3l7kr6",
+      "title": "'Absolutely sensational!' - best shots from day six",
+      "summary": "Enjoy the best shots from day six at Wimbledon, featuring 2024 finalist Jasmine Paolini and British qualifier Arthur Fery.",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/068d/live/ffb92b90-77d9-11f1-9510-1546718f668b.jpg",
+      "link": "https://www.bbc.co.uk/sport/tennis/videos/cdx7pdynvrqo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Sport",
+      "sourceLogo": "⚽",
+      "category": "sports",
+      "date": "2026-07-04T19:01:57.000Z",
+      "timeAgo": "قبل 1 ساعة"
+    },
+    {
+      "id": "abc_4u9865",
+      "title": "America 250: David Muir climbs up to the Statue of Liberty's torch",
+      "summary": "\"World News Tonight\" anchor David Muir climbed up to the torch of the Statue of Liberty as part of ABC News' coverage of America's 250th birthday.",
+      "image": "https://s.abcnews.com/images/US/IMG_7682_1783120969538_hpMain_4x3t_384.jpeg",
+      "link": "https://abcnews.com/US/america-250-david-muir-climbs-statue-libertys-torch/story?id=134390363",
+      "source": "ABC News",
+      "sourceLogo": "🇺🇸",
+      "category": "international",
+      "date": "2026-07-04T18:54:22.000Z",
+      "timeAgo": "قبل 1 ساعة"
+    },
+    {
+      "id": "bbc-sport_ewbuyw",
+      "title": "Why England won't fear Mexico or the Azteca - Shearer",
+      "summary": "Former England captain Alan Shearer explains why Thomas Tuchel's team will not be worried about the difficult conditions when they play Mexico at the Azteca Stadium.",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/86ec/live/f1abd730-77db-11f1-a627-714adb4eed6e.jpg",
+      "link": "https://www.bbc.co.uk/sport/football/articles/c4gy0l7x25wo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Sport",
+      "sourceLogo": "⚽",
+      "category": "sports",
+      "date": "2026-07-04T18:51:18.000Z",
+      "timeAgo": "قبل 1 ساعة"
+    },
+    {
+      "id": "bloomberg_y0ap17",
+      "title": "Bloomberg This Weekend 07/04/2026",
+      "summary": "The news doesn’t stop when markets close. Hosts David Gura, Christina Ruffini and Lisa Mateo bring clarity, context and a bit of humor to the weekend’s biggest headlines, LIVE from New York. Joined by Rutgers University Professor Emeritus of American Studies Robert Synder, Retired Navy Vice Admiral ",
+      "image": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iabPzDrx7tdA/v3/1200x-1.jpg",
+      "link": "https://www.bloomberg.com/news/videos/2026-07-04/bloomberg-this-weekend-07-04-2026-video",
+      "source": "Bloomberg",
+      "sourceLogo": "📊",
+      "category": "worldcup",
+      "date": "2026-07-04T18:50:38.000Z",
+      "timeAgo": "قبل 1 ساعة"
+    },
+    {
+      "id": "france24_mdktyp",
+      "title": "\"Nous nous vengerons\" : une foule d'Iraniens afflue dans le centre de Téhéran pour un dernier adieu à Ali Khamenei tué par des frappes américaines et israéliennes",
+      "summary": "Selon les médias officiels, plusieurs millions de personnes ont participé à ce premier jour de funérailles nationales afin de montrer au monde \"l'unité du pays\".",
+      "image": "https://www.franceinfo.fr/pictures/z-WNNmvSAhwkPEs_PRj2A3AmkOY/0x375:7200x4425/432x243/filters:format(jpg)/2026/07/04/6a494d7a45bcc089831399.jpg",
+      "link": "https://www.franceinfo.fr/monde/iran/nous-nous-vengerons-une-foule-d-iraniens-afflue-dans-le-centre-de-teheran-pour-un-dernier-adieu-a-ali-khamenei-tue-par-des-frappes-americaines-et-israeliennes_8094185.html#xtor=RSS-3-[lestitres]",
+      "source": "France24 عربي",
+      "sourceLogo": "🇫🇷",
+      "category": "international",
+      "date": "2026-07-04T18:46:57.000Z",
+      "timeAgo": "قبل 1 ساعة"
+    },
+    {
+      "id": "bbc-sport_eifckg",
+      "title": "England beaten by South Africa in Nations Championship",
+      "summary": "South Africa asserted their dominance over England with a commanding victory in the Nations Championship at Ellis Park.",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/06f2/live/111181b0-77d7-11f1-a627-714adb4eed6e.jpg",
+      "link": "https://www.bbc.co.uk/sport/rugby-union/videos/c9d234pwvg1o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Sport",
+      "sourceLogo": "⚽",
+      "category": "sports",
+      "date": "2026-07-04T18:41:59.000Z",
+      "timeAgo": "قبل 1 ساعة"
+    },
+    {
+      "id": "nyt_rp6xk2",
+      "title": "Trump Takes Stock of Other Presidencies, Shedding Light on His Own",
+      "summary": "In his second term, the president has increasingly mused about his predecessors, comparing himself with some and distancing from the failures of others.",
+      "image": "https://static01.nyt.com/images/2026/07/02/multimedia/00dc-trump-presidents01-photo-phbg/00dc-trump-presidents01-photo-phbg-mediumSquareAt3X.jpg",
+      "link": "https://www.nytimes.com/2026/07/03/us/politics/trump-takes-stock-of-other-presidencies-shedding-light-on-his-own.html",
+      "source": "NY Times",
+      "sourceLogo": "📰",
+      "category": "international",
+      "date": "2026-07-04T18:36:38.000Z",
+      "timeAgo": "قبل 1 ساعة"
+    },
+    {
+      "id": "abc_u1c4pu",
+      "title": "WATCH:  Gold Star moms pay tribute to sons",
+      "summary": "The five mothers lost their sons who were in active duty formed a sisterhood to ensure all soldiers are never forgotten.",
+      "image": "https://s.abcnews.com/images/GMA/260704_abc_dca_gma_rulli_moms_915_hpMain_4x3_384.jpg",
+      "link": "https://abcnews.com/video/134475433/",
+      "source": "ABC News",
+      "sourceLogo": "🇺🇸",
+      "category": "international",
+      "date": "2026-07-04T18:33:30.000Z",
+      "timeAgo": "قبل 1 ساعة"
+    },
+    {
+      "id": "bbc-sport_c2fy38",
+      "title": "Vingegaard denies Pogacar to win opening Tour stage",
+      "summary": "Denmark's Jonas Vingegaard took the yellow jersey on the opening stage of the Tour de France following a tense team time trial.",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/84ca/live/1cae2860-77ce-11f1-b133-1117329a5958.jpg",
+      "link": "https://www.bbc.co.uk/sport/cycling/articles/cvgjzdvx3v2o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Sport",
+      "sourceLogo": "⚽",
+      "category": "sports",
+      "date": "2026-07-04T18:33:22.000Z",
+      "timeAgo": "قبل 1 ساعة"
+    },
+    {
+      "id": "bbc-sport_6nyf20",
+      "title": "Bethell stars as he guides England to impressive win against India",
+      "summary": "Jacob Bethell hits an unbeaten 76 as England recover from 1-2 to chase down 191 to beat India by four wickets in the second T20 at Old Trafford and take a 1-0 lead in the five match series.",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/9e55/live/99b6fd60-77d2-11f1-b976-0b9c15b0ccfc.jpg",
+      "link": "https://www.bbc.co.uk/sport/cricket/videos/c621xdq2pk5o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Sport",
+      "sourceLogo": "⚽",
+      "category": "sports",
+      "date": "2026-07-04T18:11:51.000Z",
+      "timeAgo": "قبل 2 ساعة"
+    },
+    {
+      "id": "bbc_wj7syb",
+      "title": "الجيش الإسرائيلي يشن غارات على قطاع غزة، ومفاوضات بين حماس وممثلين عن مجلس السلام",
+      "summary": "على مدار اليومين الماضيين، شهدت أنحاء متفرقة في قطاع غزة قصفاً إسرائيلياً، ما تسبب في مقتل 16 شخصاً وإصابة 16 آخرين. ويتزامن هذا مع مباحثات في القاهرة وقبرص لأعضاء من مجلس السلام الذي أسسه ترامب، بالإضافة إلى أعضاء في فصائل فلسطينية وممثلين عن حركة حماس ووسطاء.",
+      "image": "https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/6c81/live/21133cc0-77b9-11f1-a627-714adb4eed6e.jpg",
+      "link": "https://www.bbc.com/arabic/articles/c07y25x8myzo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC عربي",
+      "sourceLogo": "🇬🇧",
+      "category": "international",
+      "date": "2026-07-04T18:10:42.000Z",
+      "timeAgo": "قبل 2 ساعة"
+    },
+    {
+      "id": "bloomberg_tcy4se",
+      "title": "US Flyover Showcases Next-Generation Airpower",
+      "summary": "Retired US Army Colonel Wayne Sanders joins Bloomberg This Weekend during the 4th of July Naval Review and tall ships parade, 'Sail4th 250' taking place in the Hudson River. Col. Sanders explains to David Gura and Christina Ruffini how this show on the Hudson underscores US military capabilities in ",
+      "image": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iarEISEed0zE/v3/1200x-1.jpg",
+      "link": "https://www.bloomberg.com/news/videos/2026-07-04/us-flyover-showcases-next-generation-airpower-video",
+      "source": "Bloomberg",
+      "sourceLogo": "📊",
+      "category": "economy",
+      "date": "2026-07-04T18:10:22.000Z",
+      "timeAgo": "قبل 2 ساعة"
+    },
+    {
+      "id": "france24_q1bvzb",
+      "title": "Jonas Vingegaard premier maillot jaune du Tour de France 2026, après la victoire de Team Visma | Lease a Bike sur le contre-la-montre par équipes à Barcelone",
+      "summary": "Le Danois a remporté la 1ere étape samedi, à Barcelone, et retrouve le maillot jaune pour la première fois depuis le Tour de France 2023.",
+      "image": "https://www.franceinfo.fr/pictures/Lry6H0X-TTlmX5_kDXavBBEPoFM/0x106:1024x682/432x243/filters:format(jpg)/2026/07/04/6a4947b50a77b893851371.jpg",
+      "link": "https://www.franceinfo.fr/tour-de-france/jonas-vingegaard-premier-maillot-jaune-du-tour-de-france-2026-apres-la-victoire-de-visma-lease-a-bike-sur-le-contre-la-montre-par-equipes-de-la-1ere-etape_8094068.html#xtor=RSS-3-[lestitres]",
+      "source": "France24 عربي",
+      "sourceLogo": "🇫🇷",
+      "category": "worldcup",
+      "date": "2026-07-04T18:01:31.000Z",
+      "timeAgo": "قبل 2 ساعة"
+    },
+    {
+      "id": "techcrunch_fw1cwc",
+      "title": "Midjourney wants Hollywood studios to reveal the details of their AI usage",
+      "summary": "As part of an ongoing legal dispute with three Hollywood studios, Midjourney is seeking to compel those studios to reveal how they use AI themselves.",
+      "image": "https://techcrunch.com/wp-content/uploads/2025/10/GettyImages-1387623215.jpg?resize=1200,900",
+      "link": "https://techcrunch.com/2026/07/04/midjourney-wants-hollywood-studios-to-reveal-the-details-of-their-ai-usage/",
+      "source": "TechCrunch",
+      "sourceLogo": "💻",
+      "category": "local",
+      "date": "2026-07-04T18:00:05.000Z",
+      "timeAgo": "قبل 2 ساعة"
+    },
+    {
+      "id": "bloomberg_2jxft3",
+      "title": "Brazil’s Durigan Says Credit Lines Won’t Affect Monetary Policy",
+      "summary": "Credit measures introduced by President Luiz Inácio Lula da Silva’s government do not undermine monetary policy, Finance Minister Dario Durigan said in an interview with local news website G1 published on Saturday.",
+      "image": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ii0szzG1Onyc/v0/1200x-1.jpg",
+      "link": "https://www.bloomberg.com/news/articles/2026-07-04/brazil-s-durigan-says-credit-lines-won-t-affect-monetary-policy",
+      "source": "Bloomberg",
+      "sourceLogo": "📊",
+      "category": "economy",
+      "date": "2026-07-04T17:56:29.000Z",
+      "timeAgo": "قبل 2 ساعة"
+    },
+    {
+      "id": "france24_clrnh1",
+      "title": "JD Vance fustige les détracteurs des Etats-Unis à l'occasion de leur 250e anniversaire",
+      "summary": "Le vice-président américain dénoncent ceux \"qui ne comprennent pas l'essence de l'Amérique\"",
+      "image": "https://www.franceinfo.fr/pictures/F61LLC1H44D64I-L0AfORbhFJl0/0x209:4032x2477/432x243/filters:format(jpg)/2026/07/04/6a4948bba779f822295746.jpg",
+      "link": "https://www.franceinfo.fr/monde/usa/jd-vance-fustige-les-detracteurs-des-etats-unis-a-l-occasion-de-leur-250e-anniversaire_8094173.html#xtor=RSS-3-[lestitres]",
+      "source": "France24 عربي",
+      "sourceLogo": "🇫🇷",
+      "category": "international",
+      "date": "2026-07-04T17:54:46.000Z",
+      "timeAgo": "قبل 2 ساعة"
     }
   ]
 }

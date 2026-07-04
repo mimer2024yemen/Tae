@@ -714,8 +714,24 @@ ul { list-style: none; }
     aspect-ratio: 16/10;
     object-fit: cover;
     transition: transform 0.4s ease;
+    background: var(--gray-light);
 }
+.latest-card img[src=""],
+.latest-card img:not([src]),
+.latest-card img[data-error="1"] { display: none; }
 .latest-card:hover img { transform: scale(1.05); }
+
+.latest-card .no-img {
+    width: 100%;
+    aspect-ratio: 16/10;
+    background: linear-gradient(135deg, var(--gray-light) 0%, #e2e5e9 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: var(--gray-4);
+    border-radius: var(--radius) var(--radius) 0 0;
+}
 
 .latest-card-body {
     padding: 16px;

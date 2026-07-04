@@ -1,6 +1,6 @@
 {
   "category": "worldcup",
-  "updated": "2026-07-04T20:24:51.833Z",
+  "updated": "2026-07-04T20:33:01.664Z",
   "count": 20,
   "articles": [
     {
@@ -13,7 +13,7 @@
       "sourceLogo": "⚽",
       "category": "worldcup",
       "date": "2026-07-04T19:49:57.000Z",
-      "timeAgo": "قبل 34 دقيقة"
+      "timeAgo": "قبل 43 دقيقة"
     },
     {
       "id": "bbc-sport_ctad4i",
@@ -67,7 +67,7 @@
       "id": "aljazeera_ijta39",
       "title": "ما خيارات مالي في ظل التقدم المتواصل للمسلحين؟",
       "summary": "لا يبدو الجيش المالي قادرا على حسم الصراع مع المسلحين الذين يتقدمون مرة بعد أخرى في هجمات منسقة وواسعة، قال محللون لحلقة 2026/7/4 من برنامج \"ما وراء الخبر\" إنها تزيد من سيطرتهم على حساب الحكومة.",
-      "image": "",
+      "image": "https://www.aljazeera.net/wp-content/uploads/2026/07/image-1783193809.jpg?resize=1920%2C1080&amp;quality=80",
       "link": "https://www.aljazeera.net/video/behindthenews/2026/7/4/%d9%85%d8%a7-%d8%ae%d9%8a%d8%a7%d8%b1%d8%a7%d8%aa-%d9%85%d8%a7%d9%84%d9%8a-%d9%81%d9%8a-%d8%b8%d9%84-%d8%a7%d9%84%d8%aa%d9%82%d8%af%d9%85-%d8%a7%d9%84%d9%85%d8%aa%d9%88%d8%a7%d8%b5%d9%84?traffic_source=rss",
       "source": "الجزيرة",
       "sourceLogo": "🌐",
@@ -91,7 +91,7 @@
       "id": "cnbc_m21fhq",
       "title": "The World Cup sends prediction market volumes soaring to record highs",
       "summary": "Trading volumes on Kalshi and Polymarket both hit record highs in June. Rothera, a new prediction market platform, was also able to manage $2 billion in volume.",
-      "image": "",
+      "image": "https://image.cnbcfm.com/api/v1/image/108270194-1772061798995-gettyimages-2263571474-l1049595_copy_qr8q5yqa.jpeg?v=1776174259&amp;w=1920&amp;h=1080",
       "link": "https://www.cnbc.com/2026/07/04/2026-fifa-world-cup-boosts-prediction-market-volumes.html",
       "source": "CNBC",
       "sourceLogo": "💹",
@@ -121,7 +121,7 @@
       "sourceLogo": "🔌",
       "category": "worldcup",
       "date": "2026-07-04T11:30:00.000Z",
-      "timeAgo": "قبل 8 ساعة"
+      "timeAgo": "قبل 9 ساعة"
     },
     {
       "id": "bbc-sport_8cx3zw",
@@ -235,7 +235,7 @@
       "id": "nasa_u7nvas",
       "title": "What’s Up: July 2026 Skywatching Tips from NASA",
       "summary": "A predawn Moon-and-planets meetup, a returning comet, a great chance to see the Milky Way, and Saturn’s rings at a new angle. Skywatching Highlights Transcript An early morning hangout with the Moon and planets, a comet swings by, prime time for the Milky Way, and Saturn’s rings shine at a new angle",
-      "image": "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/ciencia/ciencias-terrestres/2026/Moon_planets_July2026.png?w=2408&#038;h=1348&#038;fit=clip&#038;crop=faces%2Cfocalpoint",
+      "image": "https://assets.science.nasa.gov/dynamicimage/assets/science/cds/ciencia/ciencias-terrestres/2026/Moon_planets_July2026.png?w=2000&#038;h=1120&#038;fit=crop&#038;crop=faces%2Cfocalpoint",
       "link": "https://science.nasa.gov/solar-system/whats-up-july-2026-skywatching-tips-from-nasa/",
       "source": "NASA",
       "sourceLogo": "🚀",

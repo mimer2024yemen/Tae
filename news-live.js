@@ -15,7 +15,7 @@ const NEWS_CONFIG = {
         { id: 'aljazeera', name: 'الجزيرة', url: 'https://www.aljazeera.net/aljazeerarss/a7c186be-1baa-4bd4-9d80-a84db769f779/73d0e1b4-532f-45ef-b135-bfdff8b8cab9', category: 'international', logo: '🌐' },
         { id: 'cnbc', name: 'CNBC', url: 'https://www.cnbc.com/id/100003114/device/rss/rss.html', category: 'economy', logo: '💹' },
         { id: 'france24', name: 'France24', url: 'https://www.francetvinfo.fr/titres.rss', category: 'international', logo: '🇫🇷' },
-        { id: 'dw', name: 'DW', url: 'https://rss.dw.com/rdf/rss-en-all', category: 'international', logo: '🇩🇪' },
+        // DW removed - no images
         { id: 'abc', name: 'ABC News', url: 'https://feeds.abcnews.com/abcnews/topstories', category: 'international', logo: '🇺🇸' },
         { id: 'cnn', name: 'CNN', url: 'http://rss.cnn.com/rss/edition.rss', category: 'international', logo: '📺' },
         { id: 'nyt', name: 'NY Times', url: 'https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml', category: 'international', logo: '📰' },
@@ -29,7 +29,7 @@ const NEWS_CONFIG = {
         // Economy
         { id: 'bloomberg', name: 'Bloomberg', url: 'https://feeds.bloomberg.com/markets/news.rss', category: 'economy', logo: '📊' },
         { id: 'ft', name: 'Financial Times', url: 'https://www.ft.com/rss/home', category: 'economy', logo: '💼' },
-        { id: 'wsj', name: 'Wall Street Journal', url: 'https://feeds.a.dj.com/rss/RSSWorldNews.xml', category: 'economy', logo: '📈' },
+        // WSJ removed - no images
         // Tech
         { id: 'techcrunch', name: 'TechCrunch', url: 'https://techcrunch.com/feed/', category: 'technology', logo: '💻' },
         { id: 'verge', name: 'The Verge', url: 'https://www.theverge.com/rss/index.xml', category: 'technology', logo: '📱' },
@@ -268,9 +268,10 @@ function renderNewsCards(articles, containerId) {
     container.innerHTML = articles.map(a => {
         const catInfo = window.SmartCategorizer ? window.SmartCategorizer.classify(a.title, a.summary || '', a.category || '') : { categoryName: a.category, categoryIcon: '📰', subcategory: '' };
         const catBadge = catInfo.subcategory ? `${catInfo.categoryIcon} ${catInfo.categoryName} · ${catInfo.subcategory}` : `${catInfo.categoryIcon} ${catInfo.categoryName}`;
+        const imgHtml = a.image ? `<img src="${a.image}" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:6px 6px 0 0;" loading="lazy" onerror="this.outerHTML='<div class=\'no-img\'>📰</div>'">` : '<div class="no-img">📰</div>';
         return `
         <a href="${a.link}" target="_blank" rel="noopener" class="latest-card" data-category="${a.category}">
-            ${a.image ? `<img src="${a.image}" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:6px 6px 0 0;" loading="lazy" onerror="this.style.display='none'">` : ''}
+            ${imgHtml}
             <div class="latest-card-body">
                 <span class="card-cat">${catBadge}</span>
                 <h3>${escapeHtmlLive(a.title)}</h3>
@@ -305,7 +306,7 @@ function renderSliderNews(articles, containerId) {
         slide.className = 'slide' + (i === 0 ? ' active' : '');
         slide.innerHTML = `
             <div class="slide-img">
-                <img src="${a.image}" alt="" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style.background='#1a1a2e'">
+                <img src="${a.image}" alt="" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)'">
                 <div class="slide-overlay">
                     <span class="slide-category">${a.sourceLogo} ${a.source}</span>
                     <h2><a href="${a.link}" target="_blank" rel="noopener">${escapeHtmlLive(a.title)}</a></h2>

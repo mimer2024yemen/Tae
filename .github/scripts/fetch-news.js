@@ -32,7 +32,7 @@ const SOURCES = [
     { id: 'aljazeera', name: 'الجزيرة', url: 'https://www.aljazeera.net/aljazeerarss/a7c186be-1baa-4bd4-9d80-a84db769f779/73d0e1b4-532f-45ef-b135-bfdff8b8cab9', category: 'international', logo: '🌐' },
     { id: 'cnbc', name: 'CNBC', url: 'https://www.cnbc.com/id/100003114/device/rss/rss.html', category: 'economy', logo: '💹' },
     { id: 'france24', name: 'France24 عربي', url: 'https://www.francetvinfo.fr/titres.rss', category: 'international', logo: '🇫🇷' },
-    { id: 'dw', name: 'DW عربي', url: 'https://rss.dw.com/rdf/rss-en-all', category: 'international', logo: '🇩🇪' },
+    // DW removed - no images in RSS
     { id: 'rt', name: 'RT', url: 'https://www.rt.com/rss/', category: 'international', logo: '🇷🇺' },
     { id: 'trt', name: 'TRT عربي', url: 'https://www.trt.net.tr/rss', category: 'international', logo: '🇹🇷' },
     { id: 'abc', name: 'ABC News', url: 'https://feeds.abcnews.com/abcnews/topstories', category: 'international', logo: '🇺🇸' },
@@ -50,7 +50,7 @@ const SOURCES = [
     // Economy
     { id: 'bloomberg', name: 'Bloomberg', url: 'https://feeds.bloomberg.com/markets/news.rss', category: 'economy', logo: '📊' },
     { id: 'ft', name: 'Financial Times', url: 'https://www.ft.com/rss/home', category: 'economy', logo: '💼' },
-    { id: 'wsj', name: 'Wall Street Journal', url: 'https://feeds.a.dj.com/rss/RSSWorldNews.xml', category: 'economy', logo: '📈' },
+    // WSJ removed - no images in RSS
     // Tech
     { id: 'techcrunch', name: 'TechCrunch', url: 'https://techcrunch.com/feed/', category: 'technology', logo: '💻' },
     { id: 'verge', name: 'The Verge', url: 'https://www.theverge.com/rss/index.xml', category: 'technology', logo: '📱' },
@@ -61,14 +61,54 @@ const SOURCES = [
 ];
 
 function extractImage(item) {
+    // 1. Media RSS
     if (item.mediaContent?.$?.url) return item.mediaContent.$.url;
     if (item.mediaThumbnail?.$?.url) return item.mediaThumbnail.$.url;
-    if (item.enclosure?.url) return item.enclosure.url;
+    if (item.mediaContent?.['media:thumbnail']?.$?.url) return item.mediaContent['media:thumbnail'].$.url;
+
+    // 2. Enclosure
+    if (item.enclosure?.url && item.enclosure.type?.startsWith('image')) return item.enclosure.url;
+    if (item.enclosure?.url) return item.enclosure.url; // Sometimes type is wrong
+
+    // 3. Image field
     if (item.image?.url) return item.image.url;
 
+    // 4. From content:encoded
     const content = item.contentEncoded || item.content || item.description || '';
-    const match = content.match(/<img[^>]+src=["']([^"']+)["']/);
-    if (match && match[1].startsWith('http')) return match[1];
+
+    // Try srcset first (higher quality)
+    const srcsetMatch = content.match(/srcset=["']([^"']+)/);
+    if (srcsetMatch) {
+        const srcset = srcsetMatch[1].split(',');
+        const best = srcset[srcset.length - 1].trim().split(' ')[0];
+        if (best && best.startsWith('http')) return best;
+    }
+
+    // Try regular img src
+    const imgMatches = content.match(/<img[^>]+src=["']([^"']+)["']/g);
+    if (imgMatches) {
+        for (const imgTag of imgMatches) {
+            const src = imgTag.match(/src=["']([^"']+)/);
+            if (src && src[1].startsWith('http') && !src[1].includes('icon') && !src[1].includes('logo') && !src[1].includes('avatar') && !src[1].includes('1x1') && !src[1].includes('pixel')) {
+                // Skip tiny images
+                const width = imgTag.match(/width=["']?(\d+)/);
+                if (width && parseInt(width[1]) < 50) continue;
+                return src[1];
+            }
+        }
+    }
+
+    // 5. data-src (lazy loading)
+    const dataSrc = content.match(/data-src=["']([^"']+)["']/);
+    if (dataSrc && dataSrc[1].startsWith('http')) return dataSrc[1];
+
+    // 6. data-lazy-src
+    const lazySrc = content.match(/data-lazy-src=["']([^"']+)["']/);
+    if (lazySrc && lazySrc[1].startsWith('http')) return lazySrc[1];
+
+    // 7. og:image from description
+    const ogMatch = content.match(/property=["']og:image["'][^>]+content=["']([^"']+)/);
+    if (ogMatch && ogMatch[1].startsWith('http')) return ogMatch[1];
 
     return '';
 }
@@ -132,16 +172,55 @@ function cleanHTML(html) {
     return html.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim().substring(0, 300);
 }
 
+async function fetchOGImage(url) {
+    try {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 5000);
+        const res = await fetch(url, { signal: controller.signal, headers: { 'User-Agent': 'Mozilla/5.0' } });
+        clearTimeout(timeout);
+        const html = await res.text();
+
+        // og:image
+        const og = html.match(/property=["']og:image["'][^>]+content=["']([^"']+)/);
+        if (og && og[1].startsWith('http')) return og[1];
+
+        // twitter:image
+        const tw = html.match(/name=["']twitter:image["'][^>]+content=["']([^"']+)/);
+        if (tw && tw[1].startsWith('http')) return tw[1];
+
+        // First large image
+        const imgs = html.match(/<img[^>]+src=["']([^"']+)["']/g);
+        if (imgs) {
+            for (const img of imgs) {
+                const src = img.match(/src=["']([^"']+)/);
+                if (src && src[1].startsWith('http') && !src[1].includes('icon') && !src[1].includes('logo') && !src[1].includes('1x1') && !src[1].includes('pixel') && !src[1].includes('avatar')) {
+                    const width = img.match(/width=["']?(\d+)/);
+                    if (width && parseInt(width[1]) < 100) continue;
+                    return src[1];
+                }
+            }
+        }
+    } catch {}
+    return '';
+}
+
 async function fetchSource(source) {
     try {
         console.log(`  Fetching: ${source.name}...`);
         const feed = await rssParser.parseURL(source.url);
-        const articles = feed.items.slice(0, 20).map(item => {
+        const articles = [];
+        for (const item of feed.items.slice(0, 20)) {
             const title = (item.title || '').trim();
+            if (title.length < 5) continue;
             const desc = cleanHTML(item.contentSnippet || item.content || item.description || '');
-            const image = extractImage(item);
+            let image = extractImage(item);
 
-            return {
+            // Fetch OG image if no image found (for first 10 items only to avoid slowness)
+            if (!image && item.link && articles.length < 10) {
+                image = await fetchOGImage(item.link);
+            }
+
+            articles.push({
                 id: source.id + '_' + hashCode(title),
                 title,
                 summary: desc,
@@ -151,8 +230,8 @@ async function fetchSource(source) {
                 sourceLogo: source.logo,
                 category: detectCategory(title, desc, source.category),
                 date: item.pubDate ? new Date(item.pubDate).toISOString() : new Date().toISOString(),
-            };
-        }).filter(a => a.title.length > 5);
+            });
+        }
 
         console.log(`  ✅ ${source.name}: ${articles.length} articles`);
         return articles;
