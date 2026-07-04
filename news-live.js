@@ -279,9 +279,11 @@ function renderNewsCards(articles, containerId) {
     container.innerHTML = articles.map(a => {
         const catInfo = window.SmartCategorizer ? window.SmartCategorizer.classify(a.title, a.summary || '', a.category || '') : { categoryName: a.category, categoryIcon: '📰', subcategory: '' };
         const catBadge = catInfo.subcategory ? `${catInfo.categoryIcon} ${catInfo.categoryName} · ${catInfo.subcategory}` : `${catInfo.categoryIcon} ${catInfo.categoryName}`;
-        const imgProxy = window.NEWS_CONFIG?.imgProxy || 'https://images.weserv.nl/?url=';
-        const proxiedImg = a.image ? imgProxy + encodeURIComponent(a.image) : '';
-        const imgHtml = a.image ? `<img src="${proxiedImg}" data-original="${a.image}" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:6px 6px 0 0;" loading="lazy" onerror="handleImgError(this)">` : '<div class="no-img">📰</div>';
+        // Only show image if it exists and is valid
+        let imgHtml = '';
+        if (a.image && a.image.startsWith('http')) {
+            imgHtml = `<img src="${a.image}" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:6px 6px 0 0;background:#f0f0f0;" loading="lazy" onerror="this.remove()" onload="this.style.background='none'">`;
+        }
         const readTime = Math.max(1, Math.ceil((a.summary || a.title || '').split(' ').length / 3));
         const articleUrl = 'https://mimer2024yemen.github.io/Tae/?id=' + a.id;
         const shareUrl = encodeURIComponent(articleUrl);
@@ -326,11 +328,11 @@ function renderSliderNews(articles, containerId) {
     featured.forEach((a, i) => {
         const slide = document.createElement('div');
         slide.className = 'slide' + (i === 0 ? ' active' : '');
-        const slideImgProxy = window.NEWS_CONFIG?.imgProxy || 'https://images.weserv.nl/?url=';
-        const slideProxiedImg = a.image ? slideImgProxy + encodeURIComponent(a.image) : '';
+        // Only show image if it exists
+        const slideImgHtml = a.image && a.image.startsWith('http') ? `<img src="${a.image}" alt="" style="width:100%;height:100%;object-fit:cover;background:#1a1a2e;" onerror="this.style.display='none'" onload="this.style.background='none'">` : '';
         slide.innerHTML = `
-            <div class="slide-img">
-                <img src="${slideProxiedImg}" data-original="${a.image}" alt="" style="width:100%;height:100%;object-fit:cover;" onerror="handleImgError(this)">
+            <div class="slide-img" style="background:#1a1a2e;">
+                ${slideImgHtml}
                 <div class="slide-overlay">
                     <span class="slide-category">${a.sourceLogo} ${a.source}</span>
                     <h2><a href="${a.link}" target="_blank" rel="noopener">${escapeHtmlLive(a.title)}</a></h2>
@@ -356,30 +358,11 @@ function escapeHtmlLive(text) {
     return div.innerHTML;
 }
 
-// ===== IMAGE ERROR HANDLER WITH PROXY FALLBACK =====
+// ===== IMAGE ERROR HANDLER =====
 function handleImgError(img) {
-    const original = img.getAttribute('data-original');
-    const currentSrc = img.src;
-
-    // If we tried proxy and it failed, try original
-    if (currentSrc.includes('weserv.nl') && original && !img.dataset.triedOriginal) {
-        img.dataset.triedOriginal = '1';
-        img.src = original;
-        return;
-    }
-
-    // If we tried original and it failed, try another proxy
-    if (!currentSrc.includes('wsrv.nl') && original && !img.dataset.triedWsrv) {
-        img.dataset.triedWsrv = '1';
-        img.src = 'https://wsrv.nl/?url=' + encodeURIComponent(original);
-        return;
-    }
-
-    // All proxies failed, show placeholder
-    img.outerHTML = '<div class="no-img">📰</div>';
+    // Simply remove broken images - don't show placeholder
+    img.remove();
 }
-
-// Make it global
 window.handleImgError = handleImgError;
 
 // ===== AUTO REFRESH =====

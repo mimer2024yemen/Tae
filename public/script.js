@@ -424,7 +424,7 @@ function showArticleView(article) {
                 <span>📅 ${new Date(article.date).toLocaleDateString('ar-SA')}</span>
                 <span>📰 ${article.source || ''}</span>
             </div>
-            ${imgHtml}
+            ${article.image && article.image.startsWith('http') ? `<img src="${article.image}" alt="${article.title}" style="width:100%;max-height:450px;object-fit:cover;border-radius:12px;margin-bottom:24px;background:#f0f0f0;" onerror="this.remove()" onload="this.style.background='none'">` : ''}
             <div style="font-size:17px;line-height:2;color:#333;margin-bottom:30px;">
                 ${(article.summary || '').split('\n').map(p => p.trim() ? `<p style="margin-bottom:18px;">${p}</p>` : '').join('')}
             </div>
