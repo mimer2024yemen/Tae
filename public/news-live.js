@@ -287,16 +287,16 @@ function renderNewsCards(articles, containerId) {
         const shareUrl = encodeURIComponent(articleUrl);
         const shareTitle = encodeURIComponent(a.title);
         return `
-        <a href="${a.link}" target="_blank" rel="noopener" class="latest-card" data-category="${a.category}">
+        <a href="${a.link}" target="_blank" rel="noopener noreferrer" class="latest-card" data-category="${a.category}" style="cursor:pointer;">
             ${imgHtml}
             <div class="latest-card-body">
                 <span class="card-cat">${catBadge}</span>
                 <h3>${escapeHtmlLive(a.title)}</h3>
                 <span class="card-date">${a.sourceLogo} ${a.source} · ${a.timeAgo} · <span class="reading-time">🕐 ${readTime} د</span></span>
-                <div class="card-share">
-                    <button class="card-share-btn" onclick="event.preventDefault();event.stopPropagation();window.open('https://twitter.com/intent/tweet?text=${shareTitle}&url=${shareUrl}','_blank')" title="تويتر">𝕏</button>
-                    <button class="card-share-btn" onclick="event.preventDefault();event.stopPropagation();window.open('https://wa.me/?text=${shareTitle}%20${shareUrl}','_blank')" title="واتساب">📱</button>
-                    <button class="card-share-btn" onclick="event.preventDefault();event.stopPropagation();navigator.clipboard.writeText('${a.link}')" title="نسخ">🔗</button>
+                <div class="card-share" onclick="event.stopPropagation();">
+                    <button class="card-share-btn" onclick="window.open('https://twitter.com/intent/tweet?text=${shareTitle}&url=${shareUrl}','_blank')" title="تويتر">𝕏</button>
+                    <button class="card-share-btn" onclick="window.open('https://wa.me/?text=${shareTitle}%20${shareUrl}','_blank')" title="واتساب">📱</button>
+                    <button class="card-share-btn" onclick="navigator.clipboard.writeText('${a.link}');this.textContent='✅';setTimeout(()=>this.textContent='🔗',2000)" title="نسخ">🔗</button>
                 </div>
                 <span class="read-more">اقرأ المزيد ←</span>
             </div>

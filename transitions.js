@@ -15,9 +15,15 @@ const PageTransitions = {
             if (!link) return;
 
             const href = link.getAttribute('href');
-            if (!href || href.startsWith('http') || href.startsWith('#') || href.startsWith('mailto:')) return;
+            
+            // Skip external links, anchors, mailto, tel, and links with target=_blank
+            if (!href) return;
+            if (href.startsWith('http://') || href.startsWith('https://')) return;
+            if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
             if (link.target === '_blank') return;
+            if (link.hasAttribute('download')) return;
 
+            // Only handle internal navigation
             e.preventDefault();
             this.navigate(href);
         });
