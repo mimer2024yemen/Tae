@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أعلن معنا — عاجل نيوز</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 50'><rect width='120' height='50' rx='6' fill='%23d71920'/><text x='60' y='36' text-anchor='middle' fill='white' font-size='32' font-weight='900'>عاجل</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Tae/style.css">
+    <style>
+        .page-content { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        .page-header-section { background: linear-gradient(135deg, #1a1a2e, #16213e); color: white; padding: 60px 20px; text-align: center; }
+        .page-header-section h1 { color: white; font-size: 36px; margin-bottom: 12px; font-family: 'Noto Kufi Arabic', sans-serif; }
+        .breadcrumb { display: flex; gap: 8px; align-items: center; font-size: 13px; color: #888; margin-bottom: 24px; }
+        .breadcrumb a { color: #d71920; }
+        h2 { font-size: 20px; font-weight: 800; margin: 32px 0 16px; font-family: 'Noto Kufi Arabic', sans-serif; color: #d71920; }
+        p { font-size: 15px; line-height: 2; color: #444; margin-bottom: 14px; }
+        .ad-packages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 32px 0; }
+        .ad-package { background: #f8f9fa; border-radius: 12px; padding: 28px; border: 2px solid #eef0f2; text-align: center; transition: all 0.2s; }
+        .ad-package:hover { border-color: #d71920; transform: translateY(-3px); }
+        .ad-package.popular { border-color: #d71920; position: relative; }
+        .ad-package.popular::before { content: 'الأكثر طلباً'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #d71920; color: white; padding: 4px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; }
+        .ad-package h3 { font-size: 18px; font-weight: 800; margin-bottom: 12px; font-family: 'Noto Kufi Arabic', sans-serif; }
+        .ad-package .price { font-size: 28px; font-weight: 900; color: #d71920; margin-bottom: 16px; }
+        .ad-package ul { text-align: right; margin: 16px 0; }
+        .ad-package li { font-size: 14px; color: #444; margin-bottom: 8px; list-style: none; padding-right: 20px; position: relative; }
+        .ad-package li::before { content: '✓'; position: absolute; right: 0; color: #10b981; font-weight: 700; }
+        .ad-package .cta { display: inline-block; background: #d71920; color: white; padding: 10px 24px; border-radius: 8px; font-weight: 700; text-decoration: none; margin-top: 16px; }
+        @media (max-width: 768px) { .ad-packages { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="page-header-section">
+        <h1>أعلن معنا</h1>
+        <p>اعلانك يصل لملايين القراء</p>
+    </div>
+    <div class="page-content">
+        <div class="breadcrumb">
+            <a href="/Tae/">الرئيسية</a>
+            <span>←</span>
+            <span>أعلن معنا</span>
+        </div>
+
+        <h2>لماذا تعلن مع عاجل؟</h2>
+        <p>صحيفة عاجل الإلكترونية هي واحدة من أبرز المواقع الإخبارية في المملكة العربية السعودية، مع آلاف الزوار اليوميين. نوفر لك فرصة للوصول إلى جمهور واسع ومهتم بالأخبار.</p>
+
+        <h2>باقات الإعلانات</h2>
+        <div class="ad-packages">
+            <div class="ad-package">
+                <h3>الباقة الأساسية</h3>
+                <div class="price">500 ر.س</div>
+                <ul>
+                    <li>بانر أعلى الصفحة</li>
+                    <li>مدة: أسبوع واحد</li>
+                    <li>直到 10,000 مشاهدة</li>
+                    <li>تقرير أداء بسيط</li>
+                </ul>
+                <a href="/Tae/pages/contact.html" class="cta">اطلب الآن</a>
+            </div>
+            <div class="ad-package popular">
+                <h3>الباقة الاحترافية</h3>
+                <div class="price">1,500 ر.س</div>
+                <ul>
+                    <li>بانر + مقال ممول</li>
+                    <li>مدة: شهر كامل</li>
+                    <li>直到 50,000 مشاهدة</li>
+                    <li>تقرير أداء مفصل</li>
+                    <li>دعم فني مخصص</li>
+                </ul>
+                <a href="/Tae/pages/contact.html" class="cta">اطلب الآن</a>
+            </div>
+            <div class="ad-package">
+                <h3>الباقة المتميزة</h3>
+                <div class="price">3,000 ر.س</div>
+                <ul>
+                    <li>حزمة إعلانية شاملة</li>
+                    <li>مدة: 3 أشهر</li>
+                    <li>مشاهدات غير محدودة</li>
+                    <li>تقرير أسبوعي مفصل</li>
+                    <li>مدير حساب مخصص</li>
+                    <li>تصميم الإعلان مجاناً</li>
+                </ul>
+                <a href="/Tae/pages/contact.html" class="cta">اطلب الآن</a>
+            </div>
+        </div>
+
+        <h2>للتواصل</h2>
+        <p>للاستفسار عن الباقات الإعلانية أو طلب باقة مخصصة، يرجى التواصل معنا عبر:</p>
+        <ul style="list-style:none;padding:0;">
+            <li style="margin-bottom:8px;">📧 البريد الإلكتروني: <a href="mailto:ads@ajel.sa" style="color:#d71920;">ads@ajel.sa</a></li>
+            <li style="margin-bottom:8px;">📱 واتساب: <a href="https://wa.me/966500000000" style="color:#d71920;">+966 50 000 0000</a></li>
+        </ul>
+
+        <div style="text-align:center;margin-top:40px;">
+            <a href="/Tae/" style="display:inline-block;background:#d71920;color:white;padding:12px 32px;border-radius:8px;font-weight:700;text-decoration:none;">العودة للرئيسية</a>
+        </div>
+    </div>
+</body>
+</html>
