@@ -116,6 +116,56 @@ function formatDateAr(d) {
     return days[date.getDay()] + ' ' + date.getDate() + ' ' + months[date.getMonth()] + ' ' + date.getFullYear();
 }
 
+// ===== SECTION ROUTING (GitHub Pages SPA) =====
+(function() {
+    const params = new URLSearchParams(window.location.search);
+    const section = params.get('section');
+    const articleId = params.get('id');
+    const articleType = params.get('type');
+
+    if (section || articleId) {
+        // We're on a section/article page, load section.html logic
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSectionPage(section, articleId, articleType);
+        });
+    }
+})();
+
+async function loadSectionPage(section, articleId, articleType) {
+    const sectionNames = {
+        'local': 'المحليات', 'economy': 'الاقتصاد', 'sports': 'رياضة',
+        'international': 'مدارات عالمية', 'jobs': 'وظائف', 'entertainment': 'الترفيه',
+        'misc': 'منوعات', 'tourism': 'سياحة وسفر', 'society': 'مجتمع', 'worldcup': 'المونديال',
+        'opinion': 'مقالات الرأي', 'latest-news': 'آخر الأخبار',
+    };
+
+    // Update title
+    if (section) {
+        document.title = (sectionNames[section] || section) + ' — عاجل';
+        const header = document.querySelector('.section-header h2');
+        if (header) header.textContent = sectionNames[section] || section;
+    }
+
+    // Load articles from static data
+    try {
+        const data = await fetch('/Tae/data/news.json').then(r => r.json());
+        let articles = data.articles || [];
+
+        if (section && section !== 'latest-news') {
+            articles = articles.filter(a => a.category === section);
+        }
+
+        const grid = document.querySelector('.latest-grid');
+        if (grid && articles.length > 0) {
+            if (window.AjelNews) {
+                window.AjelNews.renderNewsCards(articles.slice(0, 12), grid.id || 'articlesGrid');
+            }
+        }
+    } catch (err) {
+        console.log('Section load error:', err);
+    }
+}
+
 // ===== LIVE NEWS (Static data + Client-side RSS fallback) =====
 async function loadLiveNews() {
     try {
