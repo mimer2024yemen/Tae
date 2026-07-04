@@ -809,6 +809,24 @@
 <!-- Back to Top -->
 <button class="back-to-top" id="backToTop" aria-label="العودة للأعلى">▲</button>
 
+<script>
+// Global image proxy configuration
+window.NEWS_CONFIG = {
+    imgProxy: 'https://images.weserv.nl/?url=',
+    proxy: 'https://api.allorigins.win/raw?url=',
+};
+
+// Global image error handler for all images on the page
+document.addEventListener('error', function(e) {
+    if (e.target.tagName === 'IMG' && !e.target.dataset.proxyFailed) {
+        const original = e.target.src || e.target.getAttribute('data-original');
+        if (original && !original.includes('weserv.nl') && !original.includes('wsrv.nl')) {
+            e.target.dataset.proxyFailed = '1';
+            e.target.src = 'https://images.weserv.nl/?url=' + encodeURIComponent(original);
+        }
+    }
+}, true);
+</script>
 <script src="categorizer.js"></script>
 <script src="news-live.js"></script>
 <script src="script.js"></script>

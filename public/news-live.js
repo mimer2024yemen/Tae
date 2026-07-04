@@ -6,6 +6,7 @@
 
 const NEWS_CONFIG = {
     proxy: 'https://api.allorigins.win/raw?url=',
+    imgProxy: 'https://images.weserv.nl/?url=',
     cacheKey: 'ajel_news_cache',
     cacheExpiry: 5 * 60 * 1000, // 5 minutes
     sources: [
@@ -268,7 +269,9 @@ function renderNewsCards(articles, containerId) {
     container.innerHTML = articles.map(a => {
         const catInfo = window.SmartCategorizer ? window.SmartCategorizer.classify(a.title, a.summary || '', a.category || '') : { categoryName: a.category, categoryIcon: '📰', subcategory: '' };
         const catBadge = catInfo.subcategory ? `${catInfo.categoryIcon} ${catInfo.categoryName} · ${catInfo.subcategory}` : `${catInfo.categoryIcon} ${catInfo.categoryName}`;
-        const imgHtml = a.image ? `<img src="${a.image}" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:6px 6px 0 0;" loading="lazy" onerror="this.outerHTML='<div class=\'no-img\'>📰</div>'">` : '<div class="no-img">📰</div>';
+        const imgProxy = window.NEWS_CONFIG?.imgProxy || 'https://images.weserv.nl/?url=';
+        const proxiedImg = a.image ? imgProxy + encodeURIComponent(a.image) : '';
+        const imgHtml = a.image ? `<img src="${proxiedImg}" data-original="${a.image}" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:6px 6px 0 0;" loading="lazy" onerror="handleImgError(this)">` : '<div class="no-img">📰</div>';
         return `
         <a href="${a.link}" target="_blank" rel="noopener" class="latest-card" data-category="${a.category}">
             ${imgHtml}
@@ -304,9 +307,11 @@ function renderSliderNews(articles, containerId) {
     featured.forEach((a, i) => {
         const slide = document.createElement('div');
         slide.className = 'slide' + (i === 0 ? ' active' : '');
+        const slideImgProxy = window.NEWS_CONFIG?.imgProxy || 'https://images.weserv.nl/?url=';
+        const slideProxiedImg = a.image ? slideImgProxy + encodeURIComponent(a.image) : '';
         slide.innerHTML = `
             <div class="slide-img">
-                <img src="${a.image}" alt="" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)'">
+                <img src="${slideProxiedImg}" data-original="${a.image}" alt="" style="width:100%;height:100%;object-fit:cover;" onerror="handleImgError(this)">
                 <div class="slide-overlay">
                     <span class="slide-category">${a.sourceLogo} ${a.source}</span>
                     <h2><a href="${a.link}" target="_blank" rel="noopener">${escapeHtmlLive(a.title)}</a></h2>
@@ -331,6 +336,32 @@ function escapeHtmlLive(text) {
     div.textContent = text;
     return div.innerHTML;
 }
+
+// ===== IMAGE ERROR HANDLER WITH PROXY FALLBACK =====
+function handleImgError(img) {
+    const original = img.getAttribute('data-original');
+    const currentSrc = img.src;
+
+    // If we tried proxy and it failed, try original
+    if (currentSrc.includes('weserv.nl') && original && !img.dataset.triedOriginal) {
+        img.dataset.triedOriginal = '1';
+        img.src = original;
+        return;
+    }
+
+    // If we tried original and it failed, try another proxy
+    if (!currentSrc.includes('wsrv.nl') && original && !img.dataset.triedWsrv) {
+        img.dataset.triedWsrv = '1';
+        img.src = 'https://wsrv.nl/?url=' + encodeURIComponent(original);
+        return;
+    }
+
+    // All proxies failed, show placeholder
+    img.outerHTML = '<div class="no-img">📰</div>';
+}
+
+// Make it global
+window.handleImgError = handleImgError;
 
 // ===== AUTO REFRESH =====
 let refreshInterval = null;

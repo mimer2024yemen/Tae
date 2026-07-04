@@ -22,6 +22,18 @@
     <link rel="canonical" href="" id="canonicalLink">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
+<script>
+// Global image proxy
+document.addEventListener('error', function(e) {
+    if (e.target.tagName === 'IMG' && !e.target.dataset.proxyFailed) {
+        const original = e.target.src || e.target.getAttribute('data-original');
+        if (original && !original.includes('weserv.nl') && !original.includes('wsrv.nl')) {
+            e.target.dataset.proxyFailed = '1';
+            e.target.src = 'https://images.weserv.nl/?url=' + encodeURIComponent(original);
+        }
+    }
+}, true);
+</script>
 </head>
 <body>
 
