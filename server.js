@@ -11,6 +11,7 @@ const db = require('./database');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const JWT_SECRET = process.env.JWT_SECRET || 'ajel_news_secret_key_2024';
+const SITE_URL = process.env.SITE_URL || 'https://mimer2024yemen.github.io/Tae';
 
 // ===== MIDDLEWARE =====
 app.use(cors());
@@ -61,6 +62,25 @@ function authMiddleware(req, res, next) {
     }
 }
 
+// ===== HELPERS =====
+function slugify(text) {
+    return text
+        .replace(/[^\w\u0600-\u06FF\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .trim()
+        .substring(0, 80);
+}
+
+function articleUrl(article) {
+    const slug = slugify(article.title);
+    return `${SITE_URL}/article/${article.id}/${slug}`;
+}
+
+function sectionUrl(slug) {
+    return `${SITE_URL}/${slug}`;
+}
+
 // =============================
 //       AUTH ROUTES
 // =============================
@@ -109,7 +129,7 @@ app.put('/api/sections/:id', authMiddleware, (req, res) => {
 
 // Public: get articles with filters
 app.get('/api/articles', (req, res) => {
-    const { section, section_id, limit, offset, featured, breaking, slider, status, latest } = req.query;
+    const { section, section_id, limit, offset, featured, breaking, slider, status } = req.query;
     let query = 'SELECT a.*, s.name as section_name, s.slug as section_slug FROM articles a LEFT JOIN sections s ON a.section_id = s.id WHERE 1=1';
     const params = [];
 
@@ -127,10 +147,22 @@ app.get('/api/articles', (req, res) => {
     if (offset) { query += ' OFFSET ?'; params.push(parseInt(offset)); }
 
     const articles = db.prepare(query).all(...params);
-    res.json(articles);
+
+    // Add share URLs and clean slugs
+    const enriched = articles.map(a => ({
+        ...a,
+        url: articleUrl(a),
+        share_url: articleUrl(a),
+        share_twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(a.title)}&url=${encodeURIComponent(articleUrl(a))}`,
+        share_facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(articleUrl(a))}`,
+        share_whatsapp: `https://wa.me/?text=${encodeURIComponent(a.title + '\n' + articleUrl(a))}`,
+        share_telegram: `https://t.me/share/url?url=${encodeURIComponent(articleUrl(a))}&text=${encodeURIComponent(a.title)}`,
+    }));
+
+    res.json(enriched);
 });
 
-// Public: single article
+// Public: single article by ID (supports /article/123 and /article/123/slug)
 app.get('/api/articles/:id', (req, res) => {
     const article = db.prepare(`
         SELECT a.*, s.name as section_name, s.slug as section_slug
@@ -139,9 +171,26 @@ app.get('/api/articles/:id', (req, res) => {
     `).get(req.params.id);
     if (!article) return res.status(404).json({ error: 'المقال غير موجود' });
 
-    // Increment views
     db.prepare('UPDATE articles SET views = views + 1 WHERE id = ?').run(req.params.id);
     article.views += 1;
+
+    // Enrich with URLs
+    article.url = articleUrl(article);
+    article.canonical = articleUrl(article);
+    article.share_url = articleUrl(article);
+    article.share_twitter = `https://twitter.com/intent/tweet?text=${encodeURIComponent(article.title)}&url=${encodeURIComponent(articleUrl(article))}`;
+    article.share_facebook = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(articleUrl(article))}`;
+    article.share_whatsapp = `https://wa.me/?text=${encodeURIComponent(article.title + '\n' + articleUrl(article))}`;
+    article.share_telegram = `https://t.me/share/url?url=${encodeURIComponent(articleUrl(article))}&text=${encodeURIComponent(article.title)}`;
+    article.share_linkedin = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(articleUrl(article))}`;
+
+    // Related articles from same section
+    article.related = db.prepare(`
+        SELECT id, title, image, created_at FROM articles
+        WHERE section_id = ? AND id != ? AND status = 'published'
+        ORDER BY created_at DESC LIMIT 5
+    `).all(article.section_id, article.id);
+    article.related = article.related.map(r => ({ ...r, url: articleUrl(r) }));
 
     res.json(article);
 });
@@ -156,7 +205,7 @@ app.post('/api/articles', authMiddleware, (req, res) => {
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `).run(title, summary || '', content || '', image || '', section_id, is_featured ? 1 : 0, is_breaking ? 1 : 0, is_slider ? 1 : 0, status || 'published', author_name || 'عاجل');
 
-    res.json({ id: result.lastInsertRowid, success: true });
+    res.json({ id: result.lastInsertRowid, success: true, url: articleUrl({ id: result.lastInsertRowid, title }) });
 });
 
 // Admin: update article
@@ -204,12 +253,29 @@ app.get('/api/opinions', (req, res) => {
     else { query += " AND status = 'published'"; }
     query += ' ORDER BY created_at DESC';
     if (limit) { query += ' LIMIT ?'; params.push(parseInt(limit)); }
-    res.json(db.prepare(query).all(...params));
+    const opinions = db.prepare(query).all(...params);
+
+    const enriched = opinions.map(o => ({
+        ...o,
+        url: `${SITE_URL}/opinion/${o.id}`,
+        share_url: `${SITE_URL}/opinion/${o.id}`,
+        share_twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(o.title)}&url=${encodeURIComponent(SITE_URL + '/opinion/' + o.id)}`,
+        share_facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(SITE_URL + '/opinion/' + o.id)}`,
+        share_whatsapp: `https://wa.me/?text=${encodeURIComponent(o.title + '\n' + SITE_URL + '/opinion/' + o.id)}`,
+    }));
+
+    res.json(enriched);
 });
 
 app.get('/api/opinions/:id', (req, res) => {
     const article = db.prepare('SELECT * FROM opinion_articles WHERE id = ?').get(req.params.id);
     if (!article) return res.status(404).json({ error: 'المقال غير موجود' });
+    article.url = `${SITE_URL}/opinion/${article.id}`;
+    article.share_url = article.url;
+    article.share_twitter = `https://twitter.com/intent/tweet?text=${encodeURIComponent(article.title)}&url=${encodeURIComponent(article.url)}`;
+    article.share_facebook = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(article.url)}`;
+    article.share_whatsapp = `https://wa.me/?text=${encodeURIComponent(article.title + '\n' + article.url)}`;
+    article.share_telegram = `https://t.me/share/url?url=${encodeURIComponent(article.url)}&text=${encodeURIComponent(article.title)}`;
     res.json(article);
 });
 
@@ -267,9 +333,7 @@ app.get('/api/stats', authMiddleware, (req, res) => {
     const sections = db.prepare('SELECT s.name, s.slug, COUNT(a.id) as article_count FROM sections s LEFT JOIN articles a ON s.id = a.section_id GROUP BY s.id ORDER BY s.sort_order').all();
     const recentArticles = db.prepare('SELECT a.id, a.title, a.status, a.created_at, s.name as section_name FROM articles a LEFT JOIN sections s ON a.section_id = s.id ORDER BY a.created_at DESC LIMIT 10').all();
 
-    res.json({
-        totalArticles, publishedArticles, draftArticles, totalOpinions, totalViews, sections, recentArticles
-    });
+    res.json({ totalArticles, publishedArticles, draftArticles, totalOpinions, totalViews, sections, recentArticles });
 });
 
 // =============================
@@ -284,12 +348,186 @@ app.get('/api/settings', authMiddleware, (req, res) => {
 app.put('/api/settings', authMiddleware, (req, res) => {
     const upsert = db.prepare('INSERT OR REPLACE INTO settings (key, value) VALUES (?, ?)');
     const updateMany = db.transaction((items) => {
-        for (const [key, value] of Object.entries(items)) {
-            upsert.run(key, value);
-        }
+        for (const [key, value] of Object.entries(items)) upsert.run(key, value);
     });
     updateMany(req.body);
     res.json({ success: true });
+});
+
+// =============================
+//       SITEMAP.XML
+// =============================
+app.get('/sitemap.xml', (req, res) => {
+    res.header('Content-Type', 'application/xml');
+
+    const articles = db.prepare("SELECT id, title, created_at, updated_at FROM articles WHERE status = 'published' ORDER BY created_at DESC LIMIT 5000").all();
+    const opinions = db.prepare("SELECT id, title, created_at, updated_at FROM opinion_articles WHERE status = 'published' ORDER BY created_at DESC LIMIT 1000").all();
+    const sections = db.prepare("SELECT slug, name FROM sections WHERE is_active = 1").all();
+
+    const today = new Date().toISOString().split('T')[0];
+
+    let xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- الرئيسية -->
+  <url>
+    <loc>${SITE_URL}/</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- صفحات الأقسام -->
+`;
+
+    sections.forEach(s => {
+        xml += `  <url>
+    <loc>${sectionUrl(s.slug)}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.8</priority>
+  </url>
+`;
+    });
+
+    xml += `
+  <!-- أخبار Google News -->
+`;
+
+    articles.forEach(a => {
+        const pubDate = new Date(a.created_at).toISOString();
+        const modDate = new Date(a.updated_at || a.created_at).toISOString();
+        const url = articleUrl(a);
+        xml += `  <url>
+    <loc>${url}</loc>
+    <lastmod>${modDate.split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <news:news>
+      <news:publication>
+        <news:name>عاجل</news:name>
+        <news:language>ar</news:language>
+      </news:publication>
+      <news:publication_date>${pubDate}</news:publication_date>
+      <news:title>${a.title.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</news:title>
+    </news:news>
+  </url>
+`;
+    });
+
+    xml += `
+  <!-- مقالات الرأي -->
+`;
+
+    opinions.forEach(o => {
+        const pubDate = new Date(o.created_at).toISOString();
+        xml += `  <url>
+    <loc>${SITE_URL}/opinion/${o.id}</loc>
+    <lastmod>${pubDate.split('T')[0]}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+`;
+    });
+
+    xml += `</urlset>`;
+
+    res.send(xml);
+});
+
+// =============================
+//       ROBOTS.TXT
+// =============================
+app.get('/robots.txt', (req, res) => {
+    res.header('Content-Type', 'text/plain');
+    res.send(`User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /uploads/
+
+Sitemap: ${SITE_URL}/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+Disallow: /admin
+Disallow: /api/
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+`);
+});
+
+// =============================
+//       META TAGS (OG + Twitter)
+// =============================
+function generateMetaHTML(article, sectionName) {
+    const title = article ? `${article.title} — عاجل` : 'عاجل — أخبار السعودية والخليج والعالم';
+    const description = article ? (article.summary || article.title).substring(0, 160) : 'صحيفة إلكترونية سعودية تهتم بنشر الأخبار المحلية والمنافسة في سبق الأخبار بمهنية ومصداقية';
+    const image = article?.image || `${SITE_URL}/og-default.png`;
+    const url = article ? articleUrl(article) : SITE_URL;
+    const type = article ? 'article' : 'website';
+    const publishedTime = article?.created_at ? new Date(article.created_at).toISOString() : '';
+    const section = sectionName || article?.section_name || 'أخبار';
+
+    return `
+    <!-- Open Graph -->
+    <meta property="og:type" content="${type}">
+    <meta property="og:title" content="${title.replace(/"/g, '&quot;')}">
+    <meta property="og:description" content="${description.replace(/"/g, '&quot;')}">
+    <meta property="og:image" content="${image}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="${url}">
+    <meta property="og:site_name" content="عاجل">
+    <meta property="og:locale" content="ar_SA">
+    ${publishedTime ? `<meta property="article:published_time" content="${publishedTime}">` : ''}
+    <meta property="article:section" content="${section}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${title.replace(/"/g, '&quot;')}">
+    <meta name="twitter:description" content="${description.replace(/"/g, '&quot;')}">
+    <meta name="twitter:image" content="${image}">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="${url}">
+    `;
+}
+
+// API for meta tags (used by frontend JS)
+app.get('/api/meta/:type/:id', (req, res) => {
+    const { type, id } = req.params;
+    let article;
+    if (type === 'opinion') {
+        article = db.prepare('SELECT * FROM opinion_articles WHERE id = ?').get(id);
+    } else {
+        article = db.prepare('SELECT a.*, s.name as section_name FROM articles a LEFT JOIN sections s ON a.section_id = s.id WHERE a.id = ?').get(id);
+    }
+    if (!article) return res.status(404).json({ error: 'Not found' });
+
+    res.json({
+        title: article.title,
+        description: (article.summary || article.title).substring(0, 160),
+        image: article.image || '',
+        url: type === 'opinion' ? `${SITE_URL}/opinion/${id}` : articleUrl(article),
+        type: type === 'opinion' ? 'article' : 'article',
+        section: article.section_name || '',
+        published_at: article.created_at,
+        share: {
+            twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(article.title)}&url=${encodeURIComponent(type === 'opinion' ? SITE_URL + '/opinion/' + id : articleUrl(article))}`,
+            facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(type === 'opinion' ? SITE_URL + '/opinion/' + id : articleUrl(article))}`,
+            whatsapp: `https://wa.me/?text=${encodeURIComponent(article.title + '\n' + (type === 'opinion' ? SITE_URL + '/opinion/' + id : articleUrl(article)))}`,
+            telegram: `https://t.me/share/url?url=${encodeURIComponent(type === 'opinion' ? SITE_URL + '/opinion/' + id : articleUrl(article))}&text=${encodeURIComponent(article.title)}`,
+            linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(type === 'opinion' ? SITE_URL + '/opinion/' + id : articleUrl(article))}`,
+            copy: type === 'opinion' ? `${SITE_URL}/opinion/${id}` : articleUrl(article),
+        }
+    });
 });
 
 // =============================
@@ -304,8 +542,14 @@ sectionPages.forEach(page => {
     app.get('/' + page, (req, res) => res.sendFile(path.join(__dirname, 'public', 'section.html')));
 });
 
-// ===== START SERVER =====
-// Catch-all for sub-routes (admin/anything, section/anything)
+// Article with slug: /article/123/slug-text
+app.get('/article/:id', (req, res) => res.sendFile(path.join(__dirname, 'public', 'section.html')));
+app.get('/article/:id/:slug', (req, res) => res.sendFile(path.join(__dirname, 'public', 'section.html')));
+
+// Opinion with id: /opinion/123
+app.get('/opinion/:id', (req, res) => res.sendFile(path.join(__dirname, 'public', 'section.html')));
+
+// Catch-all for admin sub-routes
 app.use((req, res, next) => {
     if (req.path.startsWith('/admin')) {
         return res.sendFile(path.join(__dirname, 'admin', 'index.html'));
@@ -317,9 +561,11 @@ app.use((req, res, next) => {
     next();
 });
 
+// ===== START SERVER =====
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`🚀 عاجل نيوز يعمل على المنفذ ${PORT}`);
     console.log(`📰 الموقع: http://localhost:${PORT}`);
     console.log(`🔧 الإدارة: http://localhost:${PORT}/admin`);
+    console.log(`🗺️  Sitemap: http://localhost:${PORT}/sitemap.xml`);
     console.log(`👤 تسجيل الدخول: admin / admin123`);
 });

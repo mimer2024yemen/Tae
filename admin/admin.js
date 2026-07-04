@@ -223,6 +223,8 @@ async function loadArticles(page = 1) {
                 <td>${formatNumber(a.views)}</td>
                 <td>${formatDate(a.created_at)}</td>
                 <td class="action-btns">
+                    <a href="/article/${a.id}" target="_blank" class="btn btn-sm" title="عرض">👁️</a>
+                    <button class="btn btn-sm" onclick="copyShareLink(${a.id}, '${escapeHtml(a.title)}')" title="نسخ الرابط">🔗</button>
                     <button class="btn btn-sm" onclick="editArticle(${a.id})" title="تعديل">✏️</button>
                     <button class="btn btn-sm btn-danger" onclick="deleteArticle(${a.id})" title="حذف">🗑️</button>
                 </td>
@@ -616,6 +618,38 @@ function getSectionIcon(slug) {
         'society': '👥', 'worldcup': '🏆'
     };
     return icons[slug] || '📂';
+}
+
+function copyShareLink(id, title) {
+    const url = window.location.origin + '/article/' + id;
+    const shareUrls = {
+        twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`,
+        facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+        whatsapp: `https://wa.me/?text=${encodeURIComponent(title + '\n' + url)}`,
+        telegram: `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`,
+    };
+
+    // Show share dialog
+    const dialog = document.createElement('div');
+    dialog.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:10000;display:flex;align-items:center;justify-content:center;';
+    dialog.innerHTML = `
+        <div style="background:#fff;border-radius:12px;padding:25px;max-width:400px;width:90%;direction:rtl;font-family:'Noto Kufi Arabic',sans-serif;">
+            <h3 style="margin-bottom:15px;font-size:16px;">مشاركة الخبر</h3>
+            <p style="font-size:13px;color:#666;margin-bottom:15px;word-break:break-all;">${url}</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:15px;">
+                <a href="${shareUrls.twitter}" target="_blank" style="background:#000;color:#fff;padding:8px 16px;border-radius:6px;font-size:13px;font-weight:700;text-decoration:none;">𝕏 تويتر</a>
+                <a href="${shareUrls.facebook}" target="_blank" style="background:#1877f2;color:#fff;padding:8px 16px;border-radius:6px;font-size:13px;font-weight:700;text-decoration:none;">f فيسبوك</a>
+                <a href="${shareUrls.whatsapp}" target="_blank" style="background:#25d366;color:#fff;padding:8px 16px;border-radius:6px;font-size:13px;font-weight:700;text-decoration:none;">📱 واتساب</a>
+                <a href="${shareUrls.telegram}" target="_blank" style="background:#0088cc;color:#fff;padding:8px 16px;border-radius:6px;font-size:13px;font-weight:700;text-decoration:none;">✈️ تلجرام</a>
+            </div>
+            <div style="display:flex;gap:8px;">
+                <button onclick="navigator.clipboard.writeText('${url}');this.textContent='تم النسخ ✅'" style="flex:1;background:#d71920;color:#fff;border:none;padding:10px;border-radius:6px;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;">🔗 نسخ الرابط</button>
+                <button onclick="this.closest('div[style*=fixed]').remove()" style="flex:1;background:#eee;border:none;padding:10px;border-radius:6px;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;">إغلاق</button>
+            </div>
+        </div>
+    `;
+    dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.remove(); });
+    document.body.appendChild(dialog);
 }
 
 function toast(msg, type = 'info') {
