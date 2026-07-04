@@ -398,6 +398,10 @@ function updateHomePage(articles) {
     renderSliderNews(articles, 'heroSlider');
     renderBreakingNews(articles, 'tickerContent');
 
+    // Hide loading skeleton
+    const skeleton = document.getElementById('loadingSkeleton');
+    if (skeleton) skeleton.style.display = 'none';
+
     // Initialize pagination for latest news
     if (window.Pagination && articles.length > 12) {
         Pagination.init(articles);

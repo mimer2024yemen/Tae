@@ -37,6 +37,17 @@
     <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://images.weserv.nl">
+    <link rel="preconnect" href="https://api.allorigins.win">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/Tae/style.css" as="style">
+    <link rel="preload" href="/Tae/script.js" as="script">
+    <link rel="preload" href="/Tae/data/index.json" as="fetch" crossorigin>
+
+    <!-- DNS prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://images.weserv.nl">
+    <link rel="dns-prefetch" href="https://api.allorigins.win">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -401,6 +412,16 @@
                 </div>
             </a>
         </div>
+        <!-- Loading Skeleton -->
+        <div id="loadingSkeleton" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:20px;">
+            <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-text"><div class="skeleton-line short"></div><div class="skeleton-line"></div><div class="skeleton-line medium"></div></div></div>
+            <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-text"><div class="skeleton-line short"></div><div class="skeleton-line"></div><div class="skeleton-line medium"></div></div></div>
+            <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-text"><div class="skeleton-line short"></div><div class="skeleton-line"></div><div class="skeleton-line medium"></div></div></div>
+            <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-text"><div class="skeleton-line short"></div><div class="skeleton-line"></div><div class="skeleton-line medium"></div></div></div>
+            <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-text"><div class="skeleton-line short"></div><div class="skeleton-line"></div><div class="skeleton-line medium"></div></div></div>
+            <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-text"><div class="skeleton-line short"></div><div class="skeleton-line"></div><div class="skeleton-line medium"></div></div></div>
+        </div>
+
         <!-- Pagination -->
         <div class="pagination-wrap" id="paginationWrap" style="display:none;">
             <div class="pagination-info" id="paginationInfo"></div>

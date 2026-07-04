@@ -219,20 +219,53 @@ async function loadSectionPage(section, articleId, articleType) {
     }
 }
 
-// ===== PAGINATION SYSTEM =====
+// ===== PAGINATION SYSTEM (Optimized) =====
 const Pagination = {
     currentPage: 1,
     itemsPerPage: 12,
     totalItems: 0,
     totalPages: 0,
     allArticles: [],
+    loadedPages: new Set(),
+    pageCache: {},
 
-    init(articles) {
-        this.allArticles = articles;
-        this.totalItems = articles.length;
-        this.totalPages = Math.ceil(this.totalItems / this.itemsPerPage);
-        this.currentPage = 1;
-        this.render();
+    async init() {
+        // Load lightweight index first
+        try {
+            const index = await fetch('/Tae/data/index.json').then(r => r.json());
+            this.totalItems = index.count;
+            this.totalPages = Math.ceil(this.totalItems / this.itemsPerPage);
+            this.allArticles = index.articles;
+            this.currentPage = 1;
+            await this.loadPage(1);
+            this.render();
+        } catch (err) {
+            console.log('Pagination init error:', err);
+            // Fallback to full data
+            const data = await fetch('/Tae/data/news.json').then(r => r.json());
+            this.allArticles = data.articles;
+            this.totalItems = data.articles.length;
+            this.totalPages = Math.ceil(this.totalItems / this.itemsPerPage);
+            this.currentPage = 1;
+            this.render();
+        }
+    },
+
+    async loadPage(page) {
+        // Try paginated file first (fast)
+        try {
+            if (this.pageCache[page]) {
+                return this.pageCache[page];
+            }
+            const data = await fetch(`/Tae/data/page-${page}.json`).then(r => r.json());
+            this.pageCache[page] = data.articles;
+            return data.articles;
+        } catch {
+            // Fallback: slice from full data
+            const start = (page - 1) * this.itemsPerPage;
+            const end = start + this.itemsPerPage;
+            return this.allArticles.slice(start, end);
+        }
     },
 
     getPageArticles(page) {
@@ -305,11 +338,16 @@ const Pagination = {
         if (page < 1 || page > this.totalPages) return;
         this.currentPage = page;
 
-        // Get articles for this page
-        const articles = this.getPageArticles(page);
+        // Show loading skeleton
+        const grid = document.getElementById('articlesGrid');
+        if (grid) {
+            grid.innerHTML = Array(6).fill('<div class="latest-card skeleton" style="height:300px;"></div>').join('');
+        }
+
+        // Load page data (paginated file is much faster)
+        const articles = await this.loadPage(page);
 
         // Render articles
-        const grid = document.getElementById('articlesGrid');
         if (grid && window.AjelNews) {
             window.AjelNews.renderNewsCards(articles, 'articlesGrid');
         }
