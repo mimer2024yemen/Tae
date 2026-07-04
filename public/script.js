@@ -758,3 +758,26 @@ document.addEventListener('DOMContentLoaded', function () {
     setInterval(updateTime, 60000);
 
 });
+
+// ===== KEYBOARD SHORTCUTS =====
+document.addEventListener('keydown', function(e) {
+    // Ctrl/Cmd + K = Search
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            const fullSearch = document.getElementById('fullSearch');
+            if (fullSearch) fullSearch.style.display = 'block';
+            searchInput.focus();
+        }
+    }
+    // Escape = Close search
+    if (e.key === 'Escape') {
+        const fullSearch = document.getElementById('fullSearch');
+        if (fullSearch) fullSearch.style.display = 'none';
+    }
+    // D = Toggle dark mode
+    if (e.key === 'd' && !e.ctrlKey && !e.metaKey && document.activeElement.tagName !== 'INPUT') {
+        toggleDarkMode();
+    }
+});

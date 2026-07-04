@@ -49,7 +49,7 @@
     <link rel="dns-prefetch" href="https://images.weserv.nl">
     <link rel="dns-prefetch" href="https://api.allorigins.win">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/Tae/style.css">
 </head>
 <body>
 
@@ -932,7 +932,7 @@ async function performSearch(e) {
         } else {
             el.innerHTML = results.map(a => `
                 <a href="${a.link}" target="_blank" rel="noopener" style="display:flex;gap:12px;padding:12px;background:#fff;border-radius:8px;margin-bottom:8px;border:1px solid #eef0f2;transition:all 0.2s;">
-                    ${a.image ? `<img src="https://images.weserv.nl/?url=${encodeURIComponent(a.image)}" style="width:80px;height:60px;object-fit:cover;border-radius:6px;flex-shrink:0;" onerror="this.style.display='none'">` : ''}
+                    ${a.image ? `<img alt="عاجل نيوز" src="https://images.weserv.nl/?url=${encodeURIComponent(a.image)}" style="width:80px;height:60px;object-fit:cover;border-radius:6px;flex-shrink:0;" onerror="this.style.display='none'">` : ''}
                     <div>
                         <div style="font-size:11px;color:#d71920;font-weight:700;">${a.source}</div>
                         <div style="font-size:14px;font-weight:700;line-height:1.5;">${a.title}</div>

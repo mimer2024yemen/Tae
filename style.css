@@ -1404,3 +1404,47 @@ img[loading="lazy"]::before {
     .slide-overlay h2 { font-size: 15px; }
     .container { padding: 0 12px; }
 }
+
+/* ===== SCROLL TO TOP ===== */
+.scroll-top {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    width: 48px;
+    height: 48px;
+    background: var(--red);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(215,25,32,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.scroll-top:hover {
+    background: var(--red-dark);
+    transform: translateY(-3px);
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .top-bar, .main-nav, .breaking-ticker, .hero-section, .worldcup-section,
+    .trending-bar, .sidebar-block, .footer, .back-to-top, .scroll-top,
+    .pagination-wrap, .load-more-wrap, .card-share, .dark-toggle,
+    .full-search, .header-actions { display: none !important; }
+    .latest-card { break-inside: avoid; page-break-inside: avoid; }
+    body { background: white; color: black; }
+    a { color: black; text-decoration: underline; }
+}
