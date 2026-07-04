@@ -35,8 +35,18 @@ const NEWS_CONFIG = {
         { id: 'techcrunch', name: 'TechCrunch', url: 'https://techcrunch.com/feed/', category: 'technology', logo: '💻' },
         { id: 'verge', name: 'The Verge', url: 'https://www.theverge.com/rss/index.xml', category: 'technology', logo: '📱' },
         { id: 'wired', name: 'WIRED', url: 'https://www.wired.com/feed/rss', category: 'technology', logo: '🔌' },
-        // Science
+        // Science & Health
         { id: 'nasa', name: 'NASA', url: 'https://www.nasa.gov/rss/dyn/breaking_news.rss', category: 'science', logo: '🚀' },
+        { id: 'sciencedaily', name: 'Science Daily', url: 'https://www.sciencedaily.com/rss/all.xml', category: 'science', logo: '🔬' },
+        { id: 'medicalnewstoday', name: 'Medical News Today', url: 'https://www.medicalnewstoday.com/newsfeeds/rss/medical-news-today.xml', category: 'health', logo: '🏥' },
+        // More World
+        { id: 'euronews', name: 'Euronews', url: 'https://www.euronews.com/rss', category: 'international', logo: '🇪🇺' },
+        { id: 'aljazeera-en', name: 'Al Jazeera EN', url: 'https://www.aljazeera.com/xml/rss/all.xml', category: 'international', logo: '🌐' },
+        // More Sports
+        { id: 'marca', name: 'Marca', url: 'https://www.marca.com/rss/portada.xml', category: 'sports', logo: '⚽' },
+        { id: 'football-italia', name: 'Football Italia', url: 'https://www.football-italia.net/feed', category: 'sports', logo: '⚽' },
+        // More Economy
+        { id: 'investing', name: 'Investing.com', url: 'https://www.investing.com/rss/news.rss', category: 'economy', logo: '📈' },
     ],
 };
 
