@@ -116,6 +116,49 @@ function formatDateAr(d) {
     return days[date.getDay()] + ' ' + date.getDate() + ' ' + months[date.getMonth()] + ' ' + date.getFullYear();
 }
 
+// ===== DYNAMIC META TAGS FOR SHARING =====
+function updateMetaTags(article) {
+    if (!article) return;
+
+    const title = article.title + ' — عاجل نيوز';
+    const description = (article.summary || article.title).substring(0, 160);
+    const image = article.image ? 'https://images.weserv.nl/?url=' + encodeURIComponent(article.image) : '';
+    const url = window.location.href;
+
+    // Update page title
+    document.title = title;
+
+    // Update Open Graph
+    updateMeta('og:type', 'article');
+    updateMeta('og:title', title);
+    updateMeta('og:description', description);
+    updateMeta('og:url', url);
+    if (image) {
+        updateMeta('og:image', image);
+        updateMeta('og:image:width', '1200');
+        updateMeta('og:image:height', '630');
+    }
+
+    // Update Twitter Card
+    updateMeta('twitter:title', title);
+    updateMeta('twitter:description', description);
+    if (image) updateMeta('twitter:image', image);
+
+    // Update canonical
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+        canonical = document.createElement('link');
+        canonical.rel = 'canonical';
+        document.head.appendChild(canonical);
+    }
+    canonical.href = url;
+}
+
+function updateMeta(property, content) {
+    let meta = document.querySelector(`meta[property="${property}"]`) || document.querySelector(`meta[name="${property}"]`);
+    if (meta) meta.setAttribute('content', content);
+}
+
 // ===== SECTION ROUTING (GitHub Pages SPA) =====
 (function() {
     const params = new URLSearchParams(window.location.search);
@@ -150,6 +193,16 @@ async function loadSectionPage(section, articleId, articleType) {
     try {
         const data = await fetch('/Tae/data/news.json').then(r => r.json());
         let articles = data.articles || [];
+
+        // If viewing a specific article
+        if (articleId) {
+            const article = articles.find(a => a.id == articleId);
+            if (article) {
+                updateMetaTags(article);
+                showArticleView(article);
+                return;
+            }
+        }
 
         if (section && section !== 'latest-news') {
             articles = articles.filter(a => a.category === section);
@@ -301,6 +354,60 @@ async function loadMoreNews() {
         btn.textContent = 'تحميل المزيد من الأخبار';
         btn.disabled = false;
     }
+}
+
+// ===== ARTICLE VIEW =====
+function showArticleView(article) {
+    const main = document.querySelector('main') || document.getElementById('content');
+    if (!main) return;
+
+    // Hide home sections
+    const homeSections = main.querySelectorAll('.hero-section, .worldcup-section, .trending-bar, .opinion-section');
+    homeSections.forEach(s => s.style.display = 'none');
+
+    const newsSection = main.querySelector('.section');
+    if (newsSection) newsSection.style.display = '';
+
+    const grid = main.querySelector('.latest-grid');
+    if (!grid) return;
+
+    const readTime = Math.max(1, Math.ceil((article.summary || '').split(' ').length / 3));
+    const shareUrl = encodeURIComponent(window.location.href);
+    const shareTitle = encodeURIComponent(article.title);
+    const imgHtml = article.image ? `<img src="https://images.weserv.nl/?url=${encodeURIComponent(article.image)}" alt="${article.title}" style="width:100%;max-height:450px;object-fit:cover;border-radius:12px;margin-bottom:24px;" onerror="this.style.display='none'">` : '';
+
+    grid.innerHTML = `
+        <div style="max-width:800px;margin:0 auto;grid-column:1/-1;">
+            <a href="/Tae/" style="color:#d71920;font-size:14px;font-weight:700;display:inline-flex;align-items:center;gap:6px;margin-bottom:20px;text-decoration:none;">← العودة للرئيسية</a>
+            <span style="display:inline-block;background:#d71920;color:#fff;padding:4px 12px;border-radius:4px;font-size:11px;font-weight:700;margin-bottom:10px;">${article.source || ''}</span>
+            <h1 style="font-size:28px;font-weight:800;line-height:1.5;margin-bottom:12px;font-family:'Noto Kufi Arabic',sans-serif;">${article.title}</h1>
+            <div style="font-size:13px;color:#888;margin-bottom:20px;display:flex;gap:15px;flex-wrap:wrap;">
+                <span>🕐 ${readTime} دقائق للقراءة</span>
+                <span>📅 ${new Date(article.date).toLocaleDateString('ar-SA')}</span>
+                <span>📰 ${article.source || ''}</span>
+            </div>
+            ${imgHtml}
+            <div style="font-size:17px;line-height:2;color:#333;margin-bottom:30px;">
+                ${(article.summary || '').split('\n').map(p => p.trim() ? `<p style="margin-bottom:18px;">${p}</p>` : '').join('')}
+            </div>
+            <!-- Share Buttons -->
+            <div style="background:#f8f9fa;border-radius:12px;padding:20px;margin-bottom:30px;">
+                <h3 style="font-size:16px;font-weight:800;margin-bottom:12px;">مشاركة الخبر</h3>
+                <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                    <a href="https://twitter.com/intent/tweet?text=${shareTitle}&url=${shareUrl}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#000;color:#fff;padding:10px 18px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;">𝕏 تويتر</a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=${shareUrl}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#1877f2;color:#fff;padding:10px 18px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;">f فيسبوك</a>
+                    <a href="https://wa.me/?text=${shareTitle}%20${shareUrl}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#25d366;color:#fff;padding:10px 18px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;">📱 واتساب</a>
+                    <a href="https://t.me/share/url?url=${shareUrl}&text=${shareTitle}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#0088cc;color:#fff;padding:10px 18px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;">✈️ تلجرام</a>
+                    <button onclick="navigator.clipboard.writeText(window.location.href);this.textContent='✅ تم النسخ';setTimeout(()=>this.textContent='🔗 نسخ الرابط',2000)" style="display:inline-flex;align-items:center;gap:6px;background:#666;color:#fff;padding:10px 18px;border-radius:8px;font-size:13px;font-weight:700;border:none;cursor:pointer;">🔗 نسخ الرابط</button>
+                </div>
+            </div>
+            <a href="/Tae/" style="color:#d71920;font-size:14px;font-weight:700;">← العودة للرئيسية</a>
+        </div>
+    `;
+
+    // Update header
+    const header = main.querySelector('.section-header h2');
+    if (header) header.textContent = article.source || 'المقال';
 }
 
 // ===== LIVE NEWS (Static data + Client-side RSS fallback) =====

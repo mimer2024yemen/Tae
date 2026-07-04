@@ -283,7 +283,8 @@ function renderNewsCards(articles, containerId) {
         const proxiedImg = a.image ? imgProxy + encodeURIComponent(a.image) : '';
         const imgHtml = a.image ? `<img src="${proxiedImg}" data-original="${a.image}" alt="" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:6px 6px 0 0;" loading="lazy" onerror="handleImgError(this)">` : '<div class="no-img">📰</div>';
         const readTime = Math.max(1, Math.ceil((a.summary || a.title || '').split(' ').length / 3));
-        const shareUrl = encodeURIComponent(a.link);
+        const articleUrl = 'https://mimer2024yemen.github.io/Tae/?id=' + a.id;
+        const shareUrl = encodeURIComponent(articleUrl);
         const shareTitle = encodeURIComponent(a.title);
         return `
         <a href="${a.link}" target="_blank" rel="noopener" class="latest-card" data-category="${a.category}">
