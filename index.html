@@ -184,34 +184,51 @@
             <!-- Main Story -->
             <div class="hero-main">
                 <div class="hero-slider" id="heroSlider">
+                    <!-- Loading state - will be replaced by JavaScript -->
                     <div class="slide active">
-                        <div class="slide-img">
-                            <div class="img-placeholder" style="background:#1a1a2e;">
-                                <span>صورة الخبر الرئيسي</span>
-                            </div>
-                            <div class="slide-overlay">
-                                <span class="slide-category">مدارات عالمية</span>
-                                <h2><a href="#">تتناول 3 ملفات رئيسية.. باكستان تستضيف جولة مفاوضات «إيرانية _ أمريكية» 11 يوليو</a></h2>
-                                <span class="slide-date">السبت 4 يوليو 2026</span>
+                        <div class="slide-img" style="background:#1a1a2e;display:flex;align-items:center;justify-content:center;">
+                            <div style="text-align:center;color:rgba(255,255,255,0.5);">
+                                <div style="font-size:32px;margin-bottom:8px;">📰</div>
+                                <div>جاري تحميل الأخبار...</div>
                             </div>
                         </div>
                     </div>
-                    <div class="slide">
-                        <div class="slide-img">
-                            <div class="img-placeholder" style="background:#16213e;">
-                                <span>صورة الخبر الثاني</span>
-                            </div>
-                            <div class="slide-overlay">
-                                <span class="slide-category">المحليات</span>
-                                <h2><a href="#">خلال أسبوع.. ضبط 15,591 مخالفًا لأنظمة الإقامة والعمل وأمن الحدود</a></h2>
-                                <span class="slide-date">السبت 4 يوليو 2026</span>
-                            </div>
-                        </div>
+                </div>
+                <div class="slider-controls" id="sliderControls" style="display:none;">
+                    <button class="slider-btn slider-prev" id="sliderPrev">❯</button>
+                    <div class="slider-dots" id="sliderDots"></div>
+                    <button class="slider-btn slider-next" id="sliderNext">❮</button>
+                </div>
+            </div>
+
+            <!-- Side Stories -->
+            <div class="hero-side" id="heroSide">
+                <!-- Loading state - will be replaced by JavaScript -->
+                <div class="side-story" style="opacity:0.5;">
+                    <div style="width:100px;height:75px;background:#f0f0f0;border-radius:6px;"></div>
+                    <div class="side-story-info">
+                        <div style="height:14px;background:#f0f0f0;border-radius:4px;margin-bottom:8px;width:60%;"></div>
+                        <div style="height:14px;background:#f0f0f0;border-radius:4px;width:90%;"></div>
                     </div>
-                    <div class="slide">
-                        <div class="slide-img">
-                            <div class="img-placeholder" style="background:#0f3460;">
-                                <span>صورة الخبر الثالث</span>
+                </div>
+                <div class="side-story" style="opacity:0.5;">
+                    <div style="width:100px;height:75px;background:#f0f0f0;border-radius:6px;"></div>
+                    <div class="side-story-info">
+                        <div style="height:14px;background:#f0f0f0;border-radius:4px;margin-bottom:8px;width:60%;"></div>
+                        <div style="height:14px;background:#f0f0f0;border-radius:4px;width:90%;"></div>
+                    </div>
+                </div>
+                <div class="side-story" style="opacity:0.5;">
+                    <div style="width:100px;height:75px;background:#f0f0f0;border-radius:6px;"></div>
+                    <div class="side-story-info">
+                        <div style="height:14px;background:#f0f0f0;border-radius:4px;margin-bottom:8px;width:60%;"></div>
+                        <div style="height:14px;background:#f0f0f0;border-radius:4px;width:90%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
                             </div>
                             <div class="slide-overlay">
                                 <span class="slide-category">المحليات</span>
@@ -356,55 +373,15 @@
             <h2>آخر الأخبار</h2>
             <a href="/latest-news" class="view-all">عرض كل الأخبار ←</a>
         </div>
-        <div class="latest-grid">
-            <a href="#" class="latest-card">
-                <div class="img-placeholder card" style="background:#e63946;"><span>صورة</span></div>
-                <div class="latest-card-body">
-                    <span class="card-cat">مدارات عالمية</span>
-                    <h3>سفير إيران في بكين: الصين ستحصل على امتيازات خاصة في رسوم خدمات مضيق هرمز</h3>
-                    <span class="card-date">السبت 4 يوليو 2026</span>
-                    <span class="read-more">اقرأ المزيد ←</span>
-                </div>
-            </a>
-            <a href="#" class="latest-card">
-                <div class="img-placeholder card" style="background:#457b9d;"><span>صورة</span></div>
-                <div class="latest-card-body">
-                    <span class="card-cat">المحليات</span>
-                    <h3>يستهدف منسوبي المساجد.. «الشؤون الإسلامية» تطلق البرنامج التوعوي «الأمن السيبراني مسؤوليتنا المشتركة»</h3>
-                    <span class="card-date">السبت 4 يوليو 2026</span>
-                    <span class="read-more">اقرأ المزيد ←</span>
-                </div>
-            </a>
-            <a href="#" class="latest-card">
-                <div class="img-placeholder card" style="background:#2a9d8f;"><span>صورة</span></div>
-                <div class="latest-card-body">
-                    <span class="card-cat">مدارات عالمية</span>
-                    <h3>ترامب: إيران تسعى لاتفاق بعد "الدرس القاسي".. ومهلة أسبوع لإقامة جنازة خامنئي</h3>
-                    <span class="card-date">السبت 4 يوليو 2026</span>
-                    <span class="read-more">اقرأ المزيد ←</span>
-                </div>
-            </a>
-            <a href="#" class="latest-card">
-                <div class="img-placeholder card" style="background:#264653;"><span>صورة</span></div>
-                <div class="latest-card-body">
-                    <span class="card-cat">المحليات</span>
-                    <h3>جامعة الباحة تفتح باب القبول للبكالوريوس والدبلوم المتوسط للعام 1448هـ</h3>
-                    <span class="card-date">السبت 4 يوليو 2026</span>
-                    <span class="read-more">اقرأ المزيد ←</span>
-                </div>
-            </a>
-            <a href="#" class="latest-card">
-                <div class="img-placeholder card" style="background:#e9c46a;"><span>صورة</span></div>
-                <div class="latest-card-body">
-                    <span class="card-cat">المحليات</span>
-                    <h3>«الشؤون الإسلامية» تنظم دورة عن الوسطية والاعتدال في سريلانكا بمشاركة واسعة</h3>
-                    <span class="card-date">السبت 4 يوليو 2026</span>
-                    <span class="read-more">اقرأ المزيد ←</span>
-                </div>
-            </a>
-            <a href="#" class="latest-card">
-                <div class="img-placeholder card" style="background:#f4a261;"><span>صورة</span></div>
-                <div class="latest-card-body">
+        <div class="latest-grid" id="articlesGrid">
+            <!-- Loading skeletons - will be replaced by JavaScript -->
+            <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-text"><div class="skeleton-line short"></div><div class="skeleton-line"></div><div class="skeleton-line medium"></div></div></div>
+            <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-text"><div class="skeleton-line short"></div><div class="skeleton-line"></div><div class="skeleton-line medium"></div></div></div>
+            <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-text"><div class="skeleton-line short"></div><div class="skeleton-line"></div><div class="skeleton-line medium"></div></div></div>
+            <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-text"><div class="skeleton-line short"></div><div class="skeleton-line"></div><div class="skeleton-line medium"></div></div></div>
+            <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-text"><div class="skeleton-line short"></div><div class="skeleton-line"></div><div class="skeleton-line medium"></div></div></div>
+            <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-text"><div class="skeleton-line short"></div><div class="skeleton-line"></div><div class="skeleton-line medium"></div></div></div>
+        </div>
                     <span class="card-cat">المحليات</span>
                     <h3>مجمع الملك فهد لطباعة المصحف الشريف يسجل رقمًا قياسيًا جديدًا في أعداد الزوار</h3>
                     <span class="card-date">السبت 4 يوليو 2026</span>
@@ -445,32 +422,9 @@
                         <h2>رياضة</h2>
                         <a href="/sports" class="view-all">كل الأخبار ←</a>
                     </div>
-                    <div class="news-list">
-                        <a href="#" class="news-list-item featured">
-                            <div class="img-placeholder card" style="background:#e76f51;"><span>صورة</span></div>
-                            <div class="news-list-info">
-                                <h3>الاتفاق يمدد عقد المدافع الاسكتلندي جاك هندري حتى 2028</h3>
-                                <span class="card-date">السبت 4 يوليو 2026</span>
-                            </div>
-                        </a>
-                        <a href="#" class="news-list-item">
-                            <div class="news-list-info">
-                                <h3>غضب عارم ضد «ميسي» بعد لقطة جدلية أمام الرأس الأخضر في كأس العالم</h3>
-                                <span class="card-date">السبت 4 يوليو 2026</span>
-                            </div>
-                        </a>
-                        <a href="#" class="news-list-item">
-                            <div class="news-list-info">
-                                <h3>مشهد لمدرب منتخب مصر يتصدر الترند بعد الفوز على أستراليا في كأس العالم</h3>
-                                <span class="card-date">السبت 4 يوليو 2026</span>
-                            </div>
-                        </a>
-                        <a href="#" class="news-list-item">
-                            <div class="news-list-info">
-                                <h3>ميسي يعزز رقمه القياسي ويقترب من الحذاء الذهبي في مونديال 2026</h3>
-                                <span class="card-date">السبت 4 يوليو 2026</span>
-                            </div>
-                        </a>
+                    <div class="news-list" id="sportsNews">
+                        <!-- Loading skeleton -->
+                        <div style="padding:20px;text-align:center;color:#888;">جاري تحميل أخبار الرياضة...</div>
                     </div>
                 </div>
 
@@ -480,32 +434,9 @@
                         <h2>مدارات عالمية</h2>
                         <a href="/international" class="view-all">كل مدارات عالمية ←</a>
                     </div>
-                    <div class="news-list">
-                        <a href="#" class="news-list-item featured">
-                            <div class="img-placeholder card" style="background:#264653;"><span>صورة</span></div>
-                            <div class="news-list-info">
-                                <h3>سفير إيران في بكين: الصين ستحصل على امتيازات خاصة في رسوم خدمات مضيق هرمز</h3>
-                                <span class="card-date">السبت 4 يوليو 2026</span>
-                            </div>
-                        </a>
-                        <a href="#" class="news-list-item">
-                            <div class="news-list-info">
-                                <h3>ترامب: إيران تسعى لاتفاق بعد "الدرس القاسي".. ومهلة أسبوع لإقامة جنازة خامنئي</h3>
-                                <span class="card-date">السبت 4 يوليو 2026</span>
-                            </div>
-                        </a>
-                        <a href="#" class="news-list-item">
-                            <div class="news-list-info">
-                                <h3>الرئيس التركي: على إسرائيل عدم عرقلة الاتفاق بين أمريكا وإيران</h3>
-                                <span class="card-date">السبت 4 يوليو 2026</span>
-                            </div>
-                        </a>
-                        <a href="#" class="news-list-item">
-                            <div class="news-list-info">
-                                <h3>الرئاسة الفلسطينية تحذر من تصعيد إرهاب المستوطنين وتطالب بتدخل دولي</h3>
-                                <span class="card-date">السبت 4 يوليو 2026</span>
-                            </div>
-                        </a>
+                    <div class="news-list" id="internationalNews">
+                        <!-- Loading skeleton -->
+                        <div style="padding:20px;text-align:center;color:#888;">جاري تحميل أخبار دولية...</div>
                     </div>
                 </div>
 
@@ -515,16 +446,11 @@
                         <h2>منوعات</h2>
                         <a href="/misc" class="view-all">كل منوعات ←</a>
                     </div>
-                    <div class="news-list">
-                        <a href="#" class="news-list-item featured">
-                            <div class="img-placeholder card" style="background:#a8dadc;"><span>صورة</span></div>
-                            <div class="news-list-info">
-                                <h3>استشاري: استهلاك الملح لا يتجاوز 5 جرامات يوميا</h3>
-                                <span class="card-date">السبت 4 يوليو 2026</span>
-                            </div>
-                        </a>
-                        <a href="#" class="news-list-item">
-                            <div class="news-list-info">
+                    <div class="news-list" id="miscNews">
+                        <!-- Loading skeleton -->
+                        <div style="padding:20px;text-align:center;color:#888;">جاري تحميل منوعات...</div>
+                    </div>
+                </div>
                                 <h3>استشاري: قلة النوم عامل خطر مستقل لتدهور وظائف الكلى</h3>
                                 <span class="card-date">السبت 4 يوليو 2026</span>
                             </div>
