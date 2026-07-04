@@ -1,8 +1,20 @@
 {
   "category": "sports",
-  "updated": "2026-07-04T19:44:51.645Z",
-  "count": 24,
+  "updated": "2026-07-04T20:01:26.354Z",
+  "count": 19,
   "articles": [
+    {
+      "id": "sky_hdkapk",
+      "title": "أوناحي يحقق رقما تاريخيا للعرب في كأس العالم",
+      "summary": "خطف نجم الوسط المغربي عز الدين أوناحي الأضواء من الجميع بالتألق في مواجهة كندا التي انتهت بفوز منتخب بلاده 3 / صفر، والتأهل لدور الثمانية ببطولة كأس العالم لكرة القدم 2026 التي تقام في الولايات المتحدة الأميركية وكندا والمكسيك.",
+      "image": "https://images.skynewsarabia.com/images/v1/2026/07/04/1879182/95/53/1-1879182.JPG",
+      "link": "https://www.skynewsarabia.com/sport/1879183-%D8%A3%D9%88%D9%86%D8%A7%D8%AD%D9%8A-%D9%8A%D8%AD%D9%82%D9%82-%D8%B1%D9%82%D9%85%D8%A7-%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE%D9%8A%D8%A7-%D9%84%D9%84%D8%B9%D8%B1%D8%A8-%D9%83%D8%A3%D8%B3-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85",
+      "source": "سكاي نيوز عربي",
+      "sourceLogo": "🔵",
+      "category": "sports",
+      "date": "2026-07-04T19:45:48.000Z",
+      "timeAgo": "قبل 15 دقيقة"
+    },
     {
       "id": "sky_nttf2b",
       "title": "منتخب المغرب يقهر \"الاستثناء\" ويؤكد \"العالمية\"",
@@ -13,7 +25,7 @@
       "sourceLogo": "🔵",
       "category": "sports",
       "date": "2026-07-04T19:37:03.000Z",
-      "timeAgo": "قبل 7 دقيقة"
+      "timeAgo": "قبل 24 دقيقة"
     },
     {
       "id": "france24_8rxl2l",
@@ -25,7 +37,7 @@
       "sourceLogo": "🇫🇷",
       "category": "sports",
       "date": "2026-07-04T19:34:10.000Z",
-      "timeAgo": "قبل 10 دقيقة"
+      "timeAgo": "قبل 27 دقيقة"
     },
     {
       "id": "sky_puregu",
@@ -37,7 +49,7 @@
       "sourceLogo": "🔵",
       "category": "sports",
       "date": "2026-07-04T19:31:45.000Z",
-      "timeAgo": "قبل 13 دقيقة"
+      "timeAgo": "قبل 29 دقيقة"
     },
     {
       "id": "sky_ib6ayy",
@@ -49,7 +61,7 @@
       "sourceLogo": "🔵",
       "category": "sports",
       "date": "2026-07-04T19:04:06.000Z",
-      "timeAgo": "قبل 40 دقيقة"
+      "timeAgo": "قبل 57 دقيقة"
     },
     {
       "id": "aljazeera_1vmstk",
@@ -61,30 +73,6 @@
       "sourceLogo": "🌐",
       "category": "sports",
       "date": "2026-07-04T16:03:32.000Z",
-      "timeAgo": "قبل 3 ساعة"
-    },
-    {
-      "id": "sky_epu9tr",
-      "title": "فيديو.. \"الفيفا\" يعرض قصة كفاح المغربي إسماعيل صيباري",
-      "summary": "استرجع إسماعيل صيباري، لاعب المنتخب المغربي، تفاصيل ملهمة من طفولته وكيف تغلب على إعاقة جسدية في المشي ليتحول إلى أحد صناع التاريخ مع \"أسود الأطلس\". وذلك في فيديو عرضته القناة الرسمية للاتحاد الدولي لكرة القدم (فيفا) على منصة \"يوتيوب\".",
-      "image": "https://images.skynewsarabia.com/images/v1/2026/07/04/1879164/95/53/1-1879164.png",
-      "link": "https://www.skynewsarabia.com/sport/1879161-%D9%81%D9%8A%D8%AF%D9%8A%D9%88-%D8%A7%D9%84%D9%81%D9%8A%D9%81%D8%A7-%D9%8A%D8%B9%D8%B1%D8%B6-%D9%82%D8%B5%D8%A9-%D9%83%D9%81%D8%A7%D8%AD-%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8%D9%8A-%D8%A5%D8%B3%D9%85%D8%A7%D8%B9%D9%8A%D9%84-%D8%B5%D9%8A%D8%A8%D8%A7%D8%B1%D9%8A",
-      "source": "سكاي نيوز عربي",
-      "sourceLogo": "🔵",
-      "category": "sports",
-      "date": "2026-07-04T16:02:24.000Z",
-      "timeAgo": "قبل 3 ساعة"
-    },
-    {
-      "id": "aljazeera_u6a0n3",
-      "title": "في سرية تامة.. تايلور سويفت وترافيس كيلسي يعقدان قرانهما",
-      "summary": "سرية تامة وأجواء غير تقليدية تحيطان بزفاف النجمة الأمريكية تايلور سويفت ولاعب كرة القدم الأمريكية ترافيس كيلسي في نيويورك.",
-      "image": "",
-      "link": "https://www.aljazeera.net/arts/2026/7/4/%d9%81%d9%8a-%d8%b3%d8%b1%d9%8a%d8%a9-%d8%aa%d8%a7%d9%85%d8%a9-%d8%aa%d8%a7%d9%8a%d9%84%d9%88%d8%b1-%d8%b3%d9%88%d9%8a%d9%81%d8%aa-%d9%88%d8%aa%d8%b1%d8%a7%d9%81%d9%8a%d8%b3?traffic_source=rss",
-      "source": "الجزيرة",
-      "sourceLogo": "🌐",
-      "category": "sports",
-      "date": "2026-07-04T15:55:18.000Z",
       "timeAgo": "قبل 3 ساعة"
     },
     {
@@ -112,15 +100,15 @@
       "timeAgo": "قبل 4 ساعة"
     },
     {
-      "id": "aljazeera_40limp",
-      "title": "\"مغامرتي تنتهي هنا\".. رونار يعلن انتهاء مهمته القصيرة مع منتخب تونس",
-      "summary": "\"مغامرتي تنتهي هنا\"، هكذا أعلن المدرب الفرنسي إيرفي رونار انفصاله عن المنتخب التونسي لكرة القدم.",
+      "id": "aljazeera_vwaxj5",
+      "title": "مليارات ضائعة.. \"المخبر الاقتصادي\" يفكك الفشل الكروي الصيني",
+      "summary": "يكشف \"المخبر الاقتصادي\" أن فشل الصين الكروي لا يعود إلى نقص المال، بل إلى مزيج من الفساد وسوء الإدارة وضيق قاعدة المواهب وهيمنة ثقافة التعليم، مما بدد مليارات الدولارات دون تحقيق حلم كأس العالم.",
       "image": "",
-      "link": "https://www.aljazeera.net/sport/2026/7/4/%d8%b1%d8%ad%d9%8a%d9%84-%d8%b1%d9%88%d9%86%d8%a7%d8%b1-%d9%85%d9%86%d8%aa%d8%ae%d8%a8-%d8%aa%d9%88%d9%86%d8%b3-%d9%83%d8%a7%d8%b3-%d8%a7%d9%84%d8%b9%d8%a7%d9%84%d9%85-2026?traffic_source=rss",
+      "link": "https://www.aljazeera.net/video/al-jazeeraspecialprograms/2026/7/4/%d9%85%d9%84%d9%8a%d8%a7%d8%b1%d8%a7%d8%aa-%d8%b6%d8%a7%d8%a6%d8%b9%d8%a9-%d8%a7%d9%84%d9%85%d8%ae%d8%a8%d8%b1-%d8%a7%d9%84%d8%a7%d9%82%d8%aa%d8%b5%d8%a7%d8%af%d9%8a-%d9%8a%d9%81%d9%83%d9%83?traffic_source=rss",
       "source": "الجزيرة",
       "sourceLogo": "🌐",
       "category": "sports",
-      "date": "2026-07-04T15:23:17.000Z",
+      "date": "2026-07-04T15:26:34.000Z",
       "timeAgo": "قبل 4 ساعة"
     },
     {
@@ -136,16 +124,16 @@
       "timeAgo": "قبل 5 ساعة"
     },
     {
-      "id": "sky_jj495f",
-      "title": "كلوب يقترب من تدريب ألمانيا.. اجتماع حاسم خلال أيام",
-      "summary": "يعقد يورغن كلوب اجتماعا مع رئيس الاتحاد الألماني لكرة القدم بيرند نيوندورف، ونائبه هانز يواخيم فاتسكه في الولايات المتحدة، الأسبوع المقبل، لمناقشة اتفاق يقضي بتوليه تدريب منتخب \"الماكينات\".",
-      "image": "https://images.skynewsarabia.com/images/v1/2026/07/04/1879159/95/53/1-1879159.jpg",
-      "link": "https://www.skynewsarabia.com/sport/1879160-%D9%83%D9%84%D9%88%D8%A8-%D9%8A%D9%82%D8%AA%D8%B1%D8%A8-%D8%AA%D8%AF%D8%B1%D9%8A%D8%A8-%D8%A3%D9%84%D9%85%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D8%AD%D8%A7%D8%B3%D9%85-%D8%A3%D9%8A%D8%A7%D9%85",
+      "id": "sky_9wudj1",
+      "title": "مصر تتوقع تلقي 1.5 مليار يورو من الاتحاد الأوروبي خلال أيام",
+      "summary": "قال وزير الخارجية المصري بدر عبد العاطي، السبت، إن بلاده تتوقع تلقي 1.5 مليار يورو (نحو 1.72 مليار دولار) من الاتحاد الأوروبي خلال الأيام المقبلة، وهي الشريحة الأولى من اثنتين متبقيتين من حزمة المساعدة المالية لدعم الاقتصاد الكلي ‌البالغة 5 مليارات يورو.",
+      "image": "https://images.skynewsarabia.com/images/v1/2026/07/04/1879156/95/53/1-1879156.jpg",
+      "link": "https://www.skynewsarabia.com/middle-east/1879157-%D9%85%D8%B5%D8%B1-%D8%AA%D8%AA%D9%88%D9%82%D8%B9-%D8%AA%D9%84%D9%82%D9%8A-1-5-%D9%85%D9%84%D9%8A%D8%A7%D8%B1-%D9%8A%D9%88%D8%B1%D9%88-%D8%A7%D9%84%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF-%D8%A7%D9%84%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A-%D8%A3%D9%8A%D8%A7%D9%85",
       "source": "سكاي نيوز عربي",
       "sourceLogo": "🔵",
       "category": "sports",
-      "date": "2026-07-04T14:09:23.000Z",
-      "timeAgo": "قبل 5 ساعة"
+      "date": "2026-07-04T13:44:44.000Z",
+      "timeAgo": "قبل 6 ساعة"
     },
     {
       "id": "bbc_m1ykfx",
@@ -169,7 +157,7 @@
       "sourceLogo": "🔵",
       "category": "sports",
       "date": "2026-07-04T11:58:54.000Z",
-      "timeAgo": "قبل 7 ساعة"
+      "timeAgo": "قبل 8 ساعة"
     },
     {
       "id": "sky_mj9mki",
@@ -182,54 +170,6 @@
       "category": "sports",
       "date": "2026-07-04T10:38:20.000Z",
       "timeAgo": "قبل 9 ساعة"
-    },
-    {
-      "id": "sky_p9vk3x",
-      "title": "ميسي بكدمة في جبهته.. ماذا قال عن \"معركة\" الرأس الأخضر؟",
-      "summary": "غادر أسطورة الأرجنتين ليونيل ميسي المواجهة المثيرة أمام الرأس الأخضر في دور الـ32 لكأس العالم 2026، بكدمة كبيرة في جبهته، إثر اصطدامه بركبة مدافع المنافس بعد التحام قوي.",
-      "image": "https://images.skynewsarabia.com/images/v1/2026/07/04/1879135/95/53/1-1879135.jpg",
-      "link": "https://www.skynewsarabia.com/sport/1879136-%D9%85%D9%8A%D8%B3%D9%8A-%D8%A8%D9%83%D8%AF%D9%85%D8%A9-%D8%AC%D8%A8%D9%87%D8%AA%D9%87-%D9%82%D8%A7%D9%84-%D9%85%D8%B9%D8%B1%D9%83%D8%A9-%D8%A7%D9%84%D8%B1%D8%A3%D8%B3-%D8%A7%D9%84%D8%A3%D8%AE%D8%B6%D8%B1",
-      "source": "سكاي نيوز عربي",
-      "sourceLogo": "🔵",
-      "category": "sports",
-      "date": "2026-07-04T09:45:34.000Z",
-      "timeAgo": "قبل 9 ساعة"
-    },
-    {
-      "id": "sky_3k8n6l",
-      "title": "هجمات متزامنة على مواقع للجيش المالي.. وحديث عن \"أسر جنود\"",
-      "summary": "شهد شمال ووسط مالي، السبت، تصعيدا عسكريا لافتا، بعدما شنت جبهة تحرير أزواد هجوما واسعا على مواقع للجيش المالي، الذي أقر بتعرض 5 من مواقعه لهجمات متزامنة، في واحدة من أكبر العمليات التي تستهدف قواته خلال الأشهر الأخيرة.",
-      "image": "https://images.skynewsarabia.com/images/v1/2026/07/04/1879127/95/53/1-1879127.jpg",
-      "link": "https://www.skynewsarabia.com/world/1879128-%D9%87%D8%AC%D9%85%D8%A7%D8%AA-%D9%85%D8%AA%D8%B2%D8%A7%D9%85%D9%86%D8%A9-%D9%85%D9%88%D8%A7%D9%82%D8%B9-%D9%84%D9%84%D8%AC%D9%8A%D8%B4-%D8%A7%D9%84%D9%85%D8%A7%D9%84%D9%8A-%D9%88%D8%AD%D8%AF%D9%8A%D8%AB-%D8%A3%D8%B3%D8%B1-%D8%AC%D9%86%D9%88%D8%AF",
-      "source": "سكاي نيوز عربي",
-      "sourceLogo": "🔵",
-      "category": "sports",
-      "date": "2026-07-04T09:36:34.000Z",
-      "timeAgo": "قبل 10 ساعة"
-    },
-    {
-      "id": "bbc_4cnkhu",
-      "title": "مبادرة أمريكية جديدة لتوحيد السلطة في ليبيا، هل تنجح هذه المرة؟",
-      "summary": "طُرحت أكثر من 15 مبادرة سياسية، إلى جانب عشرات المؤتمرات والوساطات الدولية والإقليمية، في محاولات متكررة لإنهاء أزمة الانقسام في ليبي. وأحدث هذه المحاولات جاءت في عام 2025، مع إعلان مستشار الرئيس الأمريكي مسعد بولس، وهو أيضا صهر الرئيس الأمريكي، عن مبادرة تهدف إلى توحيد المؤسسات الليبية تدريجيًا، قب",
-      "image": "https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/4b44/live/4a5d8c50-76bc-11f1-9510-1546718f668b.jpg",
-      "link": "https://www.bbc.com/arabic/articles/cy041zk20glo?at_medium=RSS&at_campaign=rss",
-      "source": "BBC عربي",
-      "sourceLogo": "🇬🇧",
-      "category": "sports",
-      "date": "2026-07-04T06:00:31.000Z",
-      "timeAgo": "قبل 13 ساعة"
-    },
-    {
-      "id": "cnbc_m8yxih",
-      "title": "American Express and Chase move luxury lounge wars beyond the airport",
-      "summary": "Credit card companies are increasingly offering access to lounges and perks at festivals and sporting events, often exclusively for premium cardholders.",
-      "image": "",
-      "link": "https://www.cnbc.com/2026/07/03/amex-chase-credit-card-lounges.html",
-      "source": "CNBC",
-      "sourceLogo": "💹",
-      "category": "sports",
-      "date": "2026-07-03T18:03:34.000Z",
-      "timeAgo": "قبل 1 يوم"
     },
     {
       "id": "bbc_6fa1pt",

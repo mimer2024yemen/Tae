@@ -1,199 +1,7 @@
 {
-  "updated": "2026-07-04T19:44:51.585Z",
+  "updated": "2026-07-04T20:01:26.313Z",
   "count": 120,
   "articles": [
-    {
-      "id": "dw_mcgqf0",
-      "title": "The moral test US founding father Thomas Jefferson failed?",
-      "summary": "Polish general and freedom fighter Thaddeus Kosciuszko presented US founding father Thomas Jefferson with a moral test. Historians still disagree on whether Jefferson passed or not.",
-      "image": "",
-      "link": "https://www.dw.com/en/the-moral-test-us-founding-father-thomas-jefferson-failed/a-77833752?maca=en-rss-en-all-1573-rdf",
-      "source": "DW",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T19:44:51.074Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_i365bp",
-      "title": "Ukraine strikes oil terminals near St. Petersburg in Russia",
-      "summary": "The long-range strikes are the latest salvo in Ukraine’s expanding campaign to inflict economic damage on Russia and hinder its war machine.",
-      "image": "",
-      "link": "https://www.dw.com/en/ukraine-strikes-oil-terminals-near-st-petersburg-in-russia/a-77830574?maca=en-rss-en-all-1573-rdf",
-      "source": "DW",
-      "sourceLogo": "🇩🇪",
-      "category": "economy",
-      "date": "2026-07-04T19:44:51.074Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_qluqmj",
-      "title": "US 250th Independence Day: Merz, Modi extend congratulations",
-      "summary": "The US is celebrating 250 years of independence with a massive fireworks display and military flyovers in the capital. Leaders from German Chancellor Friedrich Merz to India's PM Narendra Modi sent their well-wishes.",
-      "image": "",
-      "link": "https://www.dw.com/en/us-250th-independence-day-merz-modi-extend-congratulations/live-77833580?maca=en-rss-en-all-1573-rdf",
-      "source": "DW",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T19:44:51.074Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_8ya6ed",
-      "title": "Mali rebels target army bases, prison in fresh attacks",
-      "summary": "The army claimed it had regained control after the coordinated assaults on several towns and cities by Tuareg rebels and Islamists.",
-      "image": "",
-      "link": "https://www.dw.com/en/mali-rebels-target-army-bases-prison-in-fresh-attacks/a-77833144?maca=en-rss-en-all-1573-rdf",
-      "source": "DW",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T19:44:51.074Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_250v4y",
-      "title": "Germany news: AfD elects leaders amid massive protests",
-      "summary": "Party delegates of the far-right AfD are meeting in Erfurt as tens of thousands of people are protesting the event. Meanwhile, Jürgen Klopp said he was \"ready\" to jump in as Germany's head coach. DW has more.",
-      "image": "",
-      "link": "https://www.dw.com/en/germany-news-afd-elects-leaders-amid-massive-protests/live-77830605?maca=en-rss-en-all-1573-rdf",
-      "source": "DW",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T19:44:51.074Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_7beifl",
-      "title": "Welcoming the Taliban? — Germany's new Afghanistan policy",
-      "summary": "To facilitate the deportation of criminals to Afghanistan, the German government is allowing Taliban diplomats into the country.",
-      "image": "",
-      "link": "https://www.dw.com/en/welcoming-the-taliban-germany-s-new-afghanistan-policy/a-77786384?maca=en-rss-en-all-1573-rdf",
-      "source": "DW",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T19:44:51.074Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_9bteux",
-      "title": "Pope Leo calls on Europe to do more for migrants",
-      "summary": "The pontiff's trip to the migration frontline of Lampedusa underscored a stark message for Europe and the United States as intolerance and indifference rise.",
-      "image": "",
-      "link": "https://www.dw.com/en/pope-leo-calls-on-europe-to-do-more-for-migrants/a-77831684?maca=en-rss-en-all-1573-rdf",
-      "source": "DW",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T19:44:51.074Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_e4e1j3",
-      "title": "India news: Government lists 23 Pakistanis as 'terrorists'",
-      "summary": "Indian government has designated 23 Pakistan-based individuals as \"terrorists\" under its anti-terror law. Follow DW for more.",
-      "image": "",
-      "link": "https://www.dw.com/en/india-news-government-lists-23-pakistanis-as-terrorists/live-77830565?maca=en-rss-en-all-1573-rdf",
-      "source": "DW",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T19:44:51.074Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_b2dpmm",
-      "title": "Australia's Great Barrier Reef again avoids 'in danger' label",
-      "summary": "UNESCO acknowledged Australia's efforts towards the Great Barrier Reef's health but raised concerns over mass bleaching. For now, the popular marine site seems to have dodged the \"endangered\" tag.",
-      "image": "",
-      "link": "https://www.dw.com/en/australia-s-great-barrier-reef-again-avoids-in-danger-label/a-77829982?maca=en-rss-en-all-1573-rdf",
-      "source": "DW",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T19:44:51.074Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_8pvzlj",
-      "title": "Trump set to put NATO unity to the test at Turkey summit",
-      "summary": "NATO Secretary-General Mark Rutte is working to keep the alliance united and Donald Trump engaged. But disputes over burden sharing, US military commitments, and the Iran war are creating a major test for NATO unity.",
-      "image": "",
-      "link": "https://www.dw.com/en/trump-set-to-put-nato-unity-to-the-test-at-turkey-summit/a-77824515?maca=en-rss-en-all-1573-rdf",
-      "source": "DW",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T19:44:51.074Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_q50ctu",
-      "title": "Kielce pogrom in Poland: 80th anniversary of 1946 massacre",
-      "summary": "Just over a year after World War II ended, a mob in the Polish city of Kielce killed around 40 Jews, some of them Holocaust survivors. A lie about ritual child murder escalated the violence.",
-      "image": "",
-      "link": "https://www.dw.com/en/kielce-pogrom-in-poland-80th-anniversary-of-1946-massacre/a-77826002?maca=en-rss-en-all-1573-rdf",
-      "source": "DW",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T19:44:51.074Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_m8847h",
-      "title": "US: President Trump pardons 11 people, including Clean Air Act violators",
-      "summary": "Donald Trump has granted pardons to nine people convicted of violating a key environmental law. The US President has also pardoned an associate of convicted felon and former lobbyist Jack Abramoff.",
-      "image": "",
-      "link": "https://www.dw.com/en/us-president-trump-pardons-11-people-including-clean-air-act-violators/a-77829438?maca=en-rss-en-all-1573-rdf",
-      "source": "DW",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T19:44:51.074Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_fv10iy",
-      "title": "Iran: Khamenei's funeral ceremonies officially begin",
-      "summary": "Huge crowds have gathered in Tehran to pay their final respects to Iran's supreme leader, who was killed in an airstrike at the start of the US-Israeli campaign against Iran.",
-      "image": "",
-      "link": "https://www.dw.com/en/iran-khamenei-s-funeral-ceremonies-officially-begin/a-77816592?maca=en-rss-en-all-1573-rdf",
-      "source": "DW",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T19:44:51.074Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_911kx0",
-      "title": "Heat wave upends July Fourth celebrations across US",
-      "summary": "A dangerous heat wave has disrupted July Fourth events across the United States, including Donald Trump's flagship Great American State Fair, as the nation prepares to mark its 250th birthday.",
-      "image": "",
-      "link": "https://www.dw.com/en/heat-wave-upends-july-fourth-celebrations-across-us/a-77827949?maca=en-rss-en-all-1573-rdf",
-      "source": "DW",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T19:44:51.074Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_spsky",
-      "title": "Taylor Swift, Travis Kelce tie knot in star-studded ceremony",
-      "summary": "The couple got married in a major star-studded celebration at Madison Square Garden over the Fourth of July weekend.",
-      "image": "",
-      "link": "https://www.dw.com/en/taylor-swift-travis-kelce-tie-knot-in-star-studded-ceremony/a-77812947?maca=en-rss-en-all-1573-rdf",
-      "source": "DW",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T19:44:51.074Z",
-      "timeAgo": "الآن"
-    },
-    {
-      "id": "dw_ey6b36",
-      "title": "NASA launches spacecraft to recover sinking telescope",
-      "summary": "The Swift telescope has been affected by recent solar storms and is sinking faster than ever, heading toward Earth. A NASA mission will try to capture it and boost its orbit.",
-      "image": "",
-      "link": "https://www.dw.com/en/nasa-launches-spacecraft-to-recover-sinking-telescope/a-77826514?maca=en-rss-en-all-1573-rdf",
-      "source": "DW",
-      "sourceLogo": "🇩🇪",
-      "category": "international",
-      "date": "2026-07-04T19:44:51.074Z",
-      "timeAgo": "الآن"
-    },
     {
       "id": "dw_obf16j",
       "title": "Lyra McKee: 3 men acquitted of killing N. Irish journalist",
@@ -203,7 +11,7 @@
       "source": "DW",
       "sourceLogo": "🇩🇪",
       "category": "international",
-      "date": "2026-07-04T19:44:51.074Z",
+      "date": "2026-07-04T20:01:25.802Z",
       "timeAgo": "الآن"
     },
     {
@@ -215,7 +23,7 @@
       "source": "DW",
       "sourceLogo": "🇩🇪",
       "category": "international",
-      "date": "2026-07-04T19:44:51.074Z",
+      "date": "2026-07-04T20:01:25.802Z",
       "timeAgo": "الآن"
     },
     {
@@ -227,7 +35,7 @@
       "source": "DW",
       "sourceLogo": "🇩🇪",
       "category": "international",
-      "date": "2026-07-04T19:44:51.074Z",
+      "date": "2026-07-04T20:01:25.802Z",
       "timeAgo": "الآن"
     },
     {
@@ -239,7 +47,199 @@
       "source": "DW",
       "sourceLogo": "🇩🇪",
       "category": "international",
-      "date": "2026-07-04T19:44:51.074Z",
+      "date": "2026-07-04T20:01:25.802Z",
+      "timeAgo": "الآن"
+    },
+    {
+      "id": "dw_250v4y",
+      "title": "Germany news: AfD elects leaders amid massive protests",
+      "summary": "Party delegates of the far-right AfD are meeting in Erfurt as tens of thousands of people are protesting the event. Meanwhile, Jürgen Klopp said he was \"ready\" to jump in as Germany's head coach. DW has more.",
+      "image": "",
+      "link": "https://www.dw.com/en/germany-news-afd-elects-leaders-amid-massive-protests/live-77830605?maca=en-rss-en-all-1573-rdf",
+      "source": "DW",
+      "sourceLogo": "🇩🇪",
+      "category": "international",
+      "date": "2026-07-04T20:01:25.801Z",
+      "timeAgo": "الآن"
+    },
+    {
+      "id": "dw_7beifl",
+      "title": "Welcoming the Taliban? — Germany's new Afghanistan policy",
+      "summary": "To facilitate the deportation of criminals to Afghanistan, the German government is allowing Taliban diplomats into the country.",
+      "image": "",
+      "link": "https://www.dw.com/en/welcoming-the-taliban-germany-s-new-afghanistan-policy/a-77786384?maca=en-rss-en-all-1573-rdf",
+      "source": "DW",
+      "sourceLogo": "🇩🇪",
+      "category": "international",
+      "date": "2026-07-04T20:01:25.801Z",
+      "timeAgo": "الآن"
+    },
+    {
+      "id": "dw_9bteux",
+      "title": "Pope Leo calls on Europe to do more for migrants",
+      "summary": "The pontiff's trip to the migration frontline of Lampedusa underscored a stark message for Europe and the United States as intolerance and indifference rise.",
+      "image": "",
+      "link": "https://www.dw.com/en/pope-leo-calls-on-europe-to-do-more-for-migrants/a-77831684?maca=en-rss-en-all-1573-rdf",
+      "source": "DW",
+      "sourceLogo": "🇩🇪",
+      "category": "international",
+      "date": "2026-07-04T20:01:25.801Z",
+      "timeAgo": "الآن"
+    },
+    {
+      "id": "dw_e4e1j3",
+      "title": "India news: Government lists 23 Pakistanis as 'terrorists'",
+      "summary": "Indian government has designated 23 Pakistan-based individuals as \"terrorists\" under its anti-terror law. Follow DW for more.",
+      "image": "",
+      "link": "https://www.dw.com/en/india-news-government-lists-23-pakistanis-as-terrorists/live-77830565?maca=en-rss-en-all-1573-rdf",
+      "source": "DW",
+      "sourceLogo": "🇩🇪",
+      "category": "international",
+      "date": "2026-07-04T20:01:25.801Z",
+      "timeAgo": "الآن"
+    },
+    {
+      "id": "dw_b2dpmm",
+      "title": "Australia's Great Barrier Reef again avoids 'in danger' label",
+      "summary": "UNESCO acknowledged Australia's efforts towards the Great Barrier Reef's health but raised concerns over mass bleaching. For now, the popular marine site seems to have dodged the \"endangered\" tag.",
+      "image": "",
+      "link": "https://www.dw.com/en/australia-s-great-barrier-reef-again-avoids-in-danger-label/a-77829982?maca=en-rss-en-all-1573-rdf",
+      "source": "DW",
+      "sourceLogo": "🇩🇪",
+      "category": "international",
+      "date": "2026-07-04T20:01:25.801Z",
+      "timeAgo": "الآن"
+    },
+    {
+      "id": "dw_8pvzlj",
+      "title": "Trump set to put NATO unity to the test at Turkey summit",
+      "summary": "NATO Secretary-General Mark Rutte is working to keep the alliance united and Donald Trump engaged. But disputes over burden sharing, US military commitments, and the Iran war are creating a major test for NATO unity.",
+      "image": "",
+      "link": "https://www.dw.com/en/trump-set-to-put-nato-unity-to-the-test-at-turkey-summit/a-77824515?maca=en-rss-en-all-1573-rdf",
+      "source": "DW",
+      "sourceLogo": "🇩🇪",
+      "category": "international",
+      "date": "2026-07-04T20:01:25.801Z",
+      "timeAgo": "الآن"
+    },
+    {
+      "id": "dw_q50ctu",
+      "title": "Kielce pogrom in Poland: 80th anniversary of 1946 massacre",
+      "summary": "Just over a year after World War II ended, a mob in the Polish city of Kielce killed around 40 Jews, some of them Holocaust survivors. A lie about ritual child murder escalated the violence.",
+      "image": "",
+      "link": "https://www.dw.com/en/kielce-pogrom-in-poland-80th-anniversary-of-1946-massacre/a-77826002?maca=en-rss-en-all-1573-rdf",
+      "source": "DW",
+      "sourceLogo": "🇩🇪",
+      "category": "international",
+      "date": "2026-07-04T20:01:25.801Z",
+      "timeAgo": "الآن"
+    },
+    {
+      "id": "dw_m8847h",
+      "title": "US: President Trump pardons 11 people, including Clean Air Act violators",
+      "summary": "Donald Trump has granted pardons to nine people convicted of violating a key environmental law. The US President has also pardoned an associate of convicted felon and former lobbyist Jack Abramoff.",
+      "image": "",
+      "link": "https://www.dw.com/en/us-president-trump-pardons-11-people-including-clean-air-act-violators/a-77829438?maca=en-rss-en-all-1573-rdf",
+      "source": "DW",
+      "sourceLogo": "🇩🇪",
+      "category": "international",
+      "date": "2026-07-04T20:01:25.801Z",
+      "timeAgo": "الآن"
+    },
+    {
+      "id": "dw_fv10iy",
+      "title": "Iran: Khamenei's funeral ceremonies officially begin",
+      "summary": "Huge crowds have gathered in Tehran to pay their final respects to Iran's supreme leader, who was killed in an airstrike at the start of the US-Israeli campaign against Iran.",
+      "image": "",
+      "link": "https://www.dw.com/en/iran-khamenei-s-funeral-ceremonies-officially-begin/a-77816592?maca=en-rss-en-all-1573-rdf",
+      "source": "DW",
+      "sourceLogo": "🇩🇪",
+      "category": "international",
+      "date": "2026-07-04T20:01:25.801Z",
+      "timeAgo": "الآن"
+    },
+    {
+      "id": "dw_911kx0",
+      "title": "Heat wave upends July Fourth celebrations across US",
+      "summary": "A dangerous heat wave has disrupted July Fourth events across the United States, including Donald Trump's flagship Great American State Fair, as the nation prepares to mark its 250th birthday.",
+      "image": "",
+      "link": "https://www.dw.com/en/heat-wave-upends-july-fourth-celebrations-across-us/a-77827949?maca=en-rss-en-all-1573-rdf",
+      "source": "DW",
+      "sourceLogo": "🇩🇪",
+      "category": "international",
+      "date": "2026-07-04T20:01:25.801Z",
+      "timeAgo": "الآن"
+    },
+    {
+      "id": "dw_spsky",
+      "title": "Taylor Swift, Travis Kelce tie knot in star-studded ceremony",
+      "summary": "The couple got married in a major star-studded celebration at Madison Square Garden over the Fourth of July weekend.",
+      "image": "",
+      "link": "https://www.dw.com/en/taylor-swift-travis-kelce-tie-knot-in-star-studded-ceremony/a-77812947?maca=en-rss-en-all-1573-rdf",
+      "source": "DW",
+      "sourceLogo": "🇩🇪",
+      "category": "international",
+      "date": "2026-07-04T20:01:25.801Z",
+      "timeAgo": "الآن"
+    },
+    {
+      "id": "dw_ey6b36",
+      "title": "NASA launches spacecraft to recover sinking telescope",
+      "summary": "The Swift telescope has been affected by recent solar storms and is sinking faster than ever, heading toward Earth. A NASA mission will try to capture it and boost its orbit.",
+      "image": "",
+      "link": "https://www.dw.com/en/nasa-launches-spacecraft-to-recover-sinking-telescope/a-77826514?maca=en-rss-en-all-1573-rdf",
+      "source": "DW",
+      "sourceLogo": "🇩🇪",
+      "category": "international",
+      "date": "2026-07-04T20:01:25.801Z",
+      "timeAgo": "الآن"
+    },
+    {
+      "id": "dw_mcgqf0",
+      "title": "The moral test US founding father Thomas Jefferson failed?",
+      "summary": "Polish general and freedom fighter Thaddeus Kosciuszko presented US founding father Thomas Jefferson with a moral test. Historians still disagree on whether Jefferson passed or not.",
+      "image": "",
+      "link": "https://www.dw.com/en/the-moral-test-us-founding-father-thomas-jefferson-failed/a-77833752?maca=en-rss-en-all-1573-rdf",
+      "source": "DW",
+      "sourceLogo": "🇩🇪",
+      "category": "international",
+      "date": "2026-07-04T20:01:25.800Z",
+      "timeAgo": "الآن"
+    },
+    {
+      "id": "dw_i365bp",
+      "title": "Ukraine strikes oil terminals near St. Petersburg in Russia",
+      "summary": "The long-range strikes are the latest salvo in Ukraine’s expanding campaign to inflict economic damage on Russia and hinder its war machine.",
+      "image": "",
+      "link": "https://www.dw.com/en/ukraine-strikes-oil-terminals-near-st-petersburg-in-russia/a-77830574?maca=en-rss-en-all-1573-rdf",
+      "source": "DW",
+      "sourceLogo": "🇩🇪",
+      "category": "international",
+      "date": "2026-07-04T20:01:25.800Z",
+      "timeAgo": "الآن"
+    },
+    {
+      "id": "dw_qluqmj",
+      "title": "US 250th Independence Day: Merz, Modi extend congratulations",
+      "summary": "The US is celebrating 250 years of independence with a massive fireworks display and military flyovers in the capital. Leaders from German Chancellor Friedrich Merz to India's PM Narendra Modi sent their well-wishes.",
+      "image": "",
+      "link": "https://www.dw.com/en/us-250th-independence-day-merz-modi-extend-congratulations/live-77833580?maca=en-rss-en-all-1573-rdf",
+      "source": "DW",
+      "sourceLogo": "🇩🇪",
+      "category": "international",
+      "date": "2026-07-04T20:01:25.800Z",
+      "timeAgo": "الآن"
+    },
+    {
+      "id": "dw_8ya6ed",
+      "title": "Mali rebels target army bases, prison in fresh attacks",
+      "summary": "The army claimed it had regained control after the coordinated assaults on several towns and cities by Tuareg rebels and Islamists.",
+      "image": "",
+      "link": "https://www.dw.com/en/mali-rebels-target-army-bases-prison-in-fresh-attacks/a-77833144?maca=en-rss-en-all-1573-rdf",
+      "source": "DW",
+      "sourceLogo": "🇩🇪",
+      "category": "international",
+      "date": "2026-07-04T20:01:25.800Z",
       "timeAgo": "الآن"
     },
     {
@@ -251,8 +251,68 @@
       "source": "BBC عربي",
       "sourceLogo": "🇬🇧",
       "category": "international",
-      "date": "2026-07-04T19:44:30.581Z",
+      "date": "2026-07-04T20:01:04.337Z",
       "timeAgo": "الآن"
+    },
+    {
+      "id": "sky_j2ba33",
+      "title": "خلافة المنكي.. انقسامات \"داعش\" تتيح معلومات استخباراتية",
+      "summary": "فاقمت الخسائر الأخيرة التي مني بها تنظيم داعش في نيجيريا من التوترات القائمة منذ فترة طويلة بين المقاتلين الأجانب في التنظيم والمجندين المحليين، مما أدى إلى انشقاقات واسعة مكنت السلطات الأمنية من الحصول على معلومات استخباراتية مهمة ساعدت في شن المزيد من الهجمات ضد معاقل التنظيم.",
+      "image": "https://images.skynewsarabia.com/images/v2/2020/11/10/1391622/95/53/1-1391622.jpg",
+      "link": "https://www.skynewsarabia.com/world/1879176-%D8%AE%D9%84%D8%A7%D9%81%D8%A9-%D8%A7%D9%84%D9%85%D9%86%D9%83%D9%8A-%D8%A7%D9%86%D9%82%D8%B3%D8%A7%D9%85%D8%A7%D8%AA-%D8%AF%D8%A7%D8%B9%D8%B4-%D8%AA%D8%AA%D9%8A%D8%AD-%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA-%D8%A7%D8%B3%D8%AA%D8%AE%D8%A8%D8%A7%D8%B1%D8%A7%D8%AA%D9%8A%D8%A9",
+      "source": "سكاي نيوز عربي",
+      "sourceLogo": "🔵",
+      "category": "international",
+      "date": "2026-07-04T19:55:59.000Z",
+      "timeAgo": "قبل 5 دقيقة"
+    },
+    {
+      "id": "bbc_m2gkmq",
+      "title": "مراسم تشييع شعبية لخامنئي في إيران بعد أكثر من أربعة أشهر على مقتله",
+      "summary": "مراسم التشييع الشعبية للمرشد الأعلى السابق آية الله علي خامنئي، انطلقت يوم السبت، بعد أكثر من أربعة أشهر على مقتله في اليوم الأول من الحرب الأمريكية الإسرائيلية، وتستمر مراسم الجنازة ستة أيام يزور خلالها الجثمان مدناً إيرانية ويقوم برحلة أخيرة خارج البلاد أيضاً.",
+      "image": "https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/eeaf/live/7ace5470-77be-11f1-a627-714adb4eed6e.jpg",
+      "link": "https://www.bbc.com/arabic/articles/clyxp6kygx6o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC عربي",
+      "sourceLogo": "🇬🇧",
+      "category": "international",
+      "date": "2026-07-04T19:53:52.000Z",
+      "timeAgo": "قبل 7 دقيقة"
+    },
+    {
+      "id": "sky_37jh5x",
+      "title": "محمد بن زايد يهنئ ترامب بالذكرى الـ250 للاستقلال",
+      "summary": "هنأ الشيخ محمد بن زايد آل نهيان، رئيس دولة الإمارات، الرئيس الأميركي دونالد ترامب والشعب الأميركي بمناسبة الذكرى الـ250 لاستقلال الولايات المتحدة، مؤكدا حرص الإمارات على مواصلة تعزيز علاقات التحالف والصداقة بين البلدين.",
+      "image": "https://images.skynewsarabia.com/images/v1/2026/06/28/1877934/95/53/1-1877934.jpg",
+      "link": "https://www.skynewsarabia.com/world/1879185-%D9%85%D8%AD%D9%85%D8%AF-%D8%A8%D9%86-%D8%B2%D8%A7%D9%8A%D8%AF-%D9%8A%D9%87%D9%86%D8%A6-%D8%AA%D8%B1%D8%A7%D9%85%D8%A8-%D8%A8%D8%A7%D9%84%D8%B0%D9%83%D8%B1%D9%89-%D8%A7%D9%84250-%D9%84%D9%84%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84",
+      "source": "سكاي نيوز عربي",
+      "sourceLogo": "🔵",
+      "category": "international",
+      "date": "2026-07-04T19:51:04.000Z",
+      "timeAgo": "قبل 10 دقيقة"
+    },
+    {
+      "id": "sky_hdkapk",
+      "title": "أوناحي يحقق رقما تاريخيا للعرب في كأس العالم",
+      "summary": "خطف نجم الوسط المغربي عز الدين أوناحي الأضواء من الجميع بالتألق في مواجهة كندا التي انتهت بفوز منتخب بلاده 3 / صفر، والتأهل لدور الثمانية ببطولة كأس العالم لكرة القدم 2026 التي تقام في الولايات المتحدة الأميركية وكندا والمكسيك.",
+      "image": "https://images.skynewsarabia.com/images/v1/2026/07/04/1879182/95/53/1-1879182.JPG",
+      "link": "https://www.skynewsarabia.com/sport/1879183-%D8%A3%D9%88%D9%86%D8%A7%D8%AD%D9%8A-%D9%8A%D8%AD%D9%82%D9%82-%D8%B1%D9%82%D9%85%D8%A7-%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE%D9%8A%D8%A7-%D9%84%D9%84%D8%B9%D8%B1%D8%A8-%D9%83%D8%A3%D8%B3-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85",
+      "source": "سكاي نيوز عربي",
+      "sourceLogo": "🔵",
+      "category": "sports",
+      "date": "2026-07-04T19:45:48.000Z",
+      "timeAgo": "قبل 15 دقيقة"
+    },
+    {
+      "id": "france24_x31fxm",
+      "title": "Jordan Bardella redit son \"total soutien\" à Marine Le Pen et \"espère la voir élue\"",
+      "summary": "Les deux leaders du parti d'extrême droite ont affiché leur unité alors qu'ils sauront mardi lequel sera candidat à l'Elysée.",
+      "image": "https://www.franceinfo.fr/pictures/VHHFBuZ4nJcF1ViHj6noNpXaQic/0x312:6000x3687/432x243/filters:format(jpg)/2026/07/04/6a49508478d2b804877037.jpg",
+      "link": "https://www.franceinfo.fr/politique/front-national/jordan-bardella-redit-son-total-soutien-a-marine-le-pen-et-espere-la-voir-elue_8094206.html#xtor=RSS-3-[lestitres]",
+      "source": "France24",
+      "sourceLogo": "🇫🇷",
+      "category": "international",
+      "date": "2026-07-04T19:43:30.000Z",
+      "timeAgo": "قبل 17 دقيقة"
     },
     {
       "id": "sky_nttf2b",
@@ -264,7 +324,7 @@
       "sourceLogo": "🔵",
       "category": "sports",
       "date": "2026-07-04T19:37:03.000Z",
-      "timeAgo": "قبل 7 دقيقة"
+      "timeAgo": "قبل 24 دقيقة"
     },
     {
       "id": "france24_8rxl2l",
@@ -276,7 +336,7 @@
       "sourceLogo": "🇫🇷",
       "category": "sports",
       "date": "2026-07-04T19:34:10.000Z",
-      "timeAgo": "قبل 10 دقيقة"
+      "timeAgo": "قبل 27 دقيقة"
     },
     {
       "id": "sky_puregu",
@@ -288,7 +348,7 @@
       "sourceLogo": "🔵",
       "category": "sports",
       "date": "2026-07-04T19:31:45.000Z",
-      "timeAgo": "قبل 13 دقيقة"
+      "timeAgo": "قبل 29 دقيقة"
     },
     {
       "id": "sky_ib6ayy",
@@ -300,19 +360,7 @@
       "sourceLogo": "🔵",
       "category": "sports",
       "date": "2026-07-04T19:04:06.000Z",
-      "timeAgo": "قبل 40 دقيقة"
-    },
-    {
-      "id": "bbc_m2gkmq",
-      "title": "مراسم تشييع شعبية لخامنئي في إيران بعد أكثر من أربعة أشهر على مقتله",
-      "summary": "مراسم التشييع الشعبية للمرشد الأعلى السابق آية الله علي خامنئي، انطلقت يوم السبت، بعد أكثر من أربعة أشهر على مقتله في اليوم الأول من الحرب الأمريكية الإسرائيلية، وتستمر مراسم الجنازة ستة أيام يزور خلالها الجثمان مدناً إيرانية ويقوم برحلة أخيرة خارج البلاد أيضاً.",
-      "image": "https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/eeaf/live/7ace5470-77be-11f1-a627-714adb4eed6e.jpg",
-      "link": "https://www.bbc.com/arabic/articles/clyxp6kygx6o?at_medium=RSS&at_campaign=rss",
-      "source": "BBC عربي",
-      "sourceLogo": "🇬🇧",
-      "category": "international",
-      "date": "2026-07-04T18:51:36.000Z",
-      "timeAgo": "قبل 53 دقيقة"
+      "timeAgo": "قبل 57 دقيقة"
     },
     {
       "id": "france24_mdktyp",
@@ -324,18 +372,6 @@
       "sourceLogo": "🇫🇷",
       "category": "international",
       "date": "2026-07-04T18:46:57.000Z",
-      "timeAgo": "قبل 57 دقيقة"
-    },
-    {
-      "id": "france24_x31fxm",
-      "title": "Jordan Bardella redit son \"total soutien\" à Marine Le Pen et \"espère la voir élue\"",
-      "summary": "Les deux leaders du parti d'extrême droite ont affiché leur unité alors qu'ils sauront mardi lequel sera candidat à l'Elysée.",
-      "image": "https://www.franceinfo.fr/pictures/VHHFBuZ4nJcF1ViHj6noNpXaQic/0x312:6000x3687/432x243/filters:format(jpg)/2026/07/04/6a49508478d2b804877037.jpg",
-      "link": "https://www.franceinfo.fr/politique/front-national/jordan-bardella-redit-son-total-soutien-a-marine-le-pen-et-espere-la-voir-elue_8094206.html#xtor=RSS-3-[lestitres]",
-      "source": "France24",
-      "sourceLogo": "🇫🇷",
-      "category": "international",
-      "date": "2026-07-04T18:42:47.000Z",
       "timeAgo": "قبل 1 ساعة"
     },
     {
@@ -358,7 +394,7 @@
       "link": "https://www.franceinfo.fr/tour-de-france/jonas-vingegaard-premier-maillot-jaune-du-tour-de-france-2026-apres-la-victoire-de-visma-lease-a-bike-sur-le-contre-la-montre-par-equipes-de-la-1ere-etape_8094068.html#xtor=RSS-3-[lestitres]",
       "source": "France24",
       "sourceLogo": "🇫🇷",
-      "category": "international",
+      "category": "worldcup",
       "date": "2026-07-04T18:01:31.000Z",
       "timeAgo": "قبل 1 ساعة"
     },
@@ -372,7 +408,7 @@
       "sourceLogo": "🇫🇷",
       "category": "international",
       "date": "2026-07-04T17:54:46.000Z",
-      "timeAgo": "قبل 1 ساعة"
+      "timeAgo": "قبل 2 ساعة"
     },
     {
       "id": "sky_4secnc",
@@ -389,7 +425,7 @@
     {
       "id": "bbc_vws2d7",
       "title": "موسيقات جنائزية و\"آيات مختارة\"، كيف قرأت منصات التواصل مراسم وداع خامنئي؟",
-      "summary": "أثارت مراسم وداع علي خامنئي تفاعلاً واسعاً على منصات التواصل، حيث انشغل المستخدمون بالموسيقى الجنائزية، والآيات القرآنية التي رافقت دخول الوفود، وهوية النعوش الأخرى، ومشاهد بكاء مسؤولين وضيوف المراسم، وسط تباين في تفسير ما إذا كانت هذه التفاصيل تحمل رسائل سياسية أم تندرج ضمن بروتوكول التشييع.",
+      "summary": "أثارت مراسم وداع المرشد الأعلى السابق آية الله علي خامنئي تفاعلاً واسعاً على منصات التواصل، حيث انشغل المستخدمون بالموسيقى الجنائزية، والآيات القرآنية التي رافقت دخول الوفود، وهوية النعوش الأخرى، ومشاهد بكاء مسؤولين وضيوف المراسم، وسط تباين في تفسير ما إذا كانت هذه التفاصيل تحمل رسائل سياسية أم تندر",
       "image": "https://ichef.bbci.co.uk/ace/ws/240/cpsprodpb/580d/live/58355440-77d7-11f1-b976-0b9c15b0ccfc.jpg",
       "link": "https://www.bbc.com/arabic/articles/c5yze9en4m8o?at_medium=RSS&at_campaign=rss",
       "source": "BBC عربي",
@@ -418,7 +454,7 @@
       "link": "https://www.cnbc.com/2026/07/04/ive-studied-over-5000-kidsi-keep-giving-parents-the-same-surprisingly-simple-advice.html",
       "source": "CNBC",
       "sourceLogo": "💹",
-      "category": "international",
+      "category": "economy",
       "date": "2026-07-04T17:03:15.000Z",
       "timeAgo": "قبل 2 ساعة"
     },
@@ -430,7 +466,7 @@
       "link": "https://www.skynewsarabia.com/varieties/1879173-%D9%81%D9%8A%D8%AF%D9%8A%D9%88-%D8%A3%D9%85%D8%B7%D8%A7%D8%B1-%D8%BA%D8%B2%D9%8A%D8%B1%D8%A9-%D8%AA%D8%BA%D8%B1%D9%82-%D8%B4%D9%88%D8%A7%D8%B1%D8%B9-%D8%A5%D8%B3%D8%B7%D9%86%D8%A8%D9%88%D9%84",
       "source": "سكاي نيوز عربي",
       "sourceLogo": "🔵",
-      "category": "tourism",
+      "category": "international",
       "date": "2026-07-04T17:01:32.000Z",
       "timeAgo": "قبل 2 ساعة"
     },
@@ -444,7 +480,7 @@
       "sourceLogo": "🇫🇷",
       "category": "international",
       "date": "2026-07-04T16:45:38.000Z",
-      "timeAgo": "قبل 2 ساعة"
+      "timeAgo": "قبل 3 ساعة"
     },
     {
       "id": "france24_xviquh",
@@ -454,7 +490,7 @@
       "link": "https://france3-regions.franceinfo.fr/occitanie/aude/narbonne/louis-on-t-aime-une-marche-blanche-en-hommage-a-l-adolescent-de-17-ans-tue-dans-un-guet-apens-reunit-plusieurs-centaines-de-personnes-3381466.html#xtor=RSS-3-[lestitres]",
       "source": "France24",
       "sourceLogo": "🇫🇷",
-      "category": "international",
+      "category": "worldcup",
       "date": "2026-07-04T16:44:28.000Z",
       "timeAgo": "قبل 3 ساعة"
     },
@@ -526,7 +562,7 @@
       "link": "https://www.skynewsarabia.com/sport/1879161-%D9%81%D9%8A%D8%AF%D9%8A%D9%88-%D8%A7%D9%84%D9%81%D9%8A%D9%81%D8%A7-%D9%8A%D8%B9%D8%B1%D8%B6-%D9%82%D8%B5%D8%A9-%D9%83%D9%81%D8%A7%D8%AD-%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8%D9%8A-%D8%A5%D8%B3%D9%85%D8%A7%D8%B9%D9%8A%D9%84-%D8%B5%D9%8A%D8%A8%D8%A7%D8%B1%D9%8A",
       "source": "سكاي نيوز عربي",
       "sourceLogo": "🔵",
-      "category": "sports",
+      "category": "international",
       "date": "2026-07-04T16:02:24.000Z",
       "timeAgo": "قبل 3 ساعة"
     },
@@ -540,7 +576,7 @@
       "sourceLogo": "🌐",
       "category": "international",
       "date": "2026-07-04T15:59:13.000Z",
-      "timeAgo": "قبل 3 ساعة"
+      "timeAgo": "قبل 4 ساعة"
     },
     {
       "id": "sky_r631xa",
@@ -552,7 +588,7 @@
       "sourceLogo": "🔵",
       "category": "international",
       "date": "2026-07-04T15:58:39.000Z",
-      "timeAgo": "قبل 3 ساعة"
+      "timeAgo": "قبل 4 ساعة"
     },
     {
       "id": "aljazeera_u6a0n3",
@@ -562,9 +598,9 @@
       "link": "https://www.aljazeera.net/arts/2026/7/4/%d9%81%d9%8a-%d8%b3%d8%b1%d9%8a%d8%a9-%d8%aa%d8%a7%d9%85%d8%a9-%d8%aa%d8%a7%d9%8a%d9%84%d9%88%d8%b1-%d8%b3%d9%88%d9%8a%d9%81%d8%aa-%d9%88%d8%aa%d8%b1%d8%a7%d9%81%d9%8a%d8%b3?traffic_source=rss",
       "source": "الجزيرة",
       "sourceLogo": "🌐",
-      "category": "sports",
+      "category": "international",
       "date": "2026-07-04T15:55:18.000Z",
-      "timeAgo": "قبل 3 ساعة"
+      "timeAgo": "قبل 4 ساعة"
     },
     {
       "id": "aljazeera_lmru5m",
@@ -622,7 +658,7 @@
       "link": "https://www.aljazeera.net/video/al-jazeeraspecialprograms/2026/7/4/%d9%85%d9%84%d9%8a%d8%a7%d8%b1%d8%a7%d8%aa-%d8%b6%d8%a7%d8%a6%d8%b9%d8%a9-%d8%a7%d9%84%d9%85%d8%ae%d8%a8%d8%b1-%d8%a7%d9%84%d8%a7%d9%82%d8%aa%d8%b5%d8%a7%d8%af%d9%8a-%d9%8a%d9%81%d9%83%d9%83?traffic_source=rss",
       "source": "الجزيرة",
       "sourceLogo": "🌐",
-      "category": "economy",
+      "category": "sports",
       "date": "2026-07-04T15:26:34.000Z",
       "timeAgo": "قبل 4 ساعة"
     },
@@ -634,7 +670,7 @@
       "link": "https://www.aljazeera.net/sport/2026/7/4/%d8%b1%d8%ad%d9%8a%d9%84-%d8%b1%d9%88%d9%86%d8%a7%d8%b1-%d9%85%d9%86%d8%aa%d8%ae%d8%a8-%d8%aa%d9%88%d9%86%d8%b3-%d9%83%d8%a7%d8%b3-%d8%a7%d9%84%d8%b9%d8%a7%d9%84%d9%85-2026?traffic_source=rss",
       "source": "الجزيرة",
       "sourceLogo": "🌐",
-      "category": "sports",
+      "category": "international",
       "date": "2026-07-04T15:23:17.000Z",
       "timeAgo": "قبل 4 ساعة"
     },
@@ -672,7 +708,7 @@
       "sourceLogo": "🌐",
       "category": "international",
       "date": "2026-07-04T14:46:41.000Z",
-      "timeAgo": "قبل 4 ساعة"
+      "timeAgo": "قبل 5 ساعة"
     },
     {
       "id": "aljazeera_i9e94i",
@@ -682,7 +718,7 @@
       "link": "https://www.aljazeera.net/politics/2026/7/4/%d9%83%d8%a7%d8%aa%d8%a8-%d8%a5%d8%b3%d8%b1%d8%a7%d8%a6%d9%8a%d9%84%d9%8a-%d9%87%d9%84-%d8%a7%d9%84%d8%b7%d9%84%d8%a7%d8%a8-%d8%a7%d9%84%d8%a5%d8%b3%d8%b1%d8%a7%d8%a6%d9%8a%d9%84%d9%8a%d9%88%d9%86?traffic_source=rss",
       "source": "الجزيرة",
       "sourceLogo": "🌐",
-      "category": "economy",
+      "category": "international",
       "date": "2026-07-04T14:42:41.000Z",
       "timeAgo": "قبل 5 ساعة"
     },
@@ -730,7 +766,7 @@
       "link": "https://www.franceinfo.fr/culture/spectacle-vivant-le-ministere-de-la-culture-assure-qu-une-partie-des-credits-sera-versee-la-semaine-prochaine_8093897.html#xtor=RSS-3-[lestitres]",
       "source": "France24",
       "sourceLogo": "🇫🇷",
-      "category": "international",
+      "category": "worldcup",
       "date": "2026-07-04T14:22:56.000Z",
       "timeAgo": "قبل 5 ساعة"
     },
@@ -766,7 +802,7 @@
       "link": "https://www.aljazeera.net/video/aldahih/2026/7/4/%d9%84%d9%85%d8%a7%d8%b0%d8%a7-%d9%84%d8%a7-%d9%8a%d9%88%d8%ac%d8%af-%d8%b9%d9%84%d8%a7%d8%ac-%d9%88%d8%a7%d8%ad%d8%af-%d9%84%d9%84%d8%b3%d8%b1%d8%b7%d8%a7%d9%86?traffic_source=rss",
       "source": "الجزيرة",
       "sourceLogo": "🌐",
-      "category": "entertainment",
+      "category": "international",
       "date": "2026-07-04T14:14:13.000Z",
       "timeAgo": "قبل 5 ساعة"
     },
@@ -802,7 +838,7 @@
       "link": "https://www.skynewsarabia.com/sport/1879160-%D9%83%D9%84%D9%88%D8%A8-%D9%8A%D9%82%D8%AA%D8%B1%D8%A8-%D8%AA%D8%AF%D8%B1%D9%8A%D8%A8-%D8%A3%D9%84%D9%85%D8%A7%D9%86%D9%8A%D8%A7-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D8%AD%D8%A7%D8%B3%D9%85-%D8%A3%D9%8A%D8%A7%D9%85",
       "source": "سكاي نيوز عربي",
       "sourceLogo": "🔵",
-      "category": "sports",
+      "category": "international",
       "date": "2026-07-04T14:09:23.000Z",
       "timeAgo": "قبل 5 ساعة"
     },
@@ -816,7 +852,7 @@
       "sourceLogo": "🇫🇷",
       "category": "international",
       "date": "2026-07-04T14:00:01.000Z",
-      "timeAgo": "قبل 5 ساعة"
+      "timeAgo": "قبل 6 ساعة"
     },
     {
       "id": "sky_4cjfqt",
@@ -828,7 +864,7 @@
       "sourceLogo": "🔵",
       "category": "international",
       "date": "2026-07-04T13:49:37.000Z",
-      "timeAgo": "قبل 5 ساعة"
+      "timeAgo": "قبل 6 ساعة"
     },
     {
       "id": "sky_9wudj1",
@@ -838,7 +874,7 @@
       "link": "https://www.skynewsarabia.com/middle-east/1879157-%D9%85%D8%B5%D8%B1-%D8%AA%D8%AA%D9%88%D9%82%D8%B9-%D8%AA%D9%84%D9%82%D9%8A-1-5-%D9%85%D9%84%D9%8A%D8%A7%D8%B1-%D9%8A%D9%88%D8%B1%D9%88-%D8%A7%D9%84%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF-%D8%A7%D9%84%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A-%D8%A3%D9%8A%D8%A7%D9%85",
       "source": "سكاي نيوز عربي",
       "sourceLogo": "🔵",
-      "category": "economy",
+      "category": "sports",
       "date": "2026-07-04T13:44:44.000Z",
       "timeAgo": "قبل 6 ساعة"
     },
@@ -874,7 +910,7 @@
       "link": "https://www.skynewsarabia.com/varieties/1879155-%D9%85%D8%B5%D8%B1-%D8%A7%D9%83%D8%AA%D8%B4%D8%A7%D9%81-18-%D9%85%D9%82%D8%A8%D8%B1%D8%A9-%D8%A3%D8%AB%D8%B1%D9%8A%D8%A9-%D9%85%D8%AF%D9%8A%D9%86%D8%A9-%D9%85%D8%A7%D8%B1%D9%8A%D9%86%D8%A7-%D8%A7%D9%84%D8%B9%D9%84%D9%85%D9%8A%D9%86-%D8%A7%D9%84%D8%A3%D8%AB%D8%B1%D9%8A%D8%A9",
       "source": "سكاي نيوز عربي",
       "sourceLogo": "🔵",
-      "category": "entertainment",
+      "category": "international",
       "date": "2026-07-04T13:24:45.000Z",
       "timeAgo": "قبل 6 ساعة"
     },
@@ -886,7 +922,7 @@
       "link": "https://www.skynewsarabia.com/world/1879154-%D9%81%D9%8A%D8%AF%D9%8A%D9%88-%D8%A3%D9%88%D9%83%D8%B1%D8%A7%D9%86%D9%8A%D8%A7-%D8%AA%D9%82%D8%B5%D9%81-%D9%85%D9%8A%D9%86%D8%A7%D8%A1-%D9%88%D9%85%D8%AD%D8%B7%D8%A9-%D9%86%D9%81%D8%B7-%D8%B1%D9%88%D8%B3%D9%8A%D8%A7",
       "source": "سكاي نيوز عربي",
       "sourceLogo": "🔵",
-      "category": "economy",
+      "category": "international",
       "date": "2026-07-04T13:17:38.000Z",
       "timeAgo": "قبل 6 ساعة"
     },
@@ -912,7 +948,7 @@
       "sourceLogo": "🔵",
       "category": "international",
       "date": "2026-07-04T13:00:12.000Z",
-      "timeAgo": "قبل 6 ساعة"
+      "timeAgo": "قبل 7 ساعة"
     },
     {
       "id": "bbc_ewu58b",
@@ -924,7 +960,7 @@
       "sourceLogo": "🇬🇧",
       "category": "international",
       "date": "2026-07-04T12:54:35.000Z",
-      "timeAgo": "قبل 6 ساعة"
+      "timeAgo": "قبل 7 ساعة"
     },
     {
       "id": "cnbc_m21fhq",
@@ -934,9 +970,9 @@
       "link": "https://www.cnbc.com/2026/07/04/2026-fifa-world-cup-boosts-prediction-market-volumes.html",
       "source": "CNBC",
       "sourceLogo": "💹",
-      "category": "international",
+      "category": "worldcup",
       "date": "2026-07-04T12:54:04.000Z",
-      "timeAgo": "قبل 6 ساعة"
+      "timeAgo": "قبل 7 ساعة"
     },
     {
       "id": "france24_htxmjo",
@@ -960,7 +996,7 @@
       "sourceLogo": "🔵",
       "category": "sports",
       "date": "2026-07-04T11:58:54.000Z",
-      "timeAgo": "قبل 7 ساعة"
+      "timeAgo": "قبل 8 ساعة"
     },
     {
       "id": "france24_wp2ay8",
@@ -972,7 +1008,7 @@
       "sourceLogo": "🇫🇷",
       "category": "international",
       "date": "2026-07-04T11:57:40.000Z",
-      "timeAgo": "قبل 7 ساعة"
+      "timeAgo": "قبل 8 ساعة"
     },
     {
       "id": "sky_mj9mki",
@@ -1018,44 +1054,8 @@
       "link": "https://www.cnbc.com/2026/07/04/uk-france-agree-with-oman-to-ensure-safety-of-its-territorial-waters.html",
       "source": "CNBC",
       "sourceLogo": "💹",
-      "category": "international",
+      "category": "economy",
       "date": "2026-07-04T09:58:07.000Z",
-      "timeAgo": "قبل 9 ساعة"
-    },
-    {
-      "id": "sky_9yq2zh",
-      "title": "أول رد إيراني على بيان ستارمر وماكرون بشأن مضيق هرمز",
-      "summary": "حذرت إيران من أن مضيق هرمز \"ليس مسرحا للاستعراضات العسكرية لقوى خارجية\"، وذلك ردا على بيان فرنسي بريطاني بشأن الملاحة في الممر المائي الاستراتيجي.",
-      "image": "https://images.skynewsarabia.com/images/v8/2026/03/02/1856184/95/53/1-1856184.JPG",
-      "link": "https://www.skynewsarabia.com/middle-east/1879137-%D8%B1%D8%AF-%D8%A5%D9%8A%D8%B1%D8%A7%D9%86%D9%8A-%D8%A8%D9%8A%D8%A7%D9%86-%D8%B3%D8%AA%D8%A7%D8%B1%D9%85%D8%B1-%D9%88%D9%85%D8%A7%D9%83%D8%B1%D9%88%D9%86-%D8%A8%D8%B4%D8%A3%D9%86-%D9%85%D8%B6%D9%8A%D9%82-%D9%87%D8%B1%D9%85%D8%B2",
-      "source": "سكاي نيوز عربي",
-      "sourceLogo": "🔵",
-      "category": "international",
-      "date": "2026-07-04T09:56:26.000Z",
-      "timeAgo": "قبل 9 ساعة"
-    },
-    {
-      "id": "sky_p9vk3x",
-      "title": "ميسي بكدمة في جبهته.. ماذا قال عن \"معركة\" الرأس الأخضر؟",
-      "summary": "غادر أسطورة الأرجنتين ليونيل ميسي المواجهة المثيرة أمام الرأس الأخضر في دور الـ32 لكأس العالم 2026، بكدمة كبيرة في جبهته، إثر اصطدامه بركبة مدافع المنافس بعد التحام قوي.",
-      "image": "https://images.skynewsarabia.com/images/v1/2026/07/04/1879135/95/53/1-1879135.jpg",
-      "link": "https://www.skynewsarabia.com/sport/1879136-%D9%85%D9%8A%D8%B3%D9%8A-%D8%A8%D9%83%D8%AF%D9%85%D8%A9-%D8%AC%D8%A8%D9%87%D8%AA%D9%87-%D9%82%D8%A7%D9%84-%D9%85%D8%B9%D8%B1%D9%83%D8%A9-%D8%A7%D9%84%D8%B1%D8%A3%D8%B3-%D8%A7%D9%84%D8%A3%D8%AE%D8%B6%D8%B1",
-      "source": "سكاي نيوز عربي",
-      "sourceLogo": "🔵",
-      "category": "sports",
-      "date": "2026-07-04T09:45:34.000Z",
-      "timeAgo": "قبل 9 ساعة"
-    },
-    {
-      "id": "sky_3k8n6l",
-      "title": "هجمات متزامنة على مواقع للجيش المالي.. وحديث عن \"أسر جنود\"",
-      "summary": "شهد شمال ووسط مالي، السبت، تصعيدا عسكريا لافتا، بعدما شنت جبهة تحرير أزواد هجوما واسعا على مواقع للجيش المالي، الذي أقر بتعرض 5 من مواقعه لهجمات متزامنة، في واحدة من أكبر العمليات التي تستهدف قواته خلال الأشهر الأخيرة.",
-      "image": "https://images.skynewsarabia.com/images/v1/2026/07/04/1879127/95/53/1-1879127.jpg",
-      "link": "https://www.skynewsarabia.com/world/1879128-%D9%87%D8%AC%D9%85%D8%A7%D8%AA-%D9%85%D8%AA%D8%B2%D8%A7%D9%85%D9%86%D8%A9-%D9%85%D9%88%D8%A7%D9%82%D8%B9-%D9%84%D9%84%D8%AC%D9%8A%D8%B4-%D8%A7%D9%84%D9%85%D8%A7%D9%84%D9%8A-%D9%88%D8%AD%D8%AF%D9%8A%D8%AB-%D8%A3%D8%B3%D8%B1-%D8%AC%D9%86%D9%88%D8%AF",
-      "source": "سكاي نيوز عربي",
-      "sourceLogo": "🔵",
-      "category": "sports",
-      "date": "2026-07-04T09:36:34.000Z",
       "timeAgo": "قبل 10 ساعة"
     },
     {
@@ -1092,7 +1092,7 @@
       "sourceLogo": "🇫🇷",
       "category": "international",
       "date": "2026-07-04T07:52:15.000Z",
-      "timeAgo": "قبل 11 ساعة"
+      "timeAgo": "قبل 12 ساعة"
     },
     {
       "id": "bbc_4cnkhu",
@@ -1102,9 +1102,9 @@
       "link": "https://www.bbc.com/arabic/articles/cy041zk20glo?at_medium=RSS&at_campaign=rss",
       "source": "BBC عربي",
       "sourceLogo": "🇬🇧",
-      "category": "sports",
+      "category": "international",
       "date": "2026-07-04T06:00:31.000Z",
-      "timeAgo": "قبل 13 ساعة"
+      "timeAgo": "قبل 14 ساعة"
     },
     {
       "id": "cnbc_8cfgde",
@@ -1114,7 +1114,7 @@
       "link": "https://www.cnbc.com/2026/07/04/-khamenei-funeral-procession-route.html",
       "source": "CNBC",
       "sourceLogo": "💹",
-      "category": "international",
+      "category": "economy",
       "date": "2026-07-04T05:20:52.000Z",
       "timeAgo": "قبل 14 ساعة"
     },
@@ -1128,7 +1128,7 @@
       "sourceLogo": "🇫🇷",
       "category": "international",
       "date": "2026-07-04T05:00:30.000Z",
-      "timeAgo": "قبل 14 ساعة"
+      "timeAgo": "قبل 15 ساعة"
     },
     {
       "id": "bbc_q4e7cf",
@@ -1140,7 +1140,7 @@
       "sourceLogo": "🇬🇧",
       "category": "international",
       "date": "2026-07-04T03:52:13.000Z",
-      "timeAgo": "قبل 15 ساعة"
+      "timeAgo": "قبل 16 ساعة"
     },
     {
       "id": "cnbc_tjmlxx",
@@ -1162,7 +1162,7 @@
       "link": "https://www.cnbc.com/2026/07/03/extreme-heat-us-power-grids-july-4-travel.html",
       "source": "CNBC",
       "sourceLogo": "💹",
-      "category": "tourism",
+      "category": "economy",
       "date": "2026-07-03T19:00:44.000Z",
       "timeAgo": "قبل 1 يوم"
     },
@@ -1186,7 +1186,7 @@
       "link": "https://www.cnbc.com/2026/07/03/amex-chase-credit-card-lounges.html",
       "source": "CNBC",
       "sourceLogo": "💹",
-      "category": "sports",
+      "category": "economy",
       "date": "2026-07-03T18:03:34.000Z",
       "timeAgo": "قبل 1 يوم"
     },
@@ -1210,7 +1210,7 @@
       "link": "https://www.cnbc.com/2026/07/03/acting-dni-pulte-fires-dozens-of-intelligence-officials-ms-now.html",
       "source": "CNBC",
       "sourceLogo": "💹",
-      "category": "international",
+      "category": "economy",
       "date": "2026-07-03T17:44:28.000Z",
       "timeAgo": "قبل 1 يوم"
     },
@@ -1258,7 +1258,7 @@
       "link": "https://www.cnbc.com/2026/07/03/ford-achieves-quality-milestone-targets-flawless-new-vehicle-launches.html",
       "source": "CNBC",
       "sourceLogo": "💹",
-      "category": "international",
+      "category": "economy",
       "date": "2026-07-03T12:08:21.000Z",
       "timeAgo": "قبل 1 يوم"
     },
@@ -1318,7 +1318,7 @@
       "link": "https://www.cnbc.com/2026/07/03/venezuela-earthquakes-death-toll-rises-rescue-efforts-continue.html",
       "source": "CNBC",
       "sourceLogo": "💹",
-      "category": "international",
+      "category": "economy",
       "date": "2026-07-03T03:46:27.000Z",
       "timeAgo": "قبل 1 يوم"
     },
@@ -1378,7 +1378,7 @@
       "link": "https://www.cnbc.com/2026/07/01/trump-accounts-launch-july-4.html",
       "source": "CNBC",
       "sourceLogo": "💹",
-      "category": "international",
+      "category": "economy",
       "date": "2026-07-01T12:15:01.000Z",
       "timeAgo": "قبل 3 يوم"
     },
